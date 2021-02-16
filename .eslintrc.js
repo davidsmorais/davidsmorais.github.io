@@ -29,6 +29,7 @@ module.exports = {
     ],
     "react/display-name": "off",
     "react-hooks/rules-of-hooks": "warn",
+    "react/react-in-jsx-scope": "off",
     "react/prop-types": 1,
     "react-hooks/exhaustive-deps": "warn",
     "no-console": "off",
