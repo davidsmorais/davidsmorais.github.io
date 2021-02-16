@@ -25,4 +25,4 @@ const dark = {
   }
 }
 
-export {dark}
+export default {dark}

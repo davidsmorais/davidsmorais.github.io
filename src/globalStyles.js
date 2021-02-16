@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import theme from './theme';
 
 const Styles = createGlobalStyle`
 
@@ -14,12 +15,12 @@ const Styles = createGlobalStyle`
         padding:0;
         border: 0;
         outline: 0;
-        background: #010101;
+        background: ${theme.dark.background};
         overflow-x: hidden;
     }
 
     a:hover {
-        color: #000;
+        color: ${theme.dark.accent.main};
     }
 
     h1,
@@ -29,7 +30,7 @@ const Styles = createGlobalStyle`
     h5,
     h6 {
         font-family: 'Ubuntu', sans-serif;
-        color: #ddd;
+        color: ${theme.dark.text};
         font-size: 2.575rem;
         line-height: 3.0625rem;
       
@@ -39,7 +40,7 @@ const Styles = createGlobalStyle`
     }
 
     p {
-        color: #ededed;
+        color: ${theme.dark.text};
         font-size: 1.125rem;
     }
 
@@ -50,10 +51,10 @@ const Styles = createGlobalStyle`
     a {
         text-decoration: none;
         outline: none;
-        color: #343D48;
+        color: ${theme.dark.accent.secondary};
 
         :hover {
-            color: #343D48;
+            color: ${theme.dark.accent.main};
         }
     }
     
@@ -76,7 +77,7 @@ const Styles = createGlobalStyle`
 
     .anticon,
     .ant-notification-notice-icon-success {
-        color: rgb(255,130,92);
+        color: ${theme.dark.accent.main};
     }
 `;
 
