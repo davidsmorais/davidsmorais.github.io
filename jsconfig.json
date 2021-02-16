@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "Assets": [
+        "./assets/*"
+      ],
+      "Components": [
+        "./components/*"
+      ],
+      "Common": [
+        "./common/*"
+      ],
+      "Hooks": [
+        "./hooks/*"
+      ],
+      "Pages": [
+        "./pages/*"
+      ],
+      "Content": [
+        "./content/*"
+      ],
+      "Utils": [
+        "./utils"
+      ],
+      "Theme": [
+        "./theme/index.js"
+      ],
+      "Config": [
+        "./config/index.js"
+      ]
+    }
+  }
+}

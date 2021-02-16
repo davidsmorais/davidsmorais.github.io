@@ -22,9 +22,9 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "PORT=3001 cross-env ENV=development react-app-rewired start",
+    "build": "cross-env NODE_ENV=production react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,5 +41,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  }, 
+  "devDependencies": {
+    "@welldone-software/why-did-you-render": "^4.2.7",
+    "cross-env": "^7.0.2",
+    "customize-cra": "^1.0.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "react-app-rewired": "^2.1.6"
   }
 }
