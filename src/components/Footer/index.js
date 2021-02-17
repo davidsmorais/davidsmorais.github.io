@@ -1,14 +1,14 @@
 import { lazy, Fragment } from "react";
-import { Row, Col } from "antd";
 import i18n from "i18next";
 import { withTranslation } from "react-i18next";
 import Fade from "react-reveal/Fade";
 
 import * as S from "./styles";
 
-const SvgIcon = lazy(() => import("../../common/SvgIcon"));
-const Container = lazy(() => import("../../common/Container"));
-
+const SvgIcon = lazy(() => import("Common/SvgIcon"));
+const Row = lazy(() => import("Common/Row"));
+const Col = lazy(() => import("Common/Col"));
+const Container = lazy(() => import("Common/Container"));
 const Footer = ({ t }) => {
   const handleChange = (event) => {
     i18n.changeLanguage(event.target.value);
@@ -28,6 +28,7 @@ const Footer = ({ t }) => {
     );
   };
 
+  var a = 2;
   return (
     <Fragment>
       <Fade bottom>
