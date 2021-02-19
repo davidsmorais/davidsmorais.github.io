@@ -1,24 +1,33 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { MenuOutlined } from '@ant-design/icons';
+import { Body } from "Common/Text";
+
+console.log(Body);
 
 export const Header = styled.header`
-  padding: 1rem 0.5rem;
+  z-index: 1;
+  padding: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  img {
+    max-height: 64px;
+  }
+  position: sticky;
+  top: 0;
 `;
 
 export const LogoContainer = styled(Link)`
   display: flex;
-  padding-top: 1rem;
 `;
 
 export const Container = styled.div`
-  position: relative;
-  width: 100%;
   max-width: 1280px;
-  padding-right: 25px;
-  padding-left: 25px;
-  margin-right: auto;
-  margin-left: auto;
+  background: ${({theme}) => theme.background};
+  padding: 0.5rem 3rem;
+  border: 1px solid ${({ theme }) => theme?.accent?.main};
 `;
 
 export const NavLink = styled.div`
@@ -72,6 +81,7 @@ export const Menu = styled.h5`
 
 export const CustomNavLinkSmall = styled(NavLink)`
   font-size: 1rem;
+  cursor: pointer;
   color: #000000;
   transition: color 0.2s ease-in;
   margin: 0.25rem 2rem;
@@ -81,12 +91,10 @@ export const CustomNavLinkSmall = styled(NavLink)`
   }
 `;
 
-export const Label = styled.span`
-  font-size: 12px;
-  font-weight: 500;
-  color: #404041;
+export const Label = styled(Body)`
   text-align: right;
   display: flex;
+  color: ${({theme}) => theme.text};
 `;
 
 export const Outline = styled(MenuOutlined)`
@@ -94,6 +102,11 @@ export const Outline = styled(MenuOutlined)`
   padding-right: ${(props) => (props.padding ? '10px' : '')};
 `;
 
-export const Span = styled.span`
+export const Span = styled(Body)`
   cursor: pointer;
+  color: ${({ theme }) => theme.text};
+  margin: 0;
+  &:hover {
+    color: ${({ theme }) => theme.accent.main};
+  }
 `;

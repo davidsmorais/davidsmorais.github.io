@@ -11,6 +11,7 @@
     "i18next": "^19.8.4",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-xhr-backend": "^3.2.2",
+    "lodash.snakecase": "^4.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-i18next": "^11.8.5",
@@ -41,7 +42,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }, 
+  },
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^4.2.7",
     "cross-env": "^7.0.2",

@@ -1,14 +1,14 @@
-import { useState, Fragment, lazy } from "react";
+import { useState, Fragment } from "react";
 import { Row, Col, Drawer } from "antd";
 import { CSSTransition } from "react-transition-group";
 import { withTranslation } from "react-i18next";
+import sc from 'lodash.snakecase';
 
 import * as S from "./styles";
 
-const SvgIcon = lazy(() => import("../../common/SvgIcon"));
-const Button = lazy(() => import("../../common/Button"));
+// const SvgIcon = lazy(() => import("../../common/SvgIcon"));
 
-const Header = ({ t }) => {
+const Navbar = ({ t }) => {
   const [isNavVisible] = useState(false);
   const [isSmallScreen] = useState(false);
   const [visible, setVisibility] = useState(false);
@@ -32,21 +32,18 @@ const Header = ({ t }) => {
     return (
       <Fragment>
         <S.CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <S.Span>{t("About")}</S.Span>
+          <S.Span>{sc(t("About"))}</S.Span>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <S.Span>{t("Mission")}</S.Span>
+          <S.Span>{sc(t("Mission"))}</S.Span>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <S.Span>{t("Product")}</S.Span>
+          <S.Span>{sc(t("Product"))}</S.Span>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall
-          style={{ width: "180px" }}
           onClick={() => scrollTo("contact")}
         >
-          <S.Span>
-            <Button>{t("Contact")}</Button>
-          </S.Span>
+            <S.Span>{sc(t("contact"))}</S.Span>
         </S.CustomNavLinkSmall>
       </Fragment>
     );
@@ -55,10 +52,10 @@ const Header = ({ t }) => {
   return (
     <S.Header>
       <S.Container>
-        <Row type="flex" justify="space-between" gutter={20}>
-          <S.LogoContainer to="/" aria-label="homepage">
-            <SvgIcon src="logo.svg" />
-          </S.LogoContainer>
+        <Row type="flex" justify="end" align="middle" gutter={20} wrap={false}>
+{/* {          <S.LogoContainer to="/" aria-label="homepage">
+            <SvgIcon src="logo.png" />
+          </S.LogoContainer>} */}
           <S.NotHidden>
             <MenuItem />
           </S.NotHidden>
@@ -91,4 +88,4 @@ const Header = ({ t }) => {
   );
 };
 
-export default withTranslation()(Header);
+export default withTranslation()(Navbar);
