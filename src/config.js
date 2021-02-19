@@ -20,5 +20,6 @@ export default {
     twitter: 'davidsmorais',
     telegram: '@davidsmorais',
     devTo: 'dsmorais',
+    github: 'davidsmorais',
   }
 };

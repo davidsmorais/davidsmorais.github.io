@@ -25,7 +25,6 @@ export const Subtitle = styled.h2`
   font-weight: normal;
   font-size: 48px;
   line-height: 125%;
-  color: ${(props) => props.theme.colors[props.color]};
   text-align: ${(props) => props.align || ""};
 `;
 
@@ -35,7 +34,6 @@ export const Body = styled.p`
   font-weight: normal;
   font-size: 14px;
   line-height: 150%;
-  color: ${(props) => props.theme.colors[props.color]};
   text-align: ${(props) => props.align || ""};
 `;
 
@@ -46,7 +44,6 @@ export const Link = styled(RouterLink)`
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
-  color: ${(props) => props.theme.colors[props.color]};
   text-align: ${(props) => props.align || ""};
 `;
 
@@ -56,7 +53,6 @@ export const Monospace = styled.span`
   font-weight: normal;
   font-size: 24px;
   line-height: 125%;
-  color: ${(props) => props.theme.colors[props.color]};
   text-align: ${(props) => props.align || ""};
 `;
 export const Labels = styled.span`
@@ -65,7 +61,6 @@ export const Labels = styled.span`
   font-weight: normal;
   font-size: 14px;
   line-height: 100%;
-  color: ${(props) => props.theme.colors[props.color]};
   text-align: ${(props) => props.align || ""};
 `;
 export const FooterTitle = styled.h3`
@@ -75,6 +70,5 @@ export const FooterTitle = styled.h3`
   font-size: 36px;
   line-height: 125%;
   letter-spacing: 0.02em;
-  color: ${(props) => props.theme.colors[props.color]};
   text-align: ${(props) => props.align || ""};
 `;
