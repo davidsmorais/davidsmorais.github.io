@@ -26,10 +26,11 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
                 {button &&
                   typeof button === "object" &&
                   button.map((item, id) => {
+                    console.log(button)
                     return (
                       <Button
                         key={id}
-                        color={item.color}
+                        type={item.type}
                         width="true"
                         onClick={() => scrollTo("about")}
                       >
