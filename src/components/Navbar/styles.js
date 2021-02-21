@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { MenuOutlined } from '@ant-design/icons';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { MenuOutlined } from "@ant-design/icons";
 import { Body } from "Common/Text";
 
 console.log(Body);
@@ -17,6 +17,9 @@ export const Header = styled.header`
   }
   position: sticky;
   top: 0;
+  * {
+    font-size: 1rem;
+  }
 `;
 
 export const LogoContainer = styled(Link)`
@@ -25,7 +28,7 @@ export const LogoContainer = styled(Link)`
 
 export const Container = styled.div`
   max-width: 1280px;
-  background: ${({theme}) => theme.background};
+  background: ${({ theme }) => theme.background};
   padding: 0.5rem 3rem;
   border: 1px solid ${({ theme }) => theme?.accent?.main};
 `;
@@ -46,15 +49,6 @@ export const CustomNavLink = styled.div`
   @media only screen and (max-width: 320px) {
     width: 118px;
   }
-`;
-
-export const ContactWrapper = styled.div`
-  cursor: pointer;
-  width: ${(props) => (props.width ? '100%' : '110px')};
-  font-weight: 700;
-  text-align: center;
-  border-radius: 1.25rem;
-  display: inline-block;
 `;
 
 export const Burger = styled.div`
@@ -94,12 +88,12 @@ export const CustomNavLinkSmall = styled(NavLink)`
 export const Label = styled(Body)`
   text-align: right;
   display: flex;
-  color: ${({theme}) => theme.text};
+  color: ${({ theme }) => theme.text};
 `;
 
 export const Outline = styled(MenuOutlined)`
   font-size: 22px;
-  padding-right: ${(props) => (props.padding ? '10px' : '')};
+  padding-right: ${(props) => (props.padding ? "10px" : "")};
 `;
 
 export const Span = styled(Body)`

@@ -7,7 +7,7 @@
     },
     {
       "title": "Learn More",
-      "color": "#fff"
+      "type": "secondary"
     }
   ]
 }
