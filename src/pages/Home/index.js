@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import styled from "styled-components";
 
 import IntroContent from "../../content/IntroContent.json";
 import MiddleBlockContent from "../../content/MiddleBlockContent.json";
@@ -13,10 +14,37 @@ const MiddleBlock = lazy(() => import("Components/MiddleBlock"));
 const ScrollToTop = lazy(() => import("Common/ScrollToTop"));
 const Container = lazy(() => import("Common/Container"));
 
+const StyledBackgroundContainer = styled(Container)`
+  &&& {
+    background-image: linear-gradient(
+        180deg,
+        #b3f9e680 0%, rgba(18, 18, 18, 0.5) 100%
+      ),
+      url("/img/bg1.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: hard-light;
+  }
+`;
+
+const StyledBlackAndWhiteContainer = styled(Container)`
+&&& {
+  height: 150%;
+  background: linear-gradient(
+    180deg,
+    ${({ theme }) => theme.accent.secondary} 50%,
+    ${({ theme }) => theme.background} 50%
+  );
+}
+`;
+
 const Home = () => {
   return (
     <Container>
       <ScrollToTop />
+      <StyledBackgroundContainer>
       <ContentBlock
         type="right"
         first="true"
@@ -26,6 +54,7 @@ const Home = () => {
         icon="avatar.png"
         id="intro"
       />
+      </StyledBackgroundContainer>
       <MiddleBlock
         title={MiddleBlockContent.title}
         content={MiddleBlockContent.text}
@@ -54,11 +83,13 @@ const Home = () => {
         icon="waving.svg"
         id="product"
       />
+      <StyledBlackAndWhiteContainer>
       <ContactFrom
         title={ContactContent.title}
         content={ContactContent.text}
         id="contact"
       />
+      </StyledBlackAndWhiteContainer>
     </Container>
   );
 };
