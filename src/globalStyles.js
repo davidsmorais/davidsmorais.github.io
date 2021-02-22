@@ -1,12 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
-import theme from './theme';
+
 
 const Styles = createGlobalStyle`
-
+${({theme}) => `
     body,
     html,
     a {
-        font-family: 'Ubuntu', sans-serif;
+        font-family: 'Cabin', 'Ubuntu', sans-serif;
     }
 
 
@@ -15,12 +15,12 @@ const Styles = createGlobalStyle`
         padding:0;
         border: 0;
         outline: 0;
-        background: ${theme.dark.background};
+        background: ${theme.background};
         overflow-x: hidden;
     }
 
     a:hover {
-        color: ${theme.dark.accent.main};
+        color: ${theme.accent.main};
     }
 
     h1,
@@ -29,18 +29,18 @@ const Styles = createGlobalStyle`
     h4,
     h5,
     h6 {
-        font-family: 'Ubuntu', sans-serif;
-        color: ${theme.dark.text};
+        font-family: 'Raleway', 'Ubuntu', sans-serif;
+        color: ${theme.text};
         font-size: 2.575rem;
         line-height: 3.0625rem;
-      
+
         @media only screen and (max-width: 414px) {
           font-size: 1.625rem;
         }
     }
 
     p {
-        color: ${theme.dark.text};
+        color: ${theme.text};
         font-size: 1.125rem;
     }
 
@@ -51,13 +51,13 @@ const Styles = createGlobalStyle`
     a {
         text-decoration: none;
         outline: none;
-        color: ${theme.dark.accent.secondary};
+        color: ${theme.accent.secondary};
 
         :hover {
-            color: ${theme.dark.accent.main};
+            color: ${theme.accent.main};
         }
     }
-    
+
     *:focus {
         outline: none;
     }
@@ -77,8 +77,9 @@ const Styles = createGlobalStyle`
 
     .anticon,
     .ant-notification-notice-icon-success {
-        color: ${theme.dark.accent.main};
+        color: ${theme.accent.main};
     }
+`}
 `;
 
 export default Styles;
