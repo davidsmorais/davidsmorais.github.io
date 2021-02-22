@@ -30,7 +30,12 @@ export const Container = styled.div`
   max-width: 1280px;
   background: ${({ theme }) => theme.background};
   padding: 0.5rem 3rem;
-  border: 1px solid ${({ theme }) => theme?.accent?.main};
+  border: 1px solid;
+  transition: border-color 0.25s ease-in-out;
+  border-color: ${({ theme }) => theme?.accent?.secondary};
+  &:hover {
+    border-color: ${({ theme }) => theme?.accent?.main};
+  }
 `;
 
 export const NavLink = styled.div`

@@ -55,7 +55,7 @@ export const Monospace = styled.span`
   line-height: 125%;
   text-align: ${(props) => props.align || ""};
 `;
-export const Labels = styled.span`
+export const Labels = styled.label`
   font-family: Fira Code, monospace;
   font-style: normal;
   font-weight: normal;

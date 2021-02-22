@@ -1,17 +1,18 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link, FooterTitle, Labels, Body } from "Common/Text";
 
 export const Footer = styled.footer`
-  background: rgb(249, 250, 252);
+  background: ${({ theme }) => theme.text};
   padding: 2.5rem 0;
+  > div {
+    background: ${({ theme }) => theme.text};
+  }
 `;
 
-export const Title = styled.h4`
+export const Title = styled(FooterTitle)`
   font-size: 16px;
   text-transform: uppercase;
-  color: #000;
-
-  @media screen and (max-width: 414px) {
+  color: @media screen and (max-width: 414px) {
     padding: 1.5rem 0;
   }
 `;
@@ -24,11 +25,11 @@ export const NavLink = styled(Link)`
   &:hover,
   &:active,
   &:focus {
-    color: #15418e;
+    color: ${({ theme }) => theme.accent.main};
   }
 `;
 
-export const Target = styled.a`
+export const Target = styled(Link)`
   display: block;
   font-size: 1rem;
   margin-bottom: 0.625rem;
@@ -37,12 +38,12 @@ export const Target = styled.a`
   &:hover,
   &:active,
   &:focus {
-    color: #15418e;
+    color: ${({ theme }) => theme.accent.main};
   }
 `;
 
 export const Extra = styled.section`
-  background: rgb(249, 250, 252);
+  background: ${({ theme }) => theme.text};
   position: relative;
   width: 100%;
   padding-right: 25px;
@@ -50,6 +51,10 @@ export const Extra = styled.section`
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 2rem;
+  > div {
+    border-top: 1px solid ${({ theme }) => theme.background};
+    background: ${({ theme }) => theme.text};
+  }
 `;
 
 export const LogoContainer = styled.div`
@@ -66,7 +71,7 @@ export const Select = styled.div`
 `;
 
 export const Para = styled.div`
-  color: rgba(2, 7, 62, 0.8);
+  color: ${({theme}) => theme.background};
   max-width: 340px;
   font-size: 14px;
   width: 100%;
@@ -74,9 +79,9 @@ export const Para = styled.div`
 
 export const Large = styled(Link)`
   font-size: 16px;
-  color: rgba(2, 7, 62, 0.8);
-  text-align: ${(props) => (props.left ? 'left' : '')};
-  padding: ${(props) => (props.left ? '0 10%' : '')};
+  color: ${({theme}) => theme.background};
+  text-align: ${(props) => (props.left ? "left" : "")};
+  padding: ${(props) => (props.left ? "0 10%" : "")};
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-transform: capitalize;
@@ -85,20 +90,19 @@ export const Large = styled(Link)`
   margin-bottom: 0.625rem;
 
   &:hover {
-    color: rgb(255, 130, 92);
   }
 `;
 
-export const Chat = styled.p`
-  color: rgba(2, 7, 62, 0.8);
+export const Chat = styled(Body)`
+  color: ${({theme}) => theme.background};
   max-width: 85px;
-  border-bottom: 1px solid rgba(2, 7, 62, 0.8);
+  border-bottom: 1px solid ${({theme}) => theme.background};
   cursor: pointer;
   margin-top: 1rem;
 
   &:hover {
-    border-bottom: 1px solid rgb(255, 130, 92);
-    color: rgb(255, 130, 92);
+    border-bottom: 1px solid ${({ theme }) => theme.accent.main};;
+    color: ${({ theme }) => theme.accent.main};
   }
 `;
 
@@ -125,7 +129,7 @@ export const FooterContainer = styled.div`
     height: 25px;
 
     &:hover {
-      fill: rgb(255, 130, 92);
+      fill: ${({ theme }) => theme.accent.main};;
     }
   }
 `;
@@ -149,7 +153,7 @@ export const Language = styled.h4`
   }
 `;
 
-export const Label = styled.label`
+export const Label = styled(Labels)`
   font-size: 16px;
   text-transform: uppercase;
   color: #000;
@@ -166,5 +170,5 @@ export const LangSelect = styled.select`
   cursor: pointer;
   border: none;
   font-size: 1rem;
-  background: rgb(249, 250, 252);
+  background: ${({ theme }) => theme.text};
 `;
