@@ -1,6 +1,7 @@
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import Slide from "react-reveal/Slide";
+import {Title} from 'Common';
 
 import SvgIcon from "../../../common/SvgIcon";
 
@@ -23,7 +24,7 @@ const LeftContentBlock = ({ icon, title, content, section, t, id }) => {
         <Col lg={11} md={11} sm={11} xs={24}>
           <Slide right>
             <S.ContentWrapper>
-              <h6>{t(title)}</h6>
+              <Title>{t(title)}</Title>
               <S.Content>{t(content)}</S.Content>
               <S.ServiceWrapper>
                 <Row type="flex" justify="space-between">

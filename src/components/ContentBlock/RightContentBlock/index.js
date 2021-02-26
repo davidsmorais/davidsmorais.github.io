@@ -2,8 +2,9 @@ import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import Slide from "react-reveal/Slide";
 
-import SvgIcon from "../../../common/SvgIcon";
-import Button from "../../../common/Button";
+import SvgIcon from "Common/SvgIcon";
+import Button from "Common/Button";
+import { Title } from 'Common';
 
 import * as S from "./styles";
 
@@ -20,7 +21,7 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
         <Col lg={11} md={11} sm={11} xs={24}>
           <Slide left>
             <S.ContentWrapper>
-              <h6>{t(title)}</h6>
+              <Title>{t(title)}</Title>
               <S.Content>{t(content)}</S.Content>
               <S.ButtonWrapper>
                 {button &&

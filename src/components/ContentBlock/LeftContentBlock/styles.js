@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { Col } from 'antd';
+import { Body } from 'Common';
+
 
 export const LeftContentBlock = styled.section`
   position: relative;
@@ -10,7 +12,7 @@ export const LeftContentBlock = styled.section`
   }
 `;
 
-export const Content = styled.p`
+export const Content = styled(Body)`
   margin: 1.5rem 0 2rem 0;
 `;
 
@@ -29,13 +31,14 @@ export const ServiceWrapper = styled.div`
   max-width: 100%;
 `;
 
-export const MinTitle = styled.h6`
+export const MinTitle = styled((Body))`
   font-size: 1rem;
   line-height: 1rem;
   padding: 0.5rem 0;
 `;
 
-export const MinPara = styled.p`
+
+export const MinPara = styled(Body)`
   font-size: 0.75rem;
 `;
 

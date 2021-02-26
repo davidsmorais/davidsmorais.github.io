@@ -5,8 +5,8 @@ export const Title = styled.h1`
   font-family: Raleway;
   font-style: normal;
   font-weight: 900;
-  font-size: 24px;
-  line-height: 125%;
+  font-size: 72px;
+  line-height: 100%;
   color: ${(props) => props.theme[props.color]};
   text-align: ${(props) => props.align || ""};
 `;
@@ -15,7 +15,7 @@ export const BlogPostTitle = styled.h1`
   font-style: normal;
   font-weight: 900;
   font-size: 72px;
-  line-height: 100%;
+  line-height: 125%;
   color: ${(props) => props.theme[props.color]};
   text-align: ${(props) => props.align || ""};
 `;

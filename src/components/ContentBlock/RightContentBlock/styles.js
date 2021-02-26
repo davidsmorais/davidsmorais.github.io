@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Body } from 'Common';
 
 export const RightBlockContainer = styled.section`
   position: relative;
@@ -9,7 +10,7 @@ export const RightBlockContainer = styled.section`
   }
 `;
 
-export const Content = styled.p`
+export const Content = styled(Body)`
   margin: 1.5rem 0 2rem 0;
 `;
 
@@ -27,3 +28,4 @@ export const ButtonWrapper = styled.div`
   justify-content: space-between;
   max-width: 400px;
 `;
+
