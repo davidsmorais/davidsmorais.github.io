@@ -1,16 +1,26 @@
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import Slide from "react-reveal/Slide";
-import {Title} from 'Common';
+import {Title, Subtitle} from 'Common';
 
-import SvgIcon from "../../../common/SvgIcon";
+import SvgIcon from "Common/SvgIcon";
 
 import * as S from "./styles";
 
-const LeftContentBlock = ({ icon, title, content, section, t, id }) => {
+const LeftContentBlock = ({
+  icon,
+  title,
+  content,
+  section,
+  t,
+  id,
+  subtitle,
+}) => {
+  console.log("🚀 ~ file: index.js ~ line 19 ~ subtitle", subtitle)
   return (
     <S.LeftContentBlock>
       <Row type="flex" justify="space-between" align="middle" id={id}>
+        {icon && (
         <Col lg={11} md={11} sm={12} xs={24}>
           <Slide left>
             <SvgIcon
@@ -21,10 +31,12 @@ const LeftContentBlock = ({ icon, title, content, section, t, id }) => {
             />
           </Slide>
         </Col>
+        )}
         <Col lg={11} md={11} sm={11} xs={24}>
           <Slide right>
             <S.ContentWrapper>
               <Title>{t(title)}</Title>
+              <Subtitle>{t(subtitle)}</Subtitle>
               <S.Content>{t(content)}</S.Content>
               <S.ServiceWrapper>
                 <Row type="flex" justify="space-between">

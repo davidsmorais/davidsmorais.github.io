@@ -4,11 +4,11 @@ import Slide from "react-reveal/Slide";
 
 import SvgIcon from "Common/SvgIcon";
 import Button from "Common/Button";
-import { Title } from 'Common';
+import { Title, Subtitle } from 'Common';
 
 import * as S from "./styles";
 
-const RightBlock = ({ title, content, button, icon, t, id }) => {
+const RightBlock = ({ title, content, button, icon, t, id, subtitle }) => {
   const scrollTo = (id) => {
     const element = document.getElementById(id);
     element.scrollIntoView({
@@ -22,12 +22,12 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
           <Slide left>
             <S.ContentWrapper>
               <Title>{t(title)}</Title>
+              <Subtitle>{t(subtitle)}</Subtitle>
               <S.Content>{t(content)}</S.Content>
               <S.ButtonWrapper>
                 {button &&
                   typeof button === "object" &&
                   button.map((item, id) => {
-                    console.log(button)
                     return (
                       <Button
                         key={id}
@@ -43,6 +43,7 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
             </S.ContentWrapper>
           </Slide>
         </Col>
+        {icon && (
         <Col lg={11} md={11} sm={12} xs={24}>
           <Slide right>
             <SvgIcon
@@ -53,6 +54,7 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
             />
           </Slide>
         </Col>
+        )}
       </Row>
     </S.RightBlockContainer>
   );
