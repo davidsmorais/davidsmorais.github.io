@@ -12,7 +12,7 @@ const Input = lazy(() => import("../../common/Input"));
 const Button = lazy(() => import("../../common/Button"));
 const TextArea = lazy(() => import("../../common/TextArea"));
 
-const Contact = ({ title, id, t }) => {
+const Contact = ({ title, id, t, subtitle }) => {
   const { values, errors, handleChange, handleSubmit } = useForm(validate);
 
   const ValidationType = ({ type }) => {
@@ -44,6 +44,7 @@ const Contact = ({ title, id, t }) => {
           </S.TitleContainer>
           <Col>
             <S.FormGroup autoComplete="off" onSubmit={handleSubmit}>
+              <S.FormTitle>{subtitle}</S.FormTitle>
               <Col span={24}>
                 <Input
                   type="text"

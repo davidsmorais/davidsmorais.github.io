@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Title, Col } from "Common";
+import { Title, Subtitle, Col } from "Common";
 
 export const TitleTop = styled(Title)`
 position: relative;
@@ -37,11 +37,21 @@ export const IconContainer = styled.div`
 
 export const FormGroup = styled.form`
   width: 100%;
+  background: ${({ theme }) => theme.background};
+  padding: ${({ theme }) => theme.margin * 2}px;
+  padding-bottom: ${({ theme }) => theme.margin * 4}px;
   max-width: 520px;
+  border: 2px solid ${({ theme }) => theme.accent.main};
+  box-shadow: 0px -2px 10px ${({ theme }) => theme.accent.main};
   @media only screen and (max-width: 1045px) {
     max-width: 100%;
     margin-top: 2rem;
   }
+`;
+
+export const FormTitle = styled(Subtitle)`
+  color: ${({ theme }) => theme.accent.secondary};
+  margin: ${({ theme }) => theme.margin}px;
 `;
 
 export const Span = styled.span`

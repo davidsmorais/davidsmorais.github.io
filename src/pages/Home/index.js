@@ -89,7 +89,7 @@ const Home = () => {
         <Row justify="center">
           <ContactFrom
             title={ContactContent.title}
-            content={ContactContent.subtitle}
+            subtitle={ContactContent.subtitle}
             id="contact"
           />
         </Row>
