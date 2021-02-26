@@ -4,10 +4,12 @@ import styled from "styled-components";
 import IntroContent from "../../content/IntroContent.json";
 import MiddleBlockContent from "../../content/MiddleBlockContent.json";
 import AboutContent from "../../content/AboutContent.json";
-import MissionContent from "../../content/MissionContent.json";
+// import MissionContent from "../../content/MissionContent.json";
 import ProductContent from "../../content/ProductContent.json";
 import ContactContent from "../../content/ContactContent.json";
+import CONFIG from 'Config';
 
+const SkillsTerminal = lazy(() => import("Components/SkillsTerminal"));
 const ContactFrom = lazy(() => import("Components/ContactForm"));
 const ContentBlock = lazy(() => import("Components/ContentBlock"));
 const MiddleBlock = lazy(() => import("Components/MiddleBlock"));
@@ -68,13 +70,7 @@ const Home = () => {
         icon="graphs.svg"
         id="about"
       />
-      <ContentBlock
-        type="right"
-        title={MissionContent.title}
-        content={MissionContent.text}
-        icon="product-launch.svg"
-        id="mission"
-      />
+      <SkillsTerminal skills={CONFIG.skillsTerminal}/>
 
       <ContentBlock
         type="left"

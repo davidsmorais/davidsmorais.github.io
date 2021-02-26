@@ -47,7 +47,7 @@ export const Link = styled(RouterLink)`
   text-align: ${(props) => props.align || ""};
 `;
 
-export const Monospace = styled.span`
+export const Mono = styled.span`
   font-family: Fira Code, monospace;
   font-style: normal;
   font-weight: normal;
