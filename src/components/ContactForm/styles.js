@@ -1,7 +1,26 @@
 import styled from 'styled-components';
+import { Title, Col } from "Common";
+
+export const TitleTop = styled(Title)`
+position: relative;
+bottom: calc(72px * 2.5);
+color:${({theme}) => theme.background}`
+
+export const TitleBottom = styled(Title)`
+  color: ${({ theme }) => theme.text};
+  position: relative;
+  bottom: calc(72px);
+`;
+
+export const  TitleContainer = styled(Col)`
+height: 100%;
+flex: 1;
+max-width: 50%;
+justify-content: space-between`
 
 export const ContactContainer = styled.div`
   padding: 5rem 0;
+  height: 100%;
 `;
 
 export const Contact = styled.section`
