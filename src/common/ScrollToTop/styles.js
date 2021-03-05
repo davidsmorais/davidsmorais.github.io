@@ -19,6 +19,9 @@ export const Up = styled.div`
   border-radius: 50%;
   display: flex;
   align-items: center;
+  div {
+    margin: 0 auto;
+  }
   @media screen and (max-width: 1024px) {
     display: none;
   }

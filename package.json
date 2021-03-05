@@ -12,6 +12,7 @@
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-xhr-backend": "^3.2.2",
     "icomoon-react": "^2.0.19",
+    "lodash.get": "^4.4.2",
     "lodash.snakecase": "^4.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

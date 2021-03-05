@@ -1,4 +1,5 @@
 import IcomoonReact from "icomoon-react";
+import get from 'lodash.get';
 import iconSet from "./selection.json";
 import styled from "styled-components";
 
@@ -8,9 +9,10 @@ const StyledIcon = styled.img`
 `;
 const StyledSvg = styled.div`
   svg {
-    width: ${({ size }) => size}px;
-    height: ${({ size }) => size}px;
-    fill: ${({ color }) => color};
+    width: ${({ size }) => size || 32}px;
+    height: ${({ size }) => size || 32}px;
+    path {
+      fill: ${({ theme, color }) => `${get(theme, color)} !important;`
   }
 `;
 const SvgIcon = ({ src, size, color }) => {
