@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Up = styled.div`
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 0 !important;
   color: rgba(0, 0, 0, 0.65);
   font-size: 14px;
   line-height: 1.5715;
@@ -15,7 +15,10 @@ export const Up = styled.div`
   width: 40px;
   height: 40px;
   cursor: pointer;
-
+  background-color: ${({theme}) => theme.accent.secondary};
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
   @media screen and (max-width: 1024px) {
     display: none;
   }

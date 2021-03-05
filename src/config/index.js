@@ -23,6 +23,7 @@ export default {
     telegram: "@davidsmorais",
     devTo: "dsmorais",
     github: "davidsmorais",
+    linkedIn: "dmorais92",
   },
   skillsTerminal,
 };
