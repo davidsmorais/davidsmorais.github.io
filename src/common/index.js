@@ -8,6 +8,8 @@ import {
   Subtitle,
   Body,
   Mono,
+  Link,
+  MonoLink,
   Labels,
   FooterTitle,
 } from './Text';
@@ -22,6 +24,8 @@ export {
   Subtitle,
   Body,
   Mono,
+  Link,
+  MonoLink,
   Labels,
   FooterTitle,
 };

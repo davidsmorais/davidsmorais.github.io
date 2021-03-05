@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link as RouterLink } from "react-router-dom";
+// import { Link as RouterLink } from "react-router-dom";
 
 export const Title = styled.h1`
   font-family: Raleway;
@@ -38,12 +38,22 @@ export const Body = styled.p`
 `;
 
 
-export const Link = styled(RouterLink)`
+export const Link = styled.a`
   font-family: Cabin;
   font-style: normal;
   font-weight: 700;
   font-size: 1.05rem;
   line-height: 120%;
+  text-align: ${(props) => props.align || ""};
+`;
+
+
+export const MonoLink = styled.a`
+  font-family: Fira Code, monospace;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 125%;
   text-align: ${(props) => props.align || ""};
 `;
 
