@@ -41,8 +41,13 @@ export const FormGroup = styled.form`
   padding: ${({ theme }) => theme.margin * 2}px;
   padding-bottom: ${({ theme }) => theme.margin * 4}px;
   max-width: 520px;
-  border: 2px solid ${({ theme }) => theme.accent.main};
-  box-shadow: 0px -2px 10px ${({ theme }) => theme.accent.main};
+  border: 1px solid ${({ theme }) => theme.accent.secondary};
+  transition: all 0.5s;
+  box-shadow: none;
+  &:hover {
+    box-shadow: 0px -2px 10px ${({ theme }) => theme.accent.main};
+    border: 1px solid ${({ theme }) => theme.accent.main};
+  }
   @media only screen and (max-width: 1045px) {
     max-width: 100%;
     margin-top: 2rem;
