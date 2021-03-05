@@ -40,7 +40,7 @@ const white = {
   background: colors.lightGrey,
   secondaryBackground: colors.white,
   neutral: colors.grey,
-  text: colors.background,
+  text: colors.black,
   accent: {
     main: colors.teal,
     secondary: colors.darkGrey,

@@ -146,7 +146,7 @@ export const Hidden = styled.div`
 export const Language = styled.h4`
   font-size: 16px;
   text-transform: uppercase;
-  color: #000;
+  color: ${({theme}) => theme.background};
 
   @media screen and (max-width: 414px) {
     padding: 1.5rem 0;
@@ -156,7 +156,7 @@ export const Language = styled.h4`
 export const Label = styled(Labels)`
   font-size: 16px;
   text-transform: uppercase;
-  color: #000;
+  color: ${({ theme }) => theme.background};
   display: block;
   margin-bottom: 2rem;
 
@@ -171,4 +171,5 @@ export const LangSelect = styled.select`
   border: none;
   font-size: 1rem;
   background: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.background};
 `;
