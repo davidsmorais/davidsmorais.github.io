@@ -12,15 +12,17 @@ const StyledSvg = styled.div`
     width: ${({ size }) => size || 32}px;
     height: ${({ size }) => size || 32}px;
     path {
-      fill: ${({ theme, color }) => `${get(theme, color)} !important;`
+      fill: ${({ theme, color }) => (color ? `${get(theme, color)}` : "")};
+      stroke: ${({ theme, color, stroke }) =>
+        color && stroke ? `${get(theme, color)}` : ""}
   }
 `;
-const SvgIcon = ({ src, size, color }) => {
-  const isSvg = src && src.includes('.svg')
-  const svgName = src && src.split('.svg')?.[0];
+const SvgIcon = ({ src, size, color, stroke }) => {
+  const isSvg = src && src.includes(".svg");
+  const svgName = src && src.split(".svg")?.[0];
   return isSvg && svgName ? (
-    <StyledSvg color={color} alt={src} size={size}>
-      <IcomoonReact iconSet={iconSet} icon={svgName}/>
+    <StyledSvg color={color} alt={src} stroke={stroke} size={size}>
+      <IcomoonReact iconSet={iconSet} icon={svgName} />
     </StyledSvg>
   ) : (
     <StyledIcon src={`/img/svg/${src}`} alt={src} size={size} />

@@ -24,7 +24,7 @@ const Footer = ({ t }) => {
         key={src}
         aria-label={src}
       >
-        <SvgIcon src={src} width="25px" height="25px" />
+        <SvgIcon src={src} color={"accent.main"} />
       </a>
     );
   };
@@ -68,22 +68,18 @@ const Footer = ({ t }) => {
                 <SocialLink
                   href={`https://github.com/${CONFIG.socials.github}/`}
                   src="github.svg"
-                  color={"accent.main"}
                 />
                 <SocialLink
                   href={`https://twitter.com/${CONFIG.socials.twitter}`}
                   src="twitter.svg"
-                  color={"accent.main"}
                 />
                 <SocialLink
                   href={`https://www.linkedin.com/in/${CONFIG.socials.linkedIn}/`}
                   src="linked-in.svg"
-                  color={"accent.main"}
                 />
                 <SocialLink
                   href={`https://dev.to/${CONFIG.socials.devTo}/`}
                   src="devto.svg"
-                  color={"accent.main"}
                 />
               </S.FooterContainer>
               <Col lg={6} md={6} sm={12} xs={24}>

@@ -23,7 +23,7 @@ const StyledBackgroundContainer = styled(Container)`
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    top: -50px;
+    top: -55px;
     max-width: unset;
     > div {
       padding: ${({ theme }) => theme.margin * 5}px;
@@ -33,7 +33,7 @@ const StyledBackgroundContainer = styled(Container)`
 
 const StyledContainer = styled(Container)`
   position: relative;
-  top: -50px;
+  top: -55px;
   max-width: unset;
   padding: 0;
   > div,

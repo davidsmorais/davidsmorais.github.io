@@ -1,17 +1,20 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, lazy, useContext } from "react";
 import { Row, Col, Drawer } from "antd";
 import { CSSTransition } from "react-transition-group";
 import { withTranslation } from "react-i18next";
-import sc from 'lodash.snakecase';
+import sc from "lodash.snakecase";
+import { ThemeContext } from "Theme";
 
 import * as S from "./styles";
 
-// const SvgIcon = lazy(() => import("../../common/SvgIcon"));
+const SvgIcon = lazy(() => import("../../common/SvgIcon"));
 
 const Navbar = ({ t }) => {
   const [isNavVisible] = useState(false);
   const [isSmallScreen] = useState(false);
   const [visible, setVisibility] = useState(false);
+  const themeContext = useContext(ThemeContext);
+  const { currentTheme, changeTheme } = themeContext;
 
   const showDrawer = () => {
     setVisibility(!visible);
@@ -33,6 +36,14 @@ const Navbar = ({ t }) => {
     };
     return (
       <Fragment>
+        <S.CustomNavLinkSmall onClick={changeTheme}>
+          <SvgIcon
+            stroke
+            size={24}
+            src={currentTheme === "dark" ? "dark.svg" : "light.svg"}
+            color="text"
+          />
+        </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall onClick={() => scrollTo("about")}>
           <S.Span>{sc(t("About"))}</S.Span>
         </S.CustomNavLinkSmall>
@@ -42,10 +53,8 @@ const Navbar = ({ t }) => {
         <S.CustomNavLinkSmall onClick={() => scrollTo("product")}>
           <S.Span>{sc(t("Product"))}</S.Span>
         </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall
-          onClick={() => scrollTo("contact")}
-        >
-            <S.Span>{sc(t("contact"))}</S.Span>
+        <S.CustomNavLinkSmall onClick={() => scrollTo("contact")}>
+          <S.Span>{sc(t("contact"))}</S.Span>
         </S.CustomNavLinkSmall>
       </Fragment>
     );
@@ -55,7 +64,7 @@ const Navbar = ({ t }) => {
     <S.Header>
       <S.Container>
         <Row type="flex" justify="end" align="middle" gutter={20} wrap={false}>
-{/* {          <S.LogoContainer to="/" aria-label="homepage">
+          {/* {          <S.LogoContainer to="/" aria-label="homepage">
             <SvgIcon src="logo.png" />
           </S.LogoContainer>} */}
           <S.NotHidden>

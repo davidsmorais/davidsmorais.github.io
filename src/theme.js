@@ -1,3 +1,4 @@
+import React from 'react';
 const common = {
   margin: 8,
   mainFont: "'Cabin', sans-serif",
@@ -49,5 +50,7 @@ const white = {
     main: gradients.whiteGradient(colors.white, colors.teal)
   }
 };
+
+export const ThemeContext = React.createContext("dark");
 
 export default {dark, white}
