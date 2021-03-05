@@ -13,7 +13,7 @@ import theme from "./theme";
 const App = () => (
   <BrowserRouter>
     <I18nextProvider i18n={i18n}>
-    <ThemeProvider theme={theme.dark}>
+    <ThemeProvider theme={theme.white}>
       <Router />
     </ThemeProvider>
     </I18nextProvider>

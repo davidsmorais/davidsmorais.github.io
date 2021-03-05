@@ -16,7 +16,7 @@ const Container = lazy(() => import("Common/Container"));
 
 const StyledBackgroundContainer = styled(Container)`
   &&& {
-    background-image: linear-gradient(180deg, #3a907880 0%, rgb(0 0 0) 100%),
+    background-image: ${({theme})=>theme.gradients.main},
       url("/img/bg1.png");
     background-attachment: fixed;
     background-position: center;

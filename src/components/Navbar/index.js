@@ -24,9 +24,11 @@ const Navbar = ({ t }) => {
   const MenuItem = () => {
     const scrollTo = (id) => {
       const element = document.getElementById(id);
-      element.scrollIntoView({
-        behavior: "smooth",
-      });
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
       setVisibility(false);
     };
     return (

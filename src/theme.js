@@ -13,6 +13,13 @@ const colors = {
   lightGrey: '#EAEAEA',
 }
 
+const gradients = {
+  whiteGradient: (text, accent) =>
+    `linear-gradient(180deg, ${text}aa 0%, ${accent}aa 100%)`,
+  darkGradient: (text, accent) =>
+    `linear-gradient(180deg, ${text}00 0%, ${accent}aa 100%)`,
+};
+
 const dark = {
   ...common,
   background: colors.black,
@@ -22,7 +29,25 @@ const dark = {
   accent: {
     main: colors.teal,
     secondary: colors.lightGrey
+  },
+  gradients: {
+    main: gradients.darkGradient(colors.teal, colors.black)
   }
 }
 
-export default {dark}
+const white = {
+  ...common,
+  background: colors.lightGrey,
+  secondaryBackground: colors.white,
+  neutral: colors.grey,
+  text: colors.background,
+  accent: {
+    main: colors.teal,
+    secondary: colors.darkGrey,
+  },
+  gradients: {
+    main: gradients.whiteGradient(colors.white, colors.teal)
+  }
+};
+
+export default {dark, white}
