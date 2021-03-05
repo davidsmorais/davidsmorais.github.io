@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Row, Col, Mono} from 'Common'
+import { Row, Col, Mono, MonoLink } from "Common";
 
 
 export const TerminalContainer = styled(Col)`
@@ -23,6 +23,19 @@ export const Titlebar = styled(Row)`
   border-bottom: 1px solid ${({theme})=> theme.accent.main};
   background: ${({theme})=> theme.background};
 `;
+export const ClickablesContainer = styled(Col)`
+height: 100%;
+justify-content: space-between;
+align-items: flex-start;
+img {
+  margin: ${({theme}) => theme.margin * 4}px auto;
+}
+`
+
+export const StyledMonoLink = styled(MonoLink)`
+font-size: 18px;
+margin-bottom: ${({theme})=>theme.margin}px
+;`
 
 export const MonoTitle = styled(Mono)`
   font-size: 32px;
@@ -83,7 +96,7 @@ export const StacksContainer = styled(Row)`
     span.title {
       margin-bottom: ${({theme})=> theme.margin / 2}px;
     }
-    span:not(.title) {
+    span:not(.title), a {
       padding-left: ${({theme})=> theme.margin * 2}px;
     }
     button {

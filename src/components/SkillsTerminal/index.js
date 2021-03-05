@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import {Row, Mono, Col} from 'Common'
+import {Row, Mono, Col,} from 'Common'
+import SvgIcon, {ProjectIcon} from 'Common/SvgIcon'
 import {
   SectionsBar,
   StacksContainer,
@@ -7,7 +8,9 @@ import {
   Titlebar,
   TerminalContainer,
   TerminalBtn,
+  ClickablesContainer,
   MonoLabel,
+  StyledMonoLink,
 } from "./styles";
 
 export default ({ skills }) => {
@@ -41,11 +44,18 @@ export default ({ skills }) => {
     return content.map((item) => {
       switch (item.type) {
         case "image":
-          return <MonoLabel>{item.src}</MonoLabel>;
+          return <ProjectIcon size={120} src={item.src}></ProjectIcon>;
         case "title":
           return <MonoTitle>{item.content}</MonoTitle>;
         case "label":
-          return <MonoLabel>{item.content}</MonoLabel>;
+          return item.link ? (
+            <StyledMonoLink href={item.link}>
+              {item.content}
+              {item.icon && <SvgIcon src={item.icon}/>}
+            </StyledMonoLink>
+          ) : (
+            <MonoLabel>{item.content}</MonoLabel>
+          );
         case "emoji":
           return <Mono>{item.content}</Mono>;
       }
@@ -54,7 +64,9 @@ export default ({ skills }) => {
 
   const Clickables = () => {
     return (
-      <Col>{activeClickable && renderClickableContent(activeClickable)}</Col>
+      <ClickablesContainer justify="space-between">
+        {activeClickable && renderClickableContent(activeClickable)}
+      </ClickablesContainer>
     );
   };
   const SkillStacks = () => {

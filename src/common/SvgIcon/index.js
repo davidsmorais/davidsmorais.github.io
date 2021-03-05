@@ -8,7 +8,7 @@ const SvgIcon = ({ src, size }) => (
   <StyledIcon src={`/img/svg/${src}`} alt={src} size={size} />
 );
 const ProjectIcon = ({ src, size }) => (
-  <StyledIcon src={`/img/svg/${src}`} alt={src} size={size} />
+  <StyledIcon src={`/img/projects/${src}`} alt={src} size={size} />
 );
 
 export { ProjectIcon };
