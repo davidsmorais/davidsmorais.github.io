@@ -16,7 +16,6 @@ const LeftContentBlock = ({
   id,
   subtitle,
 }) => {
-  console.log("🚀 ~ file: index.js ~ line 19 ~ subtitle", subtitle)
   return (
     <S.LeftContentBlock>
       <Row type="flex" justify="space-between" align="middle" id={id}>

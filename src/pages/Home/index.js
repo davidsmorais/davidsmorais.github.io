@@ -17,7 +17,7 @@ const Container = lazy(() => import("Common/Container"));
 
 import S from './style';
 const BLOGPOSTS_QUERY = `{
-  user(username: "davidmorais") {
+  user(username: "${CONFIG.blog.hashnodeUsername}") {
     publication {
       posts(page: 0) {
         title
@@ -34,7 +34,6 @@ const BLOGPOSTS_QUERY = `{
 const Home = () => {
     const { loading, data } = useQuery(BLOGPOSTS_QUERY);
 
-    console.log("🚀 ~ file: index.js ~ line 34 ~ Home ~ data", data)
 
 
   return (

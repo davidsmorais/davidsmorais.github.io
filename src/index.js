@@ -30,8 +30,7 @@ const App = () => {
         <I18nextProvider i18n={i18n}>
           <ClientContext.Provider value={gqlClient}>
             <ThemeContext.Consumer>
-              {(ctx) =>
-                !console.log("ctx", ctx) && (
+              {(ctx) => (
                   <ThemeProvider theme={theme[ctx.currentTheme]}>
                     <Router />
                   </ThemeProvider>

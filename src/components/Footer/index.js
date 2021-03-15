@@ -29,7 +29,6 @@ const Footer = ({ t }) => {
     );
   };
 
-  console.log(CONFIG)
   return (
     <Fragment>
       <Fade bottom>

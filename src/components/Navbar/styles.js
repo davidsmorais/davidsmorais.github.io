@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { MenuOutlined } from "@ant-design/icons";
 import { Body } from "Common/Text";
 
-console.log(Body);
 
 export const Header = styled.header`
   z-index: 1;
