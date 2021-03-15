@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import styled from "styled-components";
+import { useQuery } from "graphql-hooks";
 
 import IntroContent from "Content/IntroContent.json";
 import BlogContent from "Content/BlogContent.json";
@@ -11,56 +11,36 @@ import { Row } from "Common";
 const SkillsTerminal = lazy(() => import("Components/SkillsTerminal"));
 const ContactFrom = lazy(() => import("Components/ContactForm"));
 const ContentBlock = lazy(() => import("Components/ContentBlock"));
-// const MiddleBlock = lazy(() => import("Components/MiddleBlock"));
+const BlogGrid = lazy(() => import("Components/BlogGrid"));
 const ScrollToTop = lazy(() => import("Common/ScrollToTop"));
 const Container = lazy(() => import("Common/Container"));
 
-const StyledBackgroundContainer = styled(Container)`
-  &&& {
-    background-image: ${({ theme }) => theme.gradients.main},
-      url("/img/bg1.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    top: -55px;
-    max-width: unset;
-    > div {
-      padding: ${({ theme }) => theme.margin * 5}px;
+import S from './style';
+const BLOGPOSTS_QUERY = `{
+  user(username: "davidmorais") {
+    publication {
+      posts(page: 0) {
+        title
+        brief
+        slug
+        coverImage
+        dateAdded
+        cuid
+      }
     }
   }
-`;
-
-const StyledContainer = styled(Container)`
-  position: relative;
-  top: -55px;
-  max-width: unset;
-  padding: 0;
-  > div,
-  section {
-    padding: ${({ theme }) => theme.margin * 5}px;
-  }
-`;
-
-const StyledBlackAndWhiteContainer = styled(Container)`
-  &&& {
-    height: 150%;
-    padding-top: 15%;
-    max-width: unset;
-    background: linear-gradient(
-      180deg,
-      ${({ theme }) => theme.accent.secondary} 50%,
-      ${({ theme }) => theme.background} 50%
-    );
-  }
-`;
+}`;
 
 const Home = () => {
+    const { loading, data } = useQuery(BLOGPOSTS_QUERY);
+
+    console.log("🚀 ~ file: index.js ~ line 34 ~ Home ~ data", data)
+
+
   return (
-    <StyledContainer>
+    <S.StyledContainer>
       <ScrollToTop />
-      <StyledBackgroundContainer>
+      <S.StyledBackgroundContainer>
         <Row justify="center">
           <ContentBlock
             type="right"
@@ -72,7 +52,7 @@ const Home = () => {
             id="intro"
           />
         </Row>
-      </StyledBackgroundContainer>
+      </S.StyledBackgroundContainer>
       <Container>
         <ContentBlock
           type="right"
@@ -84,8 +64,9 @@ const Home = () => {
       </Container>
       <Container>
         <ContentBlock type="left" title={BlogContent.title} id="blog" />
+        <BlogGrid posts={data?.user?.publication?.posts} loading={loading}/>
       </Container>
-      <StyledBlackAndWhiteContainer>
+      <S.StyledBlackAndWhiteContainer>
         <Row justify="center">
           <ContactFrom
             title={ContactContent.title}
@@ -93,8 +74,8 @@ const Home = () => {
             id="contact"
           />
         </Row>
-      </StyledBlackAndWhiteContainer>
-    </StyledContainer>
+      </S.StyledBlackAndWhiteContainer>
+    </S.StyledContainer>
   );
 };
 

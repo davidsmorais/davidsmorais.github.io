@@ -3,7 +3,7 @@ import { Title, Subtitle, Col } from "Common";
 
 export const TitleTop = styled(Title)`
 position: relative;
-bottom: calc(72px * 2.5);
+bottom: calc(72px * 1.75);
 color:${({theme}) => theme.background}`
 
 export const TitleBottom = styled(Title)`
