@@ -1,9 +1,10 @@
 import { lazy } from "react";
 import styled from "styled-components";
 
-import IntroContent from "../../content/IntroContent.json";
-import AboutContent from "../../content/AboutContent.json";
-import ContactContent from "../../content/ContactContent.json";
+import IntroContent from "Content/IntroContent.json";
+import BlogContent from "Content/BlogContent.json";
+import AboutContent from "Content/AboutContent.json";
+import ContactContent from "Content/ContactContent.json";
 import CONFIG from "Config";
 import { Row } from "Common";
 
@@ -16,7 +17,7 @@ const Container = lazy(() => import("Common/Container"));
 
 const StyledBackgroundContainer = styled(Container)`
   &&& {
-    background-image: ${({theme})=>theme.gradients.main},
+    background-image: ${({ theme }) => theme.gradients.main},
       url("/img/bg1.png");
     background-attachment: fixed;
     background-position: center;
@@ -72,18 +73,17 @@ const Home = () => {
           />
         </Row>
       </StyledBackgroundContainer>
-
       <Container>
         <ContentBlock
-          type="left"
-          title={"> blog"}
-          content={AboutContent.text}
-          section={AboutContent.section}
+          type="right"
+          title={AboutContent.title}
           id="about"
+          content={AboutContent.text}
         />
+        <SkillsTerminal skills={CONFIG.skillsTerminal} />
       </Container>
       <Container>
-        <SkillsTerminal skills={CONFIG.skillsTerminal} />
+        <ContentBlock type="left" title={BlogContent.title} id="blog" />
       </Container>
       <StyledBlackAndWhiteContainer>
         <Row justify="center">

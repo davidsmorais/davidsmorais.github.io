@@ -97,6 +97,7 @@ export const StacksContainer = styled(Row)`
       margin-bottom: ${({theme})=> theme.margin / 2}px;
     }
     span:not(.title), a {
+      font-size: 18px;
       padding-left: ${({theme})=> theme.margin * 2}px;
     }
     button {

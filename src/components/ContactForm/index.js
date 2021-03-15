@@ -3,7 +3,7 @@ import { Row,Col } from "antd";
 import Zoom from "react-reveal/Zoom";
 import { withTranslation } from "react-i18next";
 
-import useForm from "./useForm";
+import useForm from "Hooks/useForm";
 import validate from "./validationRules";
 
 import * as S from "./styles";
