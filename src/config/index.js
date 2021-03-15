@@ -26,4 +26,7 @@ export default {
     linkedIn: "dmorais92",
   },
   skillsTerminal,
+  blog: {
+    hashnodeUsername: 'davidmorais'
+  }
 };

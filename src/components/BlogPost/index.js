@@ -16,9 +16,7 @@ const Post = ({ title, brief, dateAdded, coverImage, slug, t }) => {
       <S.DateText>{new Date(dateAdded).toLocaleDateString()}</S.DateText>
       <Button
         type="secondary"
-        onClick={() =>
-          !console.log("cenas") && history.push(`/posts?slug=${slug}`)
-        }
+        onClick={() => history.push(`/post?slug=${slug}`)}
       >
         {t("Read More")}
       </Button>

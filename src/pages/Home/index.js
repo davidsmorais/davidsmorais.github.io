@@ -34,8 +34,6 @@ const BLOGPOSTS_QUERY = `{
 const Home = () => {
     const { loading, data } = useQuery(BLOGPOSTS_QUERY);
 
-
-
   return (
     <S.StyledContainer>
       <ScrollToTop />
