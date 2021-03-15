@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Col, Body } from "Common";
 
 export const BlogPostContainer = styled(Col)`
-  max-width: 250px;
+  max-width: 33%;
   flex: 1;
   background: ${({ theme }) => theme.background};
   padding: ${({ theme }) => theme.margin * 2}px;
