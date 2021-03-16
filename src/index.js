@@ -10,9 +10,10 @@ import Router from "./router";
 import i18n from "./translation";
 import * as serviceWorker from "./serviceWorker";
 import theme, { ThemeContext } from "Theme";
+import config from "Config";
 
 const gqlClient = new GraphQLClient({
-  url: process.env.REACT_APP_HASHNODE_API,
+  url: config.blog.hashnodeOrigin
 });
 
 const App = () => {

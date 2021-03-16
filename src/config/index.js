@@ -27,6 +27,7 @@ export default {
   },
   skillsTerminal,
   blog: {
+    hashnodeOrigin: "https://api.hashnode.com/",
     hashnodeUsername: 'davidmorais'
   }
 };
