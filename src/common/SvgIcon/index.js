@@ -14,18 +14,32 @@ const StyledSvg = styled.div`
     path {
       fill: ${({ theme, color }) => (color ? `${get(theme, color)}` : "")};
       stroke: ${({ theme, color, stroke }) =>
-        color && stroke ? `${get(theme, color)}` : ""}
+        color && stroke ? `${get(theme, color)}` : ""};
+    }
+    &:hover {
+      path {
+        fill:  ${({ theme, hoverColor }) => (hoverColor ? get(theme, hoverColor) : "")};
+        stroke: ${({ theme, hoverColor, stroke }) =>
+          hoverColor && stroke ? get(theme, hoverColor) : ""};
+      }
+    }
   }
 `;
-const SvgIcon = ({ src, size, color, stroke }) => {
+const SvgIcon = ({ src, size, color, stroke, hoverColor }) => {
   const isSvg = src && src.includes(".svg");
   const svgName = src && src.split(".svg")?.[0];
   return isSvg && svgName ? (
-    <StyledSvg color={color} alt={src} stroke={stroke} size={size}>
+    <StyledSvg
+      color={color}
+      alt={src}
+      stroke={stroke}
+      size={size}
+      hoverColor={hoverColor}
+    >
       <IcomoonReact iconSet={iconSet} icon={svgName} />
     </StyledSvg>
   ) : (
-    <StyledIcon src={`/img/svg/${src}`} alt={src} size={size} />
+    <StyledIcon src={`/img/${src}`} alt={src} size={size} />
   );
 };
 const ProjectIcon = ({ src, size }) => (

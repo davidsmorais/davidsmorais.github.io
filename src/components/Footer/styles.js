@@ -1,8 +1,12 @@
 import styled from "styled-components";
-import { Link, FooterTitle, Labels, Body } from "Common/Text";
+import { Link, FooterTitle, Labels } from "Common/Text";
 
 export const Footer = styled.footer`
   background: ${({ theme }) => theme.text};
+  h3 {
+    text-transform: uppercase;
+    color: ${({ theme }) => theme.background};
+  }
   padding: 2.5rem 0;
   > div {
     background: ${({ theme }) => theme.text};
@@ -55,6 +59,9 @@ export const Extra = styled.section`
     border-top: 1px solid ${({ theme }) => theme.background};
     background: ${({ theme }) => theme.text};
   }
+  span {
+    color: ${({ theme }) => theme.background};
+  }
 `;
 
 export const LogoContainer = styled.div`
@@ -68,47 +75,6 @@ export const Select = styled.div`
   @media only screen and (min-width: 1024px) {
     padding: 0 10%;
   }
-`;
-
-export const Para = styled.div`
-  color: ${({theme}) => theme.background};
-  max-width: 340px;
-  font-size: 14px;
-  width: 100%;
-`;
-
-export const Large = styled(Link)`
-  font-size: 16px;
-  color: ${({theme}) => theme.background};
-  text-align: ${(props) => (props.left ? "left" : "")};
-  padding: ${(props) => (props.left ? "0 10%" : "")};
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-transform: capitalize;
-  line-height: 24px;
-  display: block;
-  margin-bottom: 0.625rem;
-
-  &:hover {
-  }
-`;
-
-export const Chat = styled(Body)`
-  color: ${({theme}) => theme.background};
-  max-width: 85px;
-  border-bottom: 1px solid ${({theme}) => theme.background};
-  cursor: pointer;
-  margin-top: 1rem;
-
-  &:hover {
-    border-bottom: 1px solid ${({ theme }) => theme.accent.main};;
-    color: ${({ theme }) => theme.accent.main};
-  }
-`;
-
-export const Empty = styled.div`
-  position: relative;
-  height: 53px;
 `;
 
 export const FooterContainer = styled.div`
@@ -129,7 +95,7 @@ export const FooterContainer = styled.div`
     height: 25px;
 
     &:hover {
-      fill: ${({ theme }) => theme.accent.main};;
+      fill: ${({ theme }) => theme.accent.main};
     }
   }
 `;
@@ -146,7 +112,7 @@ export const Hidden = styled.div`
 export const Language = styled.h4`
   font-size: 16px;
   text-transform: uppercase;
-  color: ${({theme}) => theme.background};
+  color: ${({ theme }) => theme.background};
 
   @media screen and (max-width: 414px) {
     padding: 1.5rem 0;
