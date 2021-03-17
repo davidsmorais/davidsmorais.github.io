@@ -26,7 +26,7 @@ const Contact = ({ title, id, t, subtitle }) => {
     );
   };
   const getSplitTitle = () => {
-    const splitTitle = title.split("\n");
+    const splitTitle = t(title).split("\n");
     return {
       top: splitTitle?.[0] || "",
       bottom: splitTitle?.[1] || "",
@@ -44,7 +44,7 @@ const Contact = ({ title, id, t, subtitle }) => {
           </S.TitleContainer>
           <Col>
             <S.FormGroup autoComplete="off" onSubmit={handleSubmit}>
-              <S.FormTitle>{subtitle}</S.FormTitle>
+              <S.FormTitle>{t(subtitle)}</S.FormTitle>
               <Col span={24}>
                 <Input
                   type="text"
@@ -79,7 +79,7 @@ const Contact = ({ title, id, t, subtitle }) => {
               </Col>
               <S.ButtonContainer>
                 <Button name="submit" type="submit">
-                  {t("Submit")}
+                  {t("send")}
                 </Button>
               </S.ButtonContainer>
             </S.FormGroup>

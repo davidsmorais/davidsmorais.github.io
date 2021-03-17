@@ -55,7 +55,7 @@ const Footer = ({ t }) => {
               </Col>
               <Col size={2} />
               <Col size={1}>
-                <FooterTitle>{t("Follow Me")}</FooterTitle>
+                <FooterTitle>{t("followMe")}</FooterTitle>
                 <S.FooterContainer>
                   <SocialLink
                     href={`https://github.com/${CONFIG.socials.github}/`}
@@ -86,10 +86,11 @@ const Footer = ({ t }) => {
               align="middle"
               style={{ paddingTop: "3rem" }}
             >
-            <Col>
-              <Mono>{t('copyright')}</Mono>
-            </Col>
-            <Col size={2}/>
+              <Col>
+                <Mono>{t("copyright")}</Mono>
+                <S.MonoMini>{t("builtWith")}</S.MonoMini>
+              </Col>
+              <Col size={2} />
               <Col>
                 <S.Select>
                   <S.Label htmlFor="select-lang">{t("Language")}</S.Label>

@@ -1,5 +1,5 @@
 {
-    "title": "let's build something\nTOGETHER",
-    "subtitle": "GET IN TOUCH",
-    "cta": "Send"
+    "title": "contactTitle",
+    "subtitle": "contactCta",
+    "cta": "send"
 }

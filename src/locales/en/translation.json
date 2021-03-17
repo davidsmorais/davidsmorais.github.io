@@ -1,23 +1,30 @@
 {
-  "About": "About",
-  "Policy": "Policy",
-  "Mission": "Mission",
-  "Product": "Product",
-  "Tell us everything": "Tell us everything",
-  "Contact": "Contact",
-  "Do you have any question regarding the project? Feel free to reach out.": "Do you have any question regarding the project? Feel free to reach out.",
-  "Let's Chat": "Let's Chat",
-  "Application Security": "Application Security",
-  "Software Principles": "Software Principles",
-  "Support Center": "Support Center",
-  "Customer Support": "Customer Support",
-  "ADDRESS": "ADDRESS",
-  "Press": "Press",
-  "Careers & Culture": "Careers & Culture",
-  "Language": "Language",
+  "meTitle": "Hello I'm\nDavid",
+  "meText": "And I'm a web developer",
   "Explore": "Explore",
   "Learn More": "Learn More",
-  "Get Started": "Get Started",
+
+  "aboutMe": "> about me",
+  "aboutText": "got a languages degree 👉 job market sucks 👇 became developer 👉 also do design",
+
+  "blogTitle": "> blog",
+  "Read More": "Read More",
+  "Loading": "Loading",
+
+  "contactTitle": "let's build something\nTOGETHER",
+  "contactCta": "GET IN TOUCH",
+  "send": "Send",
+
+  "followMe": "FOLLOW ME",
+
+  "About": "About",
+  "Contact": "Contact",
+  "Blog": "Blog",
+
+  "Language": "Language",
+  "copyright": "Copyright © 2020 David Morais",
+  "builtWith": "built with React & styled-components ❤",
+
   "Submit": "Submit",
   "Message" : "Message",
   "Your Message": "Your Message",

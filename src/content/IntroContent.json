@@ -1,6 +1,6 @@
 {
-  "title": "Hello\nI'm David",
-  "text": "And I'm a web developer",
+  "title": "meTitle",
+  "text": "meText",
   "button": [
     {
       "title": "Explore"

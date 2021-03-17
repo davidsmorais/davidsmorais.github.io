@@ -22,11 +22,6 @@ const BlogPost = ({ t }) => {
   const { loading, data } = useQuery(POST_QUERY(slug));
 
   const post = data?.post;
-  console.log("🚀 ~ file: index.js ~ line 23 ~ BlogPost ~ post", post, data)
-  console.log(
-    "🚀 ~ file: index.js ~ line 31 ~ BlogPost ~ slug",
-    slug,
-  );
 
   return (
     <S.StyledContainer>

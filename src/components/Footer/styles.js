@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, FooterTitle, Labels } from "Common/Text";
+import { Link, FooterTitle, Labels, Mono } from "Common/Text";
 
 export const Footer = styled.footer`
   background: ${({ theme }) => theme.text};
@@ -139,3 +139,7 @@ export const LangSelect = styled.select`
   background: ${({ theme }) => theme.text};
   color: ${({ theme }) => theme.background};
 `;
+
+export const MonoMini = styled(Mono)`
+  font-size: 14px;
+`
