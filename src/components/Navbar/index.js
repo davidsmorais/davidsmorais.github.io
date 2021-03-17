@@ -47,11 +47,8 @@ const Navbar = ({ t }) => {
         <S.CustomNavLinkSmall onClick={() => scrollTo("about")}>
           <S.Span>{sc(t("About"))}</S.Span>
         </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <S.Span>{sc(t("Mission"))}</S.Span>
-        </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <S.Span>{sc(t("Product"))}</S.Span>
+        <S.CustomNavLinkSmall onClick={() => scrollTo("blog")}>
+          <S.Span>{sc(t("Blog"))}</S.Span>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall onClick={() => scrollTo("contact")}>
           <S.Span>{sc(t("contact"))}</S.Span>
