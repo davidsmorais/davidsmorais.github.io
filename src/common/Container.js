@@ -8,7 +8,8 @@ const Container = styled.div`
   margin-left: auto;
   padding: ${(props) => (props.padding ? "2.8rem" : "0 25px")};
   overflow: hidden;
-  background: ${({theme}) => theme.background};
+  background: ${({ theme, transparent }) =>
+    transparent ? "transparent" : theme.background};
 
   @media only screen and (max-width: 1024px) {
     max-width: 950px;

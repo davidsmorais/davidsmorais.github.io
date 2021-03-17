@@ -15,7 +15,7 @@ const BlogGrid = lazy(() => import("Components/BlogGrid"));
 const ScrollToTop = lazy(() => import("Common/ScrollToTop"));
 const Container = lazy(() => import("Common/Container"));
 
-import S from './style';
+import S from "./style";
 const BLOGPOSTS_QUERY = `{
   user(username: "${CONFIG.blog.hashnodeUsername}") {
     publication {
@@ -32,7 +32,7 @@ const BLOGPOSTS_QUERY = `{
 }`;
 
 const Home = () => {
-    const { loading, data } = useQuery(BLOGPOSTS_QUERY);
+  const { loading, data } = useQuery(BLOGPOSTS_QUERY);
 
   return (
     <S.StyledContainer>
@@ -46,22 +46,25 @@ const Home = () => {
             subtitle={IntroContent.text}
             button={IntroContent.button}
             icon="avatar.png"
-            id="intro"
+            id="header"
           />
         </Row>
       </S.StyledBackgroundContainer>
-      <Container>
-        <ContentBlock
-          type="right"
-          title={AboutContent.title}
-          id="about"
-          content={AboutContent.text}
-        />
-        <SkillsTerminal skills={CONFIG.skillsTerminal} />
-      </Container>
+      <Row size={4}></Row>
+        <S.StyledBackgroundContainer bg={2}>
+        <Container transparent>
+          <ContentBlock
+            type="right"
+            title={AboutContent.title}
+            id="about"
+            content={AboutContent.text}
+          />
+          <SkillsTerminal skills={CONFIG.skillsTerminal} />
+        </Container>
+        </S.StyledBackgroundContainer>
       <Container>
         <ContentBlock type="left" title={BlogContent.title} id="blog" />
-        <BlogGrid posts={data?.user?.publication?.posts} loading={loading}/>
+        <BlogGrid posts={data?.user?.publication?.posts} loading={loading} />
       </Container>
       <S.StyledBlackAndWhiteContainer>
         <Row justify="center">
