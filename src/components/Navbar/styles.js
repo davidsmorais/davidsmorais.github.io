@@ -25,6 +25,27 @@ export const LogoContainer = styled(Link)`
   display: flex;
 `;
 
+export const BackBtn = styled.button`
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 36px;
+  color: ${({ theme }) => theme.text};
+  transition: all 0.5s;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.secondaryBackground};
+  }
+  > * {
+    margin-left: ${({ theme }) => theme.margin * 2}px;
+    margin-bottom: 0px;
+  }
+`;
+
 export const Container = styled.div`
   max-width: 1280px;
   background: ${({ theme }) => theme.background};

@@ -1,15 +1,20 @@
 import { useState, Fragment, lazy, useContext } from "react";
 import { Row, Col, Drawer } from "antd";
+import { useLocation,  useHistory } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import { withTranslation } from "react-i18next";
 import sc from "lodash.snakecase";
 import { ThemeContext } from "Theme";
+import { Subtitle } from "Common";
 
 import * as S from "./styles";
 
 const SvgIcon = lazy(() => import("../../common/SvgIcon"));
 
 const Navbar = ({ t }) => {
+  let location = useLocation();
+  let history = useHistory();
+  const isHome = location.pathname === "/";
   const [isNavVisible] = useState(false);
   const [isSmallScreen] = useState(false);
   const [visible, setVisibility] = useState(false);
@@ -44,15 +49,19 @@ const Navbar = ({ t }) => {
             color="text"
           />
         </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <S.Span>{sc(t("About"))}</S.Span>
-        </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall onClick={() => scrollTo("blog")}>
-          <S.Span>{sc(t("Blog"))}</S.Span>
-        </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall onClick={() => scrollTo("contact")}>
-          <S.Span>{sc(t("contact"))}</S.Span>
-        </S.CustomNavLinkSmall>
+        {isHome && (
+          <>
+            <S.CustomNavLinkSmall onClick={() => scrollTo("about")}>
+              <S.Span>{sc(t("About"))}</S.Span>
+            </S.CustomNavLinkSmall>
+            <S.CustomNavLinkSmall onClick={() => scrollTo("blog")}>
+              <S.Span>{sc(t("Blog"))}</S.Span>
+            </S.CustomNavLinkSmall>
+            <S.CustomNavLinkSmall onClick={() => scrollTo("contact")}>
+              <S.Span>{sc(t("contact"))}</S.Span>
+            </S.CustomNavLinkSmall>
+          </>
+        )}
       </Fragment>
     );
   };
@@ -61,9 +70,12 @@ const Navbar = ({ t }) => {
     <S.Header>
       <S.Container>
         <Row type="flex" justify="end" align="middle" gutter={20} wrap={false}>
-          {/* {          <S.LogoContainer to="/" aria-label="homepage">
-            <SvgIcon src="logo.png" />
-          </S.LogoContainer>} */}
+          {!isHome && (
+            <S.BackBtn onClick={() => history.goBack()}>
+              👈
+              <Subtitle>{t("back")}</Subtitle>
+            </S.BackBtn>
+          )}
           <S.NotHidden>
             <MenuItem />
           </S.NotHidden>

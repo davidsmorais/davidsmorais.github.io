@@ -12,29 +12,6 @@ const StyledContainer = styled(Container)`
     margin-bottom: ${({ theme }) => theme.margin * 4}px;
   }
 `;
-const BackBtn = styled.button`
-  background: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  font-size: 36px;
-  color: ${({ theme }) => theme.text};
-  transition: all 0.5s;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  padding-left: ${({ theme }) => theme.margin * 2}px;
-  padding-right: ${({ theme }) => theme.margin * 2}px;
-
-  margin-bottom: ${({ theme }) => theme.margin * 4}px;
-  &:hover {
-    background-color: ${({ theme }) => theme.secondaryBackground};
-  }
-  > * {
-    margin-left: ${({ theme }) => theme.margin * 2}px;
-    margin-bottom: 0px;
-  }
-`;
 
 const Content = styled.div`
   > * {
@@ -78,4 +55,4 @@ const Content = styled.div`
     font-weight: 900;
   }
 `;
-export default { StyledContainer, BackBtn, Content };
+export default { StyledContainer, Content };

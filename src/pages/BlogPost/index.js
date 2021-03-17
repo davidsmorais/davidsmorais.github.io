@@ -1,10 +1,9 @@
 import { useQuery } from "graphql-hooks";
 import qs from "query-string";
-import {useHistory} from 'react-router-dom';
 import { withTranslation } from "react-i18next";
 
 import CONFIG from "Config";
-import { Title, Subtitle, Col, Row } from "Common";
+import { Title, Subtitle, Col } from "Common";
 
 import S from "./style";
 const POST_QUERY = (slug) => `{
@@ -17,7 +16,6 @@ const POST_QUERY = (slug) => `{
 }`;
 
 const BlogPost = ({ t }) => {
-  let history = useHistory();
   const { slug } = qs.parse(location.search);
   const { loading, data } = useQuery(POST_QUERY(slug));
 
@@ -25,12 +23,6 @@ const BlogPost = ({ t }) => {
 
   return (
     <S.StyledContainer>
-      <Row paddingInner={0} margin={0}>
-        <S.BackBtn onClick={() => history.goBack()}>
-          👈
-          <Subtitle>{t("back")}</Subtitle>
-        </S.BackBtn>
-      </Row>
       {loading || !post ? (
         <Title>{t("Loading")}</Title>
       ) : (
