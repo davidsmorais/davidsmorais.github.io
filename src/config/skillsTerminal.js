@@ -122,7 +122,7 @@ export default [
         {
           type: "label",
           link: "https://www.linkedin.com/in/dmorais92/",
-          content: "for more info => ",
+          content: "for more info =>",
           icon: "linked-in.svg"
         },
       ],

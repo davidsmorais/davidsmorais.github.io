@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {Row, Mono, Col,} from 'Common'
+import { withTranslation } from "react-i18next";
 import SvgIcon, {ProjectIcon} from 'Common/SvgIcon'
 import {
   SectionsBar,
@@ -13,7 +14,7 @@ import {
   StyledMonoLink,
 } from "./styles";
 
-export default ({ skills }) => {
+const SkillsTerminal = ({ skills, t }) => {
   const [activeSkill, changeActiveSkill] = useState(skills?.[0]);
   const [activeClickable, setClickable] = useState(null);
   const SectionBtns = () => {
@@ -31,7 +32,7 @@ export default ({ skills }) => {
                 changeActiveSkill(skill.mainSkills && skill)}}
             >
               <Mono>
-                {isActive ? "🚀" : ">"} {skill.title}
+                {isActive ? "🚀" : ">"} {t(skill.title)}
               </Mono>
             </button>
           );
@@ -46,18 +47,18 @@ export default ({ skills }) => {
         case "image":
           return <ProjectIcon size={120} src={item.src}></ProjectIcon>;
         case "title":
-          return <MonoTitle>{item.content}</MonoTitle>;
+          return <MonoTitle>{t(item.content)}</MonoTitle>;
         case "label":
           return item.link ? (
             <StyledMonoLink href={item.link}>
-              {item.content}
+              {t(item.content)}
               {item.icon && <SvgIcon src={item.icon}/>}
             </StyledMonoLink>
           ) : (
-            <MonoLabel>{item.content}</MonoLabel>
+            <MonoLabel>{t(item.content)}</MonoLabel>
           );
         case "emoji":
-          return <Mono>{item.content}</Mono>;
+          return <Mono>{t(item.content)}</Mono>;
       }
     });
   };
@@ -69,6 +70,7 @@ export default ({ skills }) => {
       </ClickablesContainer>
     );
   };
+
   const SkillStacks = () => {
     const { mainSkills, clickables } = activeSkill;
     return (
@@ -79,10 +81,10 @@ export default ({ skills }) => {
             <Col key={'skill-'+skill.title}>
               {Array.isArray(skill.title) ? (
                 skill.title.map((title) => (
-                  <Mono key={'title-'+title} className={"title"}>👉{title}</Mono>
+                  <Mono key={'title-'+title} className={"title"}>👉{t(title)}</Mono>
                 ))
               ) : (
-                <Mono className={"title"}>{skill.title} 👇</Mono>
+                <Mono className={"title"}>{t(skill.title)} 👇</Mono>
               )}
               {(skill?.stack ?? []).map((item) => {
                 const clickableData = (clickableKeys || []).find(
@@ -92,10 +94,10 @@ export default ({ skills }) => {
                   <button
                     onClick={() => setClickable(clickables[clickableData.key])}
                   >
-                    <Mono>▶ {item}</Mono>
+                    <Mono>▶ {t(item)}</Mono>
                   </button>
                 ) : (
-                  <Mono>▶ {item}</Mono>
+                  <Mono>▶ {t(item)}</Mono>
                 );
               })}
             </Col>
@@ -121,3 +123,5 @@ export default ({ skills }) => {
     </TerminalContainer>
   );
 };
+
+export default withTranslation()(SkillsTerminal);
