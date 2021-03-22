@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { notification } from "antd";
 import axios from "axios";
+import CONFIG from 'Config'
 
 const useForm = (validate) => {
   const [values, setValues] = useState({});
@@ -17,8 +18,9 @@ const useForm = (validate) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setErrors(validate(values));
+    console.log(values)
     // Your url for API
-    const url = "";
+    const url = `https://mailthis.to/${CONFIG.contacts.email}`;
     if (Object.keys(values).length === 3) {
       axios
         .post(url, {
