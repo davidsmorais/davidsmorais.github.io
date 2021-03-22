@@ -37,8 +37,15 @@ img {
 
 export const StyledMonoLink = styled(MonoLink)`
 font-size: 14px;
-margin-bottom: ${({theme})=>theme.margin}px
-;`
+margin-bottom: ${({ theme }) => theme.margin}px;
+&& {
+:hover {
+  div svg path {
+    fill: ${({ theme }) => theme.accent.main};
+  }
+}
+}
+;`;
 
 export const MonoTitle = styled(Mono)`
   font-size: 18px;
