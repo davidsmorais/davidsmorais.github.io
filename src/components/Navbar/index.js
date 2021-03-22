@@ -1,5 +1,5 @@
 import { useState, Fragment, lazy, useContext } from "react";
-import { Row, Col, Drawer } from "antd";
+import { Row, Col } from "antd";
 import { useLocation,  useHistory } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import { withTranslation } from "react-i18next";
@@ -89,7 +89,7 @@ const Navbar = ({ t }) => {
           classNames="NavAnimation"
           unmountOnExit
         >
-          <Drawer closable={false} visible={visible} onClose={onClose}>
+          <S.StyledSidebarMenu closable={false} visible={visible} onClose={onClose}>
             <Col style={{ marginBottom: "2.5rem" }}>
               <S.Label onClick={onClose}>
                 <Col span={12}>
@@ -101,7 +101,7 @@ const Navbar = ({ t }) => {
               </S.Label>
             </Col>
             <MenuItem />
-          </Drawer>
+          </S.StyledSidebarMenu>
         </CSSTransition>
       </S.Container>
     </S.Header>

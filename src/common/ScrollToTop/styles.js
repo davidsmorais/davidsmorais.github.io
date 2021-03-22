@@ -15,10 +15,15 @@ export const Up = styled.div`
   width: 40px;
   height: 40px;
   cursor: pointer;
-  background-color: ${({theme}) => theme.accent.secondary};
+  background-color: ${({ theme }) => theme.accent.secondary};
   border-radius: 50%;
+  border: 2px solid ${({ theme }) => theme.accent.background};
   display: flex;
   align-items: center;
+  &:hover {
+    background-color: ${({ theme }) => theme.accent.main};
+    color: ${({ theme }) => theme.accent.text};
+  }
   div {
     margin: 0 auto;
   }

@@ -1,9 +1,18 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { MenuOutlined } from "@ant-design/icons";
+import { Drawer } from "antd";
 import { Body } from "Common/Text";
 
 
+export const StyledSidebarMenu = styled(Drawer)`
+&&& {
+  .ant-drawer-wrapper-body {
+    background: ${({ theme }) => theme.background} !important;
+    color: ${({ theme }) => theme.text};
+  }
+}
+`;
 export const Header = styled.header`
   z-index: 1;
   padding: 0;
@@ -49,17 +58,21 @@ export const BackBtn = styled.button`
 export const Container = styled.div`
   max-width: 1280px;
   background: ${({ theme }) => theme.background};
-  padding: 0.5rem 3rem;
+  padding: 0.5rem;
   border: 1px solid;
   transition: border-color 0.25s ease-in-out;
   border-color: ${({ theme }) => theme?.accent?.secondary};
   &:hover {
     border-color: ${({ theme }) => theme?.accent?.main};
   }
+  border-radius: 0px 0px 16px 16px;
+  margin-right: 8px;
+  color: ${({ theme }) => theme.text};
 `;
 
 export const NavLink = styled.div`
   display: inline-block;
+  color: ${({ theme }) => theme.background};
   text-align: center;
 `;
 
@@ -95,13 +108,13 @@ export const Menu = styled.h5`
   margin-top: -0.45rem;
   padding: 0 1.56rem 0 0;
   font-weight: 600;
-  border-bottom: 5px solid #111b47;
+  border-bottom: 5px solid ${({ theme }) => theme?.accent?.main}; ;
 `;
 
 export const CustomNavLinkSmall = styled(NavLink)`
   font-size: 1rem;
   cursor: pointer;
-  color: #000000;
+  color: ${({ theme }) => theme.text};
   transition: color 0.2s ease-in;
   margin: 0.25rem 2rem;
 
