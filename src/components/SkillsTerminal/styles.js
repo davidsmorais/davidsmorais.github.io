@@ -5,11 +5,15 @@ import { Row, Col, Mono, MonoLink } from "Common";
 export const TerminalContainer = styled(Col)`
   border: 1px solid ${({ theme }) => theme.accent.main};
   background: ${({ theme }) => theme.secondaryBackground};
+  margin-top: -100px;
+  @media only screen and (max-width: 480px) {
+    margin-top: 1rem;
+  }
   padding: 0;
   span {
     color: ${({ theme }) => theme.accent.secondary};
   }
-  >div {
+  > div {
     margin: 0;
     padding: 0;
   }

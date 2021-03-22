@@ -1,4 +1,21 @@
 {
   "title": "aboutMe",
-  "text": "aboutText"
+  "text": "abouttldr",
+    "section": [
+    {
+      "title": "aboutIntroTitle",
+      "content": "aboutIntro",
+      "icon": "🖥"
+    },
+    {
+      "title": "degreeTitle",
+      "content": "degree",
+      "icon": "🖥"
+    },
+    {
+      "title": "aboutCodeTitle",
+      "content": "aboutCode",
+      "icon": "🖥"
+    }
+  ]
 }

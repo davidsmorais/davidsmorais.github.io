@@ -51,17 +51,18 @@ const Home = () => {
         </Row>
       </S.StyledBackgroundContainer>
       <Row size={4}></Row>
-        <S.StyledBackgroundContainer bg={2}>
+      <S.StyledBackgroundContainer bg={2}>
         <Container transparent>
           <ContentBlock
             type="right"
             title={AboutContent.title}
+            subtitle={AboutContent.text}
             id="about"
-            content={AboutContent.text}
+            section={AboutContent.section}
           />
           <SkillsTerminal skills={CONFIG.skillsTerminal} />
         </Container>
-        </S.StyledBackgroundContainer>
+      </S.StyledBackgroundContainer>
       <Container>
         <ContentBlock type="left" title={BlogContent.title} id="blog" />
         <BlogGrid posts={data?.user?.publication?.posts} loading={loading} />

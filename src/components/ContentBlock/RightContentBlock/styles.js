@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Body } from 'Common';
+import { Body, Mono } from 'Common';
 
 export const RightBlockContainer = styled.section`
   position: relative;
@@ -22,6 +22,37 @@ export const ContentWrapper = styled.div`
 
   @media only screen and (max-width: 480px) {
     margin: 2rem 0;
+  }
+`;
+
+export const MinTitle = styled(Mono)`
+color: ${({theme}) => theme.text};
+margin: ${({theme}) => theme.margin}px 0;
+font-size: 18px;
+`
+export const MinPara = styled(Mono)`
+  color: ${({ theme }) => theme.text};
+  margin: ${({ theme }) => theme.margin}px ${({ theme }) => theme.margin * 2}px;
+  font-size: 14px;
+`;
+
+export const Section = styled.div`
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+  margin: 0 auto;
+  position: relative;
+  left: 33vw;
+  max-width: 33vw;
+  bottom: 100px;
+  background: ${({ theme }) => theme.background}aa;
+  padding: ${({ theme }) => theme.margin}px ${({ theme }) => theme.margin * 2}px;
+  &:hover {
+    background: ${({ theme }) => theme.accent.secondary}aa;
+  }
+  @media only screen and (max-width: 480px) {
+    position: initial;
+    max-width: unset;
   }
 `;
 

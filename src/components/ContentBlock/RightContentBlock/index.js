@@ -8,7 +8,7 @@ import { Title, Subtitle } from 'Common';
 
 import * as S from "./styles";
 
-const RightBlock = ({ title, content, button, icon, t, id, subtitle }) => {
+const RightBlock = ({ title, content, button, icon, t, id, subtitle, section }) => {
   const scrollTo = (id) => {
     const element = document.getElementById(id);
     element.scrollIntoView({
@@ -17,13 +17,25 @@ const RightBlock = ({ title, content, button, icon, t, id, subtitle }) => {
   };
   return (
     <S.RightBlockContainer>
-      <Row type="flex" justify="space-between" align="middle" id={id}>
+      <Row type="flex" justify="space-between" MinParaalign="middle" id={id}>
         <Col lg={11} md={11} sm={11} xs={24}>
           <Slide left>
             <S.ContentWrapper>
               <Title>{t(title)}</Title>
               <Subtitle>{t(subtitle)}</Subtitle>
               <S.Content>{t(content)}</S.Content>
+              {section &&
+                typeof section === "object" &&
+                section.map((item, id) => {
+                  return (
+                    <S.Section key={id}>
+                      <S.MinTitle>
+                        {t(item.title)} {t(item.icon)}
+                      </S.MinTitle>
+                      <S.MinPara>{t(item.content)}</S.MinPara>
+                    </S.Section>
+                  );
+                })}
               <S.ButtonWrapper>
                 {button &&
                   typeof button === "object" &&
@@ -44,16 +56,16 @@ const RightBlock = ({ title, content, button, icon, t, id, subtitle }) => {
           </Slide>
         </Col>
         {icon && (
-        <Col lg={11} md={11} sm={12} xs={24}>
-          <Slide right>
-            <SvgIcon
-              src={icon}
-              className="about-block-image"
-              width="100%"
-              height="100%"
-            />
-          </Slide>
-        </Col>
+          <Col lg={11} md={11} sm={12} xs={24}>
+            <Slide right>
+              <SvgIcon
+                src={icon}
+                className="about-block-image"
+                width="100%"
+                height="100%"
+              />
+            </Slide>
+          </Col>
         )}
       </Row>
     </S.RightBlockContainer>

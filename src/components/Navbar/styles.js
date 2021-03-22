@@ -47,7 +47,9 @@ export const BackBtn = styled.button`
   align-items: center;
 
   &:hover {
-    background-color: ${({ theme }) => theme.secondaryBackground};
+    h2 {
+    color: ${({ theme }) => theme.accent.main};
+    }
   }
   > * {
     margin-left: ${({ theme }) => theme.margin * 2}px;
