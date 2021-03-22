@@ -33,16 +33,16 @@ img {
 `
 
 export const StyledMonoLink = styled(MonoLink)`
-font-size: 18px;
+font-size: 14px;
 margin-bottom: ${({theme})=>theme.margin}px
 ;`
 
 export const MonoTitle = styled(Mono)`
-  font-size: 32px;
+  font-size: 18px;
   color: ${({theme})=> theme.accent.main};
 `;
 export const MonoLabel = styled(Mono)`
-  font-size: 18px;
+  font-size: 14px;
   color: ${({ theme }) => theme.accent.main};
 `;
 export const TerminalBtn = styled.span`
@@ -83,9 +83,11 @@ export const SectionsBar = styled(Row)`
 `;
 
 export const StacksContainer = styled(Row)`
-&& {  margin-top: ${({theme})=> theme.margin / 2}px;
-  margin-left: ${({theme})=> theme.margin * 2}px;
-  margin-bottom: ${({theme})=> theme.margin * 4}px;}
+  && {
+    margin-top: ${({ theme }) => theme.margin / 2}px;
+    margin-left: ${({ theme }) => theme.margin * 2}px;
+    margin-bottom: ${({ theme }) => theme.margin * 4}px;
+  }
   justify-content: flex-start;
   > div {
     align-items: flex-start;
@@ -94,20 +96,24 @@ export const StacksContainer = styled(Row)`
       text-align: left;
     }
     span.title {
-      margin-bottom: ${({theme})=> theme.margin / 2}px;
+      margin-bottom: ${({ theme }) => theme.margin / 2}px;
     }
-    span:not(.title), a {
+    span:not(.title),
+    a {
       font-size: 18px;
-      padding-left: ${({theme})=> theme.margin * 2}px;
+      padding-left: ${({ theme }) => theme.margin * 2}px;
+      @media only screen and (max-width: 480px) {
+        padding-left: ${({ theme }) => theme.margin}px;
+      }
     }
     button {
       border: none;
-      background: ${({theme})=> theme.secondaryBackground};
+      background: ${({ theme }) => theme.secondaryBackground};
       cursor: pointer;
       span {
-        color: ${({theme})=> theme.accent.main};
+        color: ${({ theme }) => theme.accent.main};
         &:hover {
-          color: ${({theme})=> theme.accent.secondary};
+          color: ${({ theme }) => theme.accent.secondary};
         }
       }
     }

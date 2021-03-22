@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import {Row, Mono, Col,} from 'Common'
+import { Row, Col } from "Common";
 import { withTranslation } from "react-i18next";
-import SvgIcon, {ProjectIcon} from 'Common/SvgIcon'
+import SvgIcon, { ProjectIcon } from "Common/SvgIcon";
 import {
   SectionsBar,
   StacksContainer,
@@ -25,15 +25,16 @@ const SkillsTerminal = ({ skills, t }) => {
           const isActive = title === activeSkill?.title;
           return (
             <button
-            key={'btn-'+title}
+              key={"btn-" + title}
               className={isActive ? "active" : ""}
               onClick={() => {
                 setClickable(null);
-                changeActiveSkill(skill.mainSkills && skill)}}
+                changeActiveSkill(skill.mainSkills && skill);
+              }}
             >
-              <Mono>
+              <MonoTitle>
                 {isActive ? "🚀" : ">"} {t(skill.title)}
-              </Mono>
+              </MonoTitle>
             </button>
           );
         })}
@@ -52,13 +53,13 @@ const SkillsTerminal = ({ skills, t }) => {
           return item.link ? (
             <StyledMonoLink href={item.link}>
               {t(item.content)}
-              {item.icon && <SvgIcon src={item.icon}/>}
+              {item.icon && <SvgIcon src={item.icon} />}
             </StyledMonoLink>
           ) : (
             <MonoLabel>{t(item.content)}</MonoLabel>
           );
         case "emoji":
-          return <Mono>{t(item.content)}</Mono>;
+          return <MonoLabel>{t(item.content)}</MonoLabel>;
       }
     });
   };
@@ -78,13 +79,15 @@ const SkillsTerminal = ({ skills, t }) => {
         {mainSkills.map((skill) => {
           const { clickableKeys } = skill;
           return (
-            <Col key={'skill-'+skill.title}>
+            <Col key={"skill-" + skill.title}>
               {Array.isArray(skill.title) ? (
                 skill.title.map((title) => (
-                  <Mono key={'title-'+title} className={"title"}>👉{t(title)}</Mono>
+                  <MonoTitle key={"title-" + title} className={"title"}>
+                    👉{t(title)}
+                  </MonoTitle>
                 ))
               ) : (
-                <Mono className={"title"}>{t(skill.title)} 👇</Mono>
+                <MonoTitle className={"title"}>{t(skill.title)} 👇</MonoTitle>
               )}
               {(skill?.stack ?? []).map((item) => {
                 const clickableData = (clickableKeys || []).find(
@@ -94,16 +97,16 @@ const SkillsTerminal = ({ skills, t }) => {
                   <button
                     onClick={() => setClickable(clickables[clickableData.key])}
                   >
-                    <Mono>▶ {t(item)}</Mono>
+                    <MonoLabel>▶_{t(item)}</MonoLabel>
                   </button>
                 ) : (
-                  <Mono>▶ {t(item)}</Mono>
+                  <MonoLabel>▶_{t(item)}</MonoLabel>
                 );
               })}
             </Col>
           );
         })}
-        <Clickables />
+        {activeClickable && <Clickables />}
       </StacksContainer>
     );
   };
@@ -111,7 +114,7 @@ const SkillsTerminal = ({ skills, t }) => {
     <TerminalContainer>
       <Titlebar>
         <div></div>
-        <Mono>~david 🌍</Mono>
+        <MonoTitle>~david 🌍</MonoTitle>
         <Row>
           <TerminalBtn />
           <TerminalBtn />
