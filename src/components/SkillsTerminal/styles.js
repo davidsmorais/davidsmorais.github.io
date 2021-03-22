@@ -5,7 +5,6 @@ import { Row, Col, Mono, MonoLink } from "Common";
 export const TerminalContainer = styled(Col)`
   border: 1px solid ${({ theme }) => theme.accent.main};
   background: ${({ theme }) => theme.secondaryBackground};
-  margin-top: -100px;
   @media only screen and (max-width: 480px) {
     margin-top: 1rem;
   }

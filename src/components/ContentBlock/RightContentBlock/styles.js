@@ -44,7 +44,7 @@ export const Section = styled.div`
   position: relative;
   left: 33vw;
   max-width: 33vw;
-  bottom: 100px;
+  bottom: 50px;
   background: ${({ theme }) => theme.background}aa;
   padding: ${({ theme }) => theme.margin}px ${({ theme }) => theme.margin * 2}px;
   &:hover {

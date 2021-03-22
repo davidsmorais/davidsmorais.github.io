@@ -18,7 +18,6 @@ const useForm = (validate) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setErrors(validate(values));
-    console.log(values)
     // Your url for API
     const url = `https://mailthis.to/${CONFIG.contacts.email}`;
     if (Object.keys(values).length === 3) {
