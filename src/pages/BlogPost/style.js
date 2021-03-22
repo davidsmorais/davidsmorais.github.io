@@ -11,6 +11,7 @@ const StyledContainer = styled(Container)`
   img {
     margin-bottom: ${({ theme }) => theme.margin * 4}px;
   }
+
 `;
 
 const Content = styled.div`
@@ -21,6 +22,10 @@ const Content = styled.div`
     max-width: 720px;
     margin: 0 auto;
     display: flex;
+
+    @media only screen and (max-width: 575px) {
+      max-width: 100%;
+    }
   }
   h1,
   h2,
