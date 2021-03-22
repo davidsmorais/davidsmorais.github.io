@@ -17,6 +17,11 @@ const StyledBackgroundContainer = styled(Container)`
     > div {
       padding: ${({ theme }) => theme.margin * 5}px;
     }
+    @media only screen and (max-width: 480px) {
+      > div {
+      padding: ${({ theme }) => theme.margin * 4}px 0;
+      }
+    }
   }
 `;
 
@@ -41,6 +46,14 @@ const StyledBlackAndWhiteContainer = styled(Container)`
       ${({ theme }) => theme.accent.secondary} 50%,
       ${({ theme }) => theme.background} 50%
     );
+    @media only screen and (max-width: 480px) {
+      height: auto;
+      background: linear-gradient(
+        180deg,
+        ${({ theme }) => theme.accent.secondary} 10%,
+        ${({ theme }) => theme.background} 15%
+      );
+    }
   }
 `;
 

@@ -9,6 +9,11 @@ export const Title = styled.h1`
   line-height: 100%;
   color: ${(props) => props.theme[props.color]};
   text-align: ${(props) => props.align || ""};
+  @media only screen and (max-width: 480px) {
+      font-size: 3rem;
+      width: 250px;
+      margin: auto;
+  }
 `;
 export const BlogPostTitle = styled.h1`
   font-family: Raleway;
@@ -26,6 +31,11 @@ export const Subtitle = styled.h2`
   font-size: 48px;
   line-height: 125%;
   text-align: ${(props) => props.align || ""};
+  @media only screen and (max-width: 480px) {
+    font-size: 3rem;
+    width: 250px;
+    margin: auto;
+  }
 `;
 
 export const Body = styled.p`
