@@ -53,6 +53,10 @@ export const BackBtn = styled.button`
     margin-left: ${({ theme }) => theme.margin * 2}px;
     margin-bottom: 0px;
   }
+  @media only screen and (max-width: 575px) {
+    flex-flow: column wrap;
+    font-size: 24px;
+  }
 `;
 
 export const Container = styled.div`
