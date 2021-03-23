@@ -1,0 +1,52 @@
+{
+  "meTitle": "Ciao, sono \nDavid",
+  "meText": "E sono uno developer web",
+  "My blog": "Il mio blog",
+  "Get in touch": "Parla con me",
+
+  "aboutMe": "> su di me",
+  "aboutText": "got a languages degree 👉 job market sucks 👇 became developer 👉 also do design",
+
+  "blogTitle": "> blog",
+  "Read More": "Per saperne di più",
+  "Loading": "Caricamento in corso",
+
+  "contactTitle": "costruiamo cose\nINSIEME",
+  "contactCta": "PARLA CON ME",
+  "send": "Invia",
+
+  "followMe": "SEGUIMI",
+
+  "About": "Su di me",
+  "Contact": "Contatto",
+  "Blog": "Blog",
+
+  "Language": "Idioma",
+  "copyright": "Copyright © 2020 David Morais",
+  "builtWith": "costruito con React & styled-components ❤",
+
+  "Submit": "Invia",
+  "Message": "Messaggio",
+  "Your Message": "Il Tuo Messaggio",
+  "Name": "Nome",
+  "Your Name": "Il Tuo Nome",
+  "Email": "Email",
+  "Your Email": "La Tua Email",
+
+  "aboutIntroTitle": "Cresciuto con i computer 💻",
+  "degreeTitle": "Corso di lingua 🇮🇹🇪🇸🇬🇧",
+  "aboutCodeTitle": "Felice e in Crescita 😁",
+  "aboutIntro": "I computer e lo sviluppo del software sono sempre stati una parte importante della mia vita durante la crescita - Ho sviluppato giochi e ho amato l'equilibrio tra creatività e logica.",
+  "degree": "Credevo fosse solo un hobby. Ho finito il corso in lingue e presto ho capito che il codice era sempre la risposta per il mio successo.",
+  "aboutCode": "E poiché credo che creiamo la nostra fortuna, il duro lavoro e la devozione mi hanno portato qui. Sono felice e sto crescendo come developer. Fammi sapere le tue esigenze IT\n(🤫 Faccio anche design).",
+  "abouttldr": "mi sono laureata in lingue 🎓 senza lavoro 💸 sono diventato developer 🖥 felice 😍 faccio anche design 🎨",
+
+  "Other": "Altre",
+  "Projects & Work": "Progetti & Lavori",
+  "Projects": "Progetti",
+  "I can deliver prototypes for web and mobile apps.": "Consegna di prototipi di applicazioni web e mobili",
+  "I can deliver all kinds of graphics for your project including media kits and branding.": "Realizzo tutti i tipi di grafica, inclusi i media kit e il marchio",
+  "Languages": "Lingue",
+  "Databases": "Banche Dati",
+  "for more info =>": "per maggiori informazioni =>"
+}

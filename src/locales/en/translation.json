@@ -1,11 +1,10 @@
 {
   "meTitle": "Hello I'm\nDavid",
   "meText": "And I'm a web developer",
-  "Explore": "Explore",
-  "Learn More": "Learn More",
+  "My blog": "My blog",
+  "Get in touch": "Get in touch",
 
   "aboutMe": "> about me",
-  "aboutText": "got a languages degree 👉 job market sucks 👇 became developer 👉 also do design",
 
   "blogTitle": "> blog",
   "Read More": "Read More",
@@ -28,8 +27,25 @@
   "Submit": "Submit",
   "Message" : "Message",
   "Your Message": "Your Message",
-  "Name" : "Message",
+  "Name" : "Name",
   "Your Name": "Your Name",
-  "Email" : "Message",
-  "Your Email": "Your Message"
+  "Email" : "Email",
+  "Your Email": "Your Email",
+
+  "aboutIntroTitle": "Grew up with computers 💻",
+  "degreeTitle":"Languages degree 🇮🇹🇪🇸🇬🇧",
+  "aboutCodeTitle": "Happy and growing 😁",
+	"aboutIntro": "Computers and software development were always a huge part of my life while growing up - I've developed games and loved the balance of creativity and logic.",
+	"degree": "I believed it to be just a hobby. I finished my degree in languages and soon realized code was always the answer for my success.",
+	"aboutCode":"And since I believe we make our own luck, hard work and devotion brought me here. I'm happy and growing as a developer. Let me know your IT needs\n(🤫 I also do design).",
+	"abouttldr": "got a languages degree 🎓 no job 💸 became developer 🖥 happy 😍 also do design 🎨",
+
+	"Other": "Other",
+  "Projects & Work": "Projects & Work",
+  "Projects": "Projects",
+  "I can deliver prototypes for web and mobile apps.": "Web and mobile apps prototype delivery",
+  "I can deliver all kinds of graphics for your project including media kits and branding.": "I do all sorts of graphics, including media kits and branding",
+  "Languages": "Languages",
+  "Databases": "Databases",
+  "for more info =>": "for more info =>"
 }
