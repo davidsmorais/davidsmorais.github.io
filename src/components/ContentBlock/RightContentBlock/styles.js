@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Body, Mono } from 'Common';
+import { Mono } from 'Common';
 
 export const RightBlockContainer = styled.section`
   position: relative;
@@ -12,28 +12,57 @@ export const RightBlockContainer = styled.section`
 }
 `;
 
-export const Content = styled(Body)`
+export const Content = styled.div`
   margin: 1.5rem 0 2rem 0;
 `;
-
-export const ContentWrapper = styled.div`
-  position: relative;
-  max-width: 540px;
-
+export const SectionWrapper = styled.div`
+  margin: 1.5rem 0 2rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 300px;
+  margin-left: 25%;
   @media only screen and (max-width: 480px) {
-    margin: 2rem 0;
+    margin-left: 0;
+    flex-flow: column wrap;
   }
 `;
 
-export const MinTitle = styled(Mono)`
-color: ${({theme}) => theme.text};
-margin: ${({theme}) => theme.margin}px 0;
-font-size: 18px;
+export const TitleWrapper = styled.div`
+min-width: 300px;
+
 `
+
+export const ContentWrapper = styled.div`
+  max-width: 540px;
+
+  @media only screen and (max-width: 480px) {
+    margin: 2rem auto;
+    max-width: 375px;
+  }
+  ${({ hasSection }) =>
+    hasSection &&
+    `
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+      @media only screen and (max-width: 480px) {
+      flex-flow: column wrap;
+  }
+  `}
+`;
+
+export const MinTitle = styled(Mono)`
+  color: ${({ theme }) => theme.text};
+  margin: ${({ theme }) => theme.margin}px 0;
+  font-size: 18px;
+  white-space: pre-line;
+`;
 export const MinPara = styled(Mono)`
   color: ${({ theme }) => theme.text};
   margin: ${({ theme }) => theme.margin}px ${({ theme }) => theme.margin * 2}px;
   font-size: 14px;
+  white-space: pre-line;
 `;
 
 export const Section = styled.div`
@@ -41,10 +70,7 @@ export const Section = styled.div`
   flex-flow: column;
   flex: 1;
   margin: 0 auto;
-  position: relative;
-  left: 33vw;
-  max-width: 33vw;
-  bottom: 50px;
+  min-width: 33vw;
   background: ${({ theme }) => theme.background}aa;
   padding: ${({ theme }) => theme.margin}px ${({ theme }) => theme.margin * 2}px;
   &:hover {

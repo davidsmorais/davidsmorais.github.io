@@ -4,7 +4,7 @@ import Slide from "react-reveal/Slide";
 
 import SvgIcon from "Common/SvgIcon";
 import Button from "Common/Button";
-import { Title, Subtitle } from 'Common';
+import { Title } from "Common";
 
 import * as S from "./styles";
 
@@ -18,24 +18,28 @@ const RightBlock = ({ title, content, button, icon, t, id, subtitle, section }) 
   return (
     <S.RightBlockContainer>
       <Row type="flex" justify="space-between" MinParaalign="middle" id={id}>
-        <Col lg={11} md={11} sm={11} xs={24}>
+        <Col lg={24} md={24} sm={24} xs={24}>
           <Slide left>
-            <S.ContentWrapper>
-              <Title>{t(title)}</Title>
-              <Subtitle>{t(subtitle)}</Subtitle>
-              <S.Content>{t(content)}</S.Content>
-              {section &&
-                typeof section === "object" &&
-                section.map((item, id) => {
-                  return (
-                    <S.Section key={id}>
-                      <S.MinTitle>
-                        {t(item.title)} {t(item.icon)}
-                      </S.MinTitle>
-                      <S.MinPara>{t(item.content)}</S.MinPara>
-                    </S.Section>
-                  );
-                })}
+            <S.ContentWrapper hasSection={Boolean(section?.length)}>
+              <S.TitleWrapper>
+                <Title>{t(title)}</Title>
+                <S.MinTitle>{t(subtitle)}</S.MinTitle>
+                <S.Content>{t(content)}</S.Content>
+              </S.TitleWrapper>
+              <S.SectionWrapper>
+                {section &&
+                  typeof section === "object" &&
+                  section.map((item, id) => {
+                    return (
+                      <S.Section key={id}>
+                        <S.MinTitle>
+                          {t(item.title)} {t(item.icon)}
+                        </S.MinTitle>
+                        <S.MinPara>{t(item.content)}</S.MinPara>
+                      </S.Section>
+                    );
+                  })}
+              </S.SectionWrapper>
               <S.ButtonWrapper>
                 {button &&
                   typeof button === "object" &&

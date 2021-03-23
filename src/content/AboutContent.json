@@ -4,18 +4,15 @@
     "section": [
     {
       "title": "aboutIntroTitle",
-      "content": "aboutIntro",
-      "icon": "🖥"
+      "content": "aboutIntro"
     },
     {
       "title": "degreeTitle",
-      "content": "degree",
-      "icon": "🖥"
+      "content": "degree"
     },
     {
       "title": "aboutCodeTitle",
-      "content": "aboutCode",
-      "icon": "🖥"
+      "content": "aboutCode"
     }
   ]
 }
