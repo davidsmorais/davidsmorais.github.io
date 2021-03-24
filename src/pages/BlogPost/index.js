@@ -26,11 +26,13 @@ const BlogPost = ({ t }) => {
   useEffect(() => {
     if (postHasLoaded) {
           const element = document.getElementById("scroll-target");
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "end",
-            inline: "nearest",
-          });
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "end",
+              inline: "nearest",
+            });
+          }
     }
   }, [postHasLoaded]);
 

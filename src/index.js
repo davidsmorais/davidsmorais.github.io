@@ -19,7 +19,7 @@ const gqlClient = new GraphQLClient({
 const App = () => {
   const [currentTheme, setTheme] = useState("dark");
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ThemeContext.Provider
         value={{
           currentTheme,
