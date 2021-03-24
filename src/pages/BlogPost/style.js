@@ -24,7 +24,10 @@ const Content = styled.div`
     display: flex;
 
     @media only screen and (max-width: 575px) {
-      max-width: 100%;
+      max-width: 300px;
+      display: block;
+      width: auto;
+      height: auto;
     }
   }
   h1,
