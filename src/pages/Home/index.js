@@ -1,5 +1,4 @@
 import { lazy } from "react";
-import { useQuery } from "graphql-hooks";
 
 import IntroContent from "Content/IntroContent.json";
 import BlogContent from "Content/BlogContent.json";
@@ -16,23 +15,8 @@ const ScrollToTop = lazy(() => import("Common/ScrollToTop"));
 const Container = lazy(() => import("Common/Container"));
 
 import S from "./style";
-const BLOGPOSTS_QUERY = `{
-  user(username: "${CONFIG.blog.hashnodeUsername}") {
-    publication {
-      posts(page: 0) {
-        title
-        brief
-        slug
-        coverImage
-        dateAdded
-        cuid
-      }
-    }
-  }
-}`;
 
 const Home = () => {
-  const { loading, data } = useQuery(BLOGPOSTS_QUERY);
 
   return (
     <S.StyledContainer>
@@ -65,7 +49,7 @@ const Home = () => {
       </S.StyledBackgroundContainer>
       <Container>
         <ContentBlock type="left" title={BlogContent.title} id="blog" />
-        <BlogGrid posts={data?.user?.publication?.posts} loading={loading} />
+        <BlogGrid />
       </Container>
       <S.StyledBlackAndWhiteContainer>
         <Row justify="center">

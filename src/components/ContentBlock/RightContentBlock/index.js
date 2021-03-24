@@ -19,7 +19,7 @@ const RightBlock = ({ title, content, button, icon, t, id, subtitle, section }) 
     <S.RightBlockContainer>
       <Row type="flex" justify="space-between" MinParaalign="middle" id={id}>
         <Col lg={11} md={24} sm={24} xs={24}>
-          <Slide left>
+          <Slide top cascade>
             <S.ContentWrapper hasSection={Boolean(section?.length)}>
               <S.TitleWrapper>
                 <Title>{t(title)}</Title>
