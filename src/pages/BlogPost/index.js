@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useQuery } from "graphql-hooks";
 import qs from "query-string";
 import { withTranslation } from "react-i18next";
@@ -21,16 +22,29 @@ const BlogPost = ({ t }) => {
 
   const post = data?.post;
 
+  const postHasLoaded = loading || !post;
+  useEffect(() => {
+    if (postHasLoaded) {
+          const element = document.getElementById("scroll-target");
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "end",
+            inline: "nearest",
+          });
+    }
+  }, [postHasLoaded]);
+
   return (
     <S.StyledContainer>
-      {loading || !post ? (
+      <div id="scroll-target"/>
+      {postHasLoaded ? (
         <Title>{t("Loading")}</Title>
       ) : (
         <Col>
           <img src={post.coverImage} />
           <Title>{post.title}</Title>
           <Subtitle>{new Date(post.dateAdded).toLocaleDateString()}</Subtitle>
-          <S.Content dangerouslySetInnerHTML={{__html: post.content}}/>
+          <S.Content dangerouslySetInnerHTML={{ __html: post.content }} />
         </Col>
       )}
     </S.StyledContainer>
