@@ -56,7 +56,7 @@ const Home = () => {
           <ContentBlock
             type="right"
             title={AboutContent.title}
-            subtitle={AboutContent.text}
+            content={AboutContent.text}
             id="about"
             section={AboutContent.section}
           />

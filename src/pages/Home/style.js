@@ -46,6 +46,14 @@ const StyledBlackAndWhiteContainer = styled(Container)`
       ${({ theme }) => theme.accent.secondary} 50%,
       ${({ theme }) => theme.background} 50%
     );
+    @media only screen and (max-width: 760px) {
+      height: auto;
+      background: linear-gradient(
+        180deg,
+        ${({ theme }) => theme.accent.secondary} 25%,
+        ${({ theme }) => theme.background} 25%
+      );
+    }
     @media only screen and (max-width: 480px) {
       height: auto;
       background: linear-gradient(

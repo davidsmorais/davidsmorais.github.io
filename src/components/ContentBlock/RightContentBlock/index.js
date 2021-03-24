@@ -4,7 +4,7 @@ import Slide from "react-reveal/Slide";
 
 import SvgIcon from "Common/SvgIcon";
 import Button from "Common/Button";
-import { Title } from "Common";
+import { Title, Subtitle } from "Common";
 
 import * as S from "./styles";
 
@@ -18,12 +18,12 @@ const RightBlock = ({ title, content, button, icon, t, id, subtitle, section }) 
   return (
     <S.RightBlockContainer>
       <Row type="flex" justify="space-between" MinParaalign="middle" id={id}>
-        <Col lg={24} md={24} sm={24} xs={24}>
+        <Col lg={11} md={24} sm={24} xs={24}>
           <Slide left>
             <S.ContentWrapper hasSection={Boolean(section?.length)}>
               <S.TitleWrapper>
                 <Title>{t(title)}</Title>
-                <S.MinTitle>{t(subtitle)}</S.MinTitle>
+                <Subtitle>{t(subtitle)}</Subtitle>
                 <S.Content>{t(content)}</S.Content>
               </S.TitleWrapper>
               <S.SectionWrapper>

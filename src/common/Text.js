@@ -32,7 +32,7 @@ export const Subtitle = styled.h2`
   line-height: 125%;
   text-align: ${(props) => props.align || ""};
   @media only screen and (max-width: 480px) {
-    font-size: 3rem;
+    font-size: 2rem;
     width: 250px;
     margin: auto;
   }

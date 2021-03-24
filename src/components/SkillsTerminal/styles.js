@@ -6,7 +6,7 @@ export const TerminalContainer = styled(Col)`
   border: 1px solid ${({ theme }) => theme.accent.main};
   background: ${({ theme }) => theme.secondaryBackground};
   @media only screen and (max-width: 480px) {
-    margin-top: 1rem;
+    margin-left: ${({theme}) => theme.margin * 4}px;
   }
   padding: 0;
   span {

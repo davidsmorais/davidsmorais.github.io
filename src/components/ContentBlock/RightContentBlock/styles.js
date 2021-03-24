@@ -12,8 +12,11 @@ export const RightBlockContainer = styled.section`
 }
 `;
 
-export const Content = styled.div`
+export const Content = styled(Mono)`
   margin: 1.5rem 0 2rem 0;
+  color: ${({ theme }) => theme.text};
+  white-space: pre-line;
+  font-size: 18px;
 `;
 export const SectionWrapper = styled.div`
   margin: 1.5rem 0 2rem 0;
@@ -21,22 +24,29 @@ export const SectionWrapper = styled.div`
   flex-flow: row wrap;
   max-width: 300px;
   margin-left: 25%;
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 768px) {
     margin-left: 0;
     flex-flow: column wrap;
   }
 `;
 
 export const TitleWrapper = styled.div`
-min-width: 300px;
-
-`
+  min-width: 300px;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-flow: column;
+    span {
+      margin-top: ${({ theme }) => theme.margin * 2}px;
+    }
+  }
+`;
 
 export const ContentWrapper = styled.div`
   max-width: 540px;
+  position: relative;
 
   @media only screen and (max-width: 480px) {
-    margin: 2rem auto;
+    margin: 2rem 0;
     max-width: 375px;
   }
   ${({ hasSection }) =>
@@ -46,7 +56,7 @@ export const ContentWrapper = styled.div`
     flex-flow: row nowrap;
     justify-content: space-between;
     width: 100%;
-      @media only screen and (max-width: 480px) {
+      @media only screen and (max-width: 768px) {
       flex-flow: column wrap;
   }
   `}
@@ -68,7 +78,6 @@ export const MinPara = styled(Mono)`
 export const Section = styled.div`
   display: flex;
   flex-flow: column;
-  flex: 1;
   margin: 0 auto;
   min-width: 33vw;
   background: ${({ theme }) => theme.background}aa;

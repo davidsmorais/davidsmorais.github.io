@@ -19,10 +19,10 @@ export const Content = styled(Body)`
 export const ContentWrapper = styled.div`
   position: relative;
   max-width: 540px;
-
-  @media only screen and (max-width: 480px) {
-    margin: 2rem 0;
+  >h1 {
+    white-space: pre;
   }
+
 `;
 
 export const ServiceWrapper = styled.div`
