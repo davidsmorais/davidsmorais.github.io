@@ -3,7 +3,6 @@ import { Row, Col } from "antd";
 import { useLocation,  useHistory } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import { withTranslation } from "react-i18next";
-import sc from "lodash.snakecase";
 import { ThemeContext } from "Theme";
 import { Subtitle } from "Common";
 
@@ -52,13 +51,13 @@ const Navbar = ({ t }) => {
         {isHome && (
           <>
             <S.CustomNavLinkSmall onClick={() => scrollTo("about")}>
-              <S.Span>{sc(t("About"))}</S.Span>
+              <S.Span>{t("About")}</S.Span>
             </S.CustomNavLinkSmall>
             <S.CustomNavLinkSmall onClick={() => scrollTo("blog")}>
-              <S.Span>{sc(t("Blog"))}</S.Span>
+              <S.Span>{t("Blog")}</S.Span>
             </S.CustomNavLinkSmall>
             <S.CustomNavLinkSmall onClick={() => scrollTo("contact")}>
-              <S.Span>{sc(t("contact"))}</S.Span>
+              <S.Span>{t("Contact")}</S.Span>
             </S.CustomNavLinkSmall>
           </>
         )}
