@@ -25,6 +25,7 @@ export const BlogPostContainer = styled(Col)`
   }
   img {
     margin: ${({ theme }) => theme.margin}px;
+    max-width: 100%;
   }
 `;
 export const DateText = styled(Body)`
