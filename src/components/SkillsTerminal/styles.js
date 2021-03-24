@@ -10,6 +10,7 @@ export const TerminalContainer = styled(Col)`
   }
   padding: 0;
   span {
+
     color: ${({ theme }) => theme.accent.secondary};
   }
   > div {
@@ -54,6 +55,7 @@ export const MonoTitle = styled(Mono)`
 export const MonoLabel = styled(Mono)`
   font-size: 14px;
   color: ${({ theme }) => theme.accent.main};
+  white-space: pre;
 `;
 export const TerminalBtn = styled.span`
   width: 16px;

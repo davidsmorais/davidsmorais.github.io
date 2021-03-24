@@ -13,6 +13,14 @@ const Row = styled.div`
   margin: ${(props) => (props.margin ?? 1) * props.theme.margin}px
     ${(props) =>
       props.center ? "auto" : (props.margin ?? 1) * props.theme.margin + "px"};
+
+  @media only screen and (max-width: 480px) {
+    &&&&& {
+    margin: 0;
+    padding: 0;
+    padding-top: 0;
+    }
+  }
 `;
 
 

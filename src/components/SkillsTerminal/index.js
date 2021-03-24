@@ -97,10 +97,10 @@ const SkillsTerminal = ({ skills, t }) => {
                   <button
                     onClick={() => setClickable(clickables[clickableData.key])}
                   >
-                    <MonoLabel>▶_{t(item)}</MonoLabel>
+                    <MonoLabel>▶ {t(item)}</MonoLabel>
                   </button>
                 ) : (
-                  <MonoLabel>▶_{t(item)}</MonoLabel>
+                  <MonoLabel>▶ {t(item)}</MonoLabel>
                 );
               })}
             </Col>
