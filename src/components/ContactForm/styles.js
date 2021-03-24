@@ -1,22 +1,32 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { Title, Subtitle, Col } from "Common";
 
 export const TitleTop = styled(Title)`
-position: relative;
-bottom: calc(72px * 1.75);
-color:${({theme}) => theme.background}`
+  position: relative;
+  bottom: calc(72px * 1.75);
+  color: ${({ theme }) => theme.background};
+  @media only screen and (max-width: 480px) {
+    font-size: 2.5rem;
+    margin-left: ${({theme}) => theme.margin}px;
+  }
+`;
 
 export const TitleBottom = styled(Title)`
   color: ${({ theme }) => theme.text};
   position: relative;
   bottom: calc(72px);
+  @media only screen and (max-width: 480px) {
+    font-size: 2.5rem;
+    margin-left: ${({ theme }) => theme.margin}px;
+  }
 `;
 
-export const  TitleContainer = styled(Col)`
-height: 100%;
-flex: 1;
-max-width: 50%;
-justify-content: space-between`
+export const TitleContainer = styled(Col)`
+  height: 100%;
+  flex: 1;
+  max-width: 50%;
+  justify-content: space-between;
+`;
 
 export const ContactContainer = styled.div`
   padding: 5rem 0;
@@ -52,6 +62,9 @@ export const FormGroup = styled.form`
     max-width: 100%;
     margin-top: 2rem;
   }
+  @media only screen and (max-width: 480px) {
+    padding: ${({ theme }) => theme.margin}px;
+  }
 `;
 
 export const FormTitle = styled(Subtitle)`
@@ -61,7 +74,7 @@ export const FormTitle = styled(Subtitle)`
 
 export const Span = styled.span`
   display: block;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 600;
   color: rgb(255, 130, 92);
   height: 0.775rem;

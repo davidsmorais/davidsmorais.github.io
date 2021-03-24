@@ -14,6 +14,9 @@ export const Title = styled.h1`
       width: 250px;
       margin: auto;
   }
+  @media only screen and (max-width: 350px) {
+    width: 200px;
+  }
 `;
 export const BlogPostTitle = styled.h1`
   font-family: Raleway;
@@ -33,7 +36,7 @@ export const Subtitle = styled.h2`
   text-align: ${(props) => props.align || ""};
   @media only screen and (max-width: 480px) {
     font-size: 2rem;
-    width: 250px;
+    width: 200px;
     margin: auto;
   }
 `;

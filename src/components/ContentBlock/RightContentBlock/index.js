@@ -40,10 +40,10 @@ const RightBlock = ({ title, content, button, icon, t, id, subtitle, section }) 
                     );
                   })}
               </S.SectionWrapper>
-              <S.ButtonWrapper>
                 {button &&
                   typeof button === "object" &&
-                  button.map((item, id) => {
+              <S.ButtonWrapper>
+                  {button.map((item, id) => {
                     return (
                       <Button
                         key={id}
@@ -56,6 +56,7 @@ const RightBlock = ({ title, content, button, icon, t, id, subtitle, section }) 
                     );
                   })}
               </S.ButtonWrapper>
+              }
             </S.ContentWrapper>
           </Slide>
         </Col>

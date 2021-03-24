@@ -4,10 +4,19 @@ import { Mono } from 'Common';
 export const RightBlockContainer = styled.section`
   position: relative;
   padding: 10rem 0 8rem;
+  h1 {
+    margin: 0;
+  }
+  span {
+    font-size: 14px;
+  }
 
 && {
   @media only screen and (max-width: 768px) {
-    padding: 0 2rem;
+    padding: 0;
+    img {
+      max-width: 240px;
+    }
   }
 }
 `;
@@ -23,18 +32,21 @@ export const SectionWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
   max-width: 300px;
-  margin-left: 25%;
+  margin-left: ${({ theme }) => theme.margin * 10}px;
   @media only screen and (max-width: 768px) {
     margin-left: 0;
     flex-flow: column wrap;
+    margin: ${({ theme }) => theme.margin * 2}px auto;
   }
 `;
 
 export const TitleWrapper = styled.div`
-  min-width: 300px;
+  min-width: 400px;
   @media only screen and (max-width: 768px) {
+    min-width: unset;
     display: flex;
     flex-flow: column;
+    align-items: center;
     span {
       margin-top: ${({ theme }) => theme.margin * 2}px;
     }
@@ -58,6 +70,7 @@ export const ContentWrapper = styled.div`
     width: 100%;
       @media only screen and (max-width: 768px) {
       flex-flow: column wrap;
+      align-center: center;
   }
   `}
 `;
