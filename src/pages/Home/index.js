@@ -1,7 +1,6 @@
-import { lazy } from "react";
+import { lazy, useEffect } from "react";
 import { useQuery } from "graphql-hooks";
 import { withTranslation } from "react-i18next";
-
 
 import IntroContent from "Content/IntroContent.json";
 import BlogContent from "Content/BlogContent.json";
@@ -34,8 +33,18 @@ const BLOGPOSTS_QUERY = `{
   }
 }`;
 
-const Home = ({t}) => {
+const Home = ({ t }) => {
   const { loading, data } = useQuery(BLOGPOSTS_QUERY);
+
+  useEffect(() => {
+    if (!loading && data) {
+      const element = document.getElementById("header");
+      if (element)
+        element.scrollIntoView({
+          behavior: "smooth",
+        });
+    }
+  }, [loading]);
 
   return (
     <S.StyledContainer>
