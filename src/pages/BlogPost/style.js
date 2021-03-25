@@ -11,10 +11,32 @@ const StyledContainer = styled(Container)`
   img {
     margin-bottom: ${({ theme }) => theme.margin * 4}px;
   }
-
+  @media only screen and (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+  }
 `;
 
 const Content = styled.div`
+  @media only screen and (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
   > * {
     font-family: Cabin;
   }
