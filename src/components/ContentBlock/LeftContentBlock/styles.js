@@ -19,7 +19,7 @@ export const Content = styled(Body)`
 export const ContentWrapper = styled.div`
   position: relative;
   max-width: 540px;
-  >h1 {
+  > h1 {
     white-space: pre;
   }
 
