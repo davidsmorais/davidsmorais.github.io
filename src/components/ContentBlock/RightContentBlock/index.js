@@ -8,7 +8,17 @@ import { Title, Subtitle } from "Common";
 
 import * as S from "./styles";
 
-const RightBlock = ({ title, content, button, icon, t, id, subtitle, section }) => {
+const RightBlock = ({
+  title,
+  content,
+  button,
+  icon,
+  t,
+  id,
+  subtitle,
+  section,
+  loading,
+}) => {
   const scrollTo = (id) => {
     const element = document.getElementById(id);
     element.scrollIntoView({
@@ -19,7 +29,7 @@ const RightBlock = ({ title, content, button, icon, t, id, subtitle, section }) 
     <S.RightBlockContainer>
       <Row type="flex" justify="space-between" MinParaalign="middle" id={id}>
         <Col lg={11} md={24} sm={24} xs={24}>
-          <Slide top cascade>
+          <Slide top cascade when={!loading}>
             <S.ContentWrapper hasSection={Boolean(section?.length)}>
               <S.TitleWrapper>
                 <Title>{t(title)}</Title>
@@ -40,9 +50,8 @@ const RightBlock = ({ title, content, button, icon, t, id, subtitle, section }) 
                     );
                   })}
               </S.SectionWrapper>
-                {button &&
-                  typeof button === "object" &&
-              <S.ButtonWrapper>
+              {button && typeof button === "object" && (
+                <S.ButtonWrapper>
                   {button.map((item, id) => {
                     return (
                       <Button
@@ -55,14 +64,14 @@ const RightBlock = ({ title, content, button, icon, t, id, subtitle, section }) 
                       </Button>
                     );
                   })}
-              </S.ButtonWrapper>
-              }
+                </S.ButtonWrapper>
+              )}
             </S.ContentWrapper>
           </Slide>
         </Col>
         {icon && (
           <Col lg={11} md={11} sm={12} xs={24}>
-            <Slide right>
+            <Slide right when={!loading}>
               <SvgIcon
                 src={icon}
                 className="about-block-image"

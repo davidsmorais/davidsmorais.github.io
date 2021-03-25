@@ -1,11 +1,14 @@
 import { lazy } from "react";
+import { useQuery } from "graphql-hooks";
+import { withTranslation } from "react-i18next";
+
 
 import IntroContent from "Content/IntroContent.json";
 import BlogContent from "Content/BlogContent.json";
 import AboutContent from "Content/AboutContent.json";
 import ContactContent from "Content/ContactContent.json";
 import CONFIG from "Config";
-import { Row } from "Common";
+import { Row, Title } from "Common";
 
 const SkillsTerminal = lazy(() => import("Components/SkillsTerminal"));
 const ContactFrom = lazy(() => import("Components/ContactForm"));
@@ -16,15 +19,37 @@ const Container = lazy(() => import("Common/Container"));
 
 import S from "./style";
 
-const Home = () => {
+const BLOGPOSTS_QUERY = `{
+  user(username: "${CONFIG.blog.hashnodeUsername}") {
+    publication {
+      posts(page: 0) {
+        title
+        brief
+        slug
+        coverImage
+        dateAdded
+        cuid
+      }
+    }
+  }
+}`;
+
+const Home = ({t}) => {
+  const { loading, data } = useQuery(BLOGPOSTS_QUERY);
 
   return (
     <S.StyledContainer>
+      {loading && (
+        <S.LoadingModal>
+          <Title>{t("loading")}</Title>
+        </S.LoadingModal>
+      )}
       <ScrollToTop />
       <S.StyledBackgroundContainer>
         <Row justify="center">
           <ContentBlock
             type="right"
+            loading={loading}
             first="true"
             title={IntroContent.title}
             subtitle={IntroContent.text}
@@ -49,7 +74,7 @@ const Home = () => {
       </S.StyledBackgroundContainer>
       <Container>
         <ContentBlock type="left" title={BlogContent.title} id="blog" />
-        <BlogGrid />
+        <BlogGrid loading={loading} posts={data?.user?.publication?.posts} />
       </Container>
       <S.StyledBlackAndWhiteContainer>
         <Row justify="center">
@@ -64,4 +89,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withTranslation()(Home);

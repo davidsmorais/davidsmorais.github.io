@@ -36,6 +36,24 @@ const StyledContainer = styled(Container)`
   }
 `;
 
+const LoadingModal = styled.div`
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: ${({ theme }) => theme.text};
+  opacity: 0.7;
+  overflow: hidden;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  > h1 {
+    color: ${({ theme }) => theme.accent.main};
+  }
+`;
+
 const StyledBlackAndWhiteContainer = styled(Container)`
   &&& {
     height: 150%;
@@ -73,4 +91,4 @@ const StyledBlackAndWhiteContainer = styled(Container)`
   }
 `;
 
-export default { StyledBackgroundContainer , StyledContainer, StyledBlackAndWhiteContainer };
+export default { StyledBackgroundContainer , LoadingModal ,  StyledContainer, StyledBlackAndWhiteContainer };
