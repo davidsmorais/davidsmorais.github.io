@@ -15,11 +15,22 @@ export const RightBlockContainer = styled.section`
   @media only screen and (max-width: 768px) {
     padding: 0;
     img {
+      margin: 0 auto;
       max-width: 240px;
+      display: block;
     }
   }
 }
 `;
+
+export const ImageRow = styled.div`
+flex-flow: row nowrap;
+width: 100%;
+justify-content: center;
+> img {
+  margin: auto;
+}
+`
 
 export const Content = styled(Mono)`
   margin: 1.5rem 0 2rem 0;
