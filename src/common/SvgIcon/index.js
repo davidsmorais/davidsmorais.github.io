@@ -39,11 +39,19 @@ const SvgIcon = ({ src, size, color, stroke, hoverColor }) => {
       <IcomoonReact iconSet={iconSet} icon={svgName} />
     </StyledSvg>
   ) : (
-    <StyledIcon src={`/img/${src}`} alt={src} size={size} />
+    <StyledIcon
+      src={`${process.env.PUBLIC_URL}/img/${src}`}
+      alt={src}
+      size={size}
+    />
   );
 };
 const ProjectIcon = ({ src, size }) => (
-  <StyledIcon src={`/img/projects/${src}`} alt={src} size={size} />
+  <StyledIcon
+    src={`${process.env.PUBLIC_URL}/img/projects/${src}`}
+    alt={src}
+    size={size}
+  />
 );
 
 export { ProjectIcon };

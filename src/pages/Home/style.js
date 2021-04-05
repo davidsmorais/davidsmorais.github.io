@@ -6,7 +6,7 @@ const Container = lazy(() => import("Common/Container"));
 const StyledBackgroundContainer = styled(Container)`
   &&& {
     background-image: ${({ theme }) => theme.gradients.main},
-      ${({ bg }) => `url("/img/bg${bg || 1}.png");`}
+      ${({ bg }) => `url("${process.env.PUBLIC_URL}/img/bg${bg || 1}.png");`}
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
