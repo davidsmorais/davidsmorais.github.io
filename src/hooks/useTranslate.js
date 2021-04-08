@@ -20,6 +20,8 @@ const useTranslate = (mainKey) => {
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE)
   const languages = Object.keys(content)
 
+  console.log(language, content[language])
+
   const updatePageLanguage = useCallback(
     (lang) => {
       if (typeof window !== 'undefined') {
@@ -32,10 +34,15 @@ const useTranslate = (mainKey) => {
   )
   const translate = useCallback(
     (key) => {
-      return (
-        content?.[language]?.[mainKey ?? key]?.[key] ??
-        `Key not found: ${mainKey ? `${mainKey}.${key}` : key}`
-      )
+      if (!key) {
+        return '';
+      }
+      const notFoundString = `Key not found: ${mainKey ? `${mainKey}.${key}` : key}`
+      if (mainKey) {
+        return content?.[language]?.[mainKey]?.[key] ?? notFoundString
+      } else {
+        return content?.[language]?.[key] ?? key;
+      }
     },
     [language, setLanguage],
   )
