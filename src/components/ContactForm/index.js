@@ -1,7 +1,7 @@
 import { lazy } from "react";
-import { Row,Col } from "antd";
+import { Row, Col } from "antd";
+import useTranslate from "Hooks/useTranslate";
 import Zoom from "react-reveal/Zoom";
-import { withTranslation } from "react-i18next";
 
 import useForm from "Hooks/useForm";
 import validate from "./validationRules";
@@ -12,7 +12,8 @@ const Input = lazy(() => import("../../common/Input"));
 const Button = lazy(() => import("../../common/Button"));
 const TextArea = lazy(() => import("../../common/TextArea"));
 
-const Contact = ({ title, id, t, subtitle }) => {
+const Contact = ({ title, id, subtitle }) => {
+  const { t } = useTranslate();
   const { values, errors, handleChange, handleSubmit } = useForm(validate);
 
   const ValidationType = ({ type }) => {
@@ -90,4 +91,4 @@ const Contact = ({ title, id, t, subtitle }) => {
   );
 };
 
-export default withTranslation()(Contact);
+export default Contact;

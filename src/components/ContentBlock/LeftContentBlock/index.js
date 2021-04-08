@@ -1,5 +1,5 @@
 import { Row, Col } from "antd";
-import { withTranslation } from "react-i18next";
+import useTranslate from "Hooks/useTranslate";
 import Slide from "react-reveal/Slide";
 import {Title, Subtitle} from 'Common';
 
@@ -12,10 +12,10 @@ const LeftContentBlock = ({
   title,
   content,
   section,
-  t,
   id,
   subtitle,
 }) => {
+  const { t } = useTranslate();
   return (
     <S.LeftContentBlock>
       <Row type="flex" justify="space-between" align="middle" id={id}>
@@ -60,4 +60,4 @@ const LeftContentBlock = ({
   );
 };
 
-export default withTranslation()(LeftContentBlock);
+export default LeftContentBlock;

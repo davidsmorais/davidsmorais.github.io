@@ -1,12 +1,13 @@
 import { lazy } from "react";
-import { withTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+import useTranslate from "Hooks/useTranslate";
 import { BlogPostTitle, Body } from "Common";
 
 import * as S from "./styles";
 const Button = lazy(() => import("Common/Button"));
 
-const Post = ({ title, brief, dateAdded, coverImage, slug, t }) => {
+const Post = ({ title, brief, dateAdded, coverImage, slug }) => {
+  const { t } = useTranslate();
   let history = useHistory();
   return (
     <S.BlogPostContainer>
@@ -24,4 +25,4 @@ const Post = ({ title, brief, dateAdded, coverImage, slug, t }) => {
   );
 };
 
-export default withTranslation()(Post);
+export default Post;

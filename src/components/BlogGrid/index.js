@@ -1,8 +1,9 @@
-import { withTranslation } from "react-i18next";
+import useTranslate from "Hooks/useTranslate";
 import BlogPost from "Components/BlogPost";
 import * as S from "./styles";
 
-const BlogGrid = ({ posts, loading, t }) => {
+const BlogGrid = ({ posts, loading }) => {
+  const { t } = useTranslate();
   return (
     <S.BlogsRow>
       {loading ||
@@ -12,4 +13,4 @@ const BlogGrid = ({ posts, loading, t }) => {
   );
 };
 
-export default withTranslation()(BlogGrid);
+export default BlogGrid;

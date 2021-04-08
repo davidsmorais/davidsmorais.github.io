@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "styled-components";
-import { I18nextProvider } from "react-i18next";
 import { GraphQLClient, ClientContext } from "graphql-hooks";
 import "antd/dist/antd.css";
 
 import Router from "./router";
-import i18n from "./translation";
 import * as serviceWorker from "./serviceWorker";
 import theme, { ThemeContext } from "Theme";
 import config from "Config";
@@ -28,7 +26,6 @@ const App = () => {
           },
         }}
       >
-        <I18nextProvider i18n={i18n}>
           <ClientContext.Provider value={gqlClient}>
             <ThemeContext.Consumer>
               {(ctx) => ctx && (
@@ -39,7 +36,6 @@ const App = () => {
               }
             </ThemeContext.Consumer>
           </ClientContext.Provider>
-        </I18nextProvider>
       </ThemeContext.Provider>
     </BrowserRouter>
   );

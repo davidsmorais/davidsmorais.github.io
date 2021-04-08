@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Row, Col } from "Common";
-import { withTranslation } from "react-i18next";
+import useTranslate from "Hooks/useTranslate";
 import SvgIcon, { ProjectIcon } from "Common/SvgIcon";
 import {
   SectionsBar,
@@ -14,7 +14,9 @@ import {
   StyledMonoLink,
 } from "./styles";
 
-const SkillsTerminal = ({ skills, t }) => {
+const SkillsTerminal = ({ skills }) => {
+
+  const { t } = useTranslate();
   const [activeSkill, changeActiveSkill] = useState(skills?.[0]);
   const [activeClickable, setClickable] = useState(null);
   const SectionBtns = () => {
@@ -127,4 +129,4 @@ const SkillsTerminal = ({ skills, t }) => {
   );
 };
 
-export default withTranslation()(SkillsTerminal);
+export default SkillsTerminal;

@@ -1,6 +1,6 @@
 import { lazy, useEffect } from "react";
 import { useQuery } from "graphql-hooks";
-import { withTranslation } from "react-i18next";
+import useTranslate from "Hooks/useTranslate";
 
 import IntroContent from "Content/IntroContent.json";
 import BlogContent from "Content/BlogContent.json";
@@ -33,7 +33,9 @@ const BLOGPOSTS_QUERY = `{
   }
 }`;
 
-const Home = ({ t }) => {
+const Home = () => {
+
+  const { t } = useTranslate();
   const { loading, data } = useQuery(BLOGPOSTS_QUERY);
 
   useEffect(() => {
@@ -98,4 +100,4 @@ const Home = ({ t }) => {
   );
 };
 
-export default withTranslation()(Home);
+export default Home;

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useQuery } from "graphql-hooks";
 import qs from "query-string";
-import { withTranslation } from "react-i18next";
+import useTranslate from "Hooks/useTranslate";
 
 import CONFIG from "Config";
 import { Title, Subtitle, Col } from "Common";
@@ -16,7 +16,8 @@ const POST_QUERY = (slug) => `{
   }
 }`;
 
-const BlogPost = ({ t }) => {
+const BlogPost = () => {
+  const { t } = useTranslate();
   const { slug } = qs.parse(location.search);
   const { loading, data } = useQuery(POST_QUERY(slug));
 
@@ -25,20 +26,20 @@ const BlogPost = ({ t }) => {
   const postHasLoaded = loading || !post;
   useEffect(() => {
     if (postHasLoaded) {
-          const element = document.getElementById("scroll-target");
-          if (element) {
-            element.scrollIntoView({
-              behavior: "smooth",
-              block: "end",
-              inline: "nearest",
-            });
-          }
+      const element = document.getElementById("scroll-target");
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "end",
+          inline: "nearest",
+        });
+      }
     }
   }, [postHasLoaded]);
 
   return (
     <S.StyledContainer>
-      <div id="scroll-target"/>
+      <div id="scroll-target" />
       {postHasLoaded ? (
         <Title>{t("Loading")}</Title>
       ) : (
@@ -53,4 +54,4 @@ const BlogPost = ({ t }) => {
   );
 };
 
-export default withTranslation()(BlogPost);
+export default BlogPost;

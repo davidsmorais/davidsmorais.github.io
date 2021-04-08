@@ -1,9 +1,10 @@
-import { withTranslation } from "react-i18next";
+import useTranslate from "Hooks/useTranslate";
 import Fade from "react-reveal/Fade";
 
 import * as S from "./styles";
 
-const Block = ({ title, content, t }) => {
+const Block = ({ title, content }) => {
+  const { t } = useTranslate();
   return (
     <S.Container>
       <Fade left>
@@ -16,4 +17,4 @@ const Block = ({ title, content, t }) => {
   );
 };
 
-export default withTranslation()(Block);
+export default Block;

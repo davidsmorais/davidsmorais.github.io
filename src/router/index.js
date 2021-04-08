@@ -14,7 +14,6 @@ const Router = () => {
       <Navbar />
       <Switch>
         {routes.map((routeItem) => {
-          console.log('rendering route', routeItem)
           return (
             <Route
               key={routeItem.component}

@@ -1,5 +1,5 @@
 import { Row, Col } from "antd";
-import { withTranslation } from "react-i18next";
+import useTranslate from "Hooks/useTranslate";
 import Slide from "react-reveal/Slide";
 
 import SvgIcon from "Common/SvgIcon";
@@ -13,12 +13,12 @@ const RightBlock = ({
   content,
   button,
   icon,
-  t,
   id,
   subtitle,
   section,
   loading,
 }) => {
+  const { t } = useTranslate();
   const scrollTo = (id) => {
     const element = document.getElementById(id);
     element.scrollIntoView({
@@ -86,4 +86,4 @@ const RightBlock = ({
   );
 };
 
-export default withTranslation()(RightBlock);
+export default RightBlock;

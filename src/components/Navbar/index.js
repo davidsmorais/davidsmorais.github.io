@@ -1,8 +1,8 @@
 import { useState, Fragment, lazy, useContext } from "react";
 import { Row, Col } from "antd";
-import { useLocation,  useHistory } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
-import { withTranslation } from "react-i18next";
+import useTranslate from "Hooks/useTranslate";
 import { ThemeContext } from "Theme";
 import { Subtitle } from "Common";
 
@@ -10,9 +10,10 @@ import * as S from "./styles";
 
 const SvgIcon = lazy(() => import("../../common/SvgIcon"));
 
-const Navbar = ({ t }) => {
+const Navbar = () => {
   let location = useLocation();
   let history = useHistory();
+  const { t } = useTranslate();
   const isHome = location.pathname === "/";
   const [isNavVisible] = useState(false);
   const [isSmallScreen] = useState(false);
@@ -88,7 +89,11 @@ const Navbar = ({ t }) => {
           classNames="NavAnimation"
           unmountOnExit
         >
-          <S.StyledSidebarMenu closable={false} visible={visible} onClose={onClose}>
+          <S.StyledSidebarMenu
+            closable={false}
+            visible={visible}
+            onClose={onClose}
+          >
             <Col style={{ marginBottom: "2.5rem" }}>
               <S.Label onClick={onClose}>
                 <Col span={12}>
@@ -107,4 +112,4 @@ const Navbar = ({ t }) => {
   );
 };
 
-export default withTranslation()(Navbar);
+export default Navbar;

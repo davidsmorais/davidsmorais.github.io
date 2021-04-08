@@ -1,9 +1,8 @@
 import { lazy, Fragment } from "react";
-import i18n from "i18next";
-import { withTranslation } from "react-i18next";
 import Fade from "react-reveal/Fade";
 import { ThemeContext } from "Theme";
 import CONFIG from "Config";
+import useTranslate from "Hooks/useTranslate";
 
 import { FooterTitle, Mono } from "Common/Text";
 import * as S from "./styles";
@@ -13,9 +12,10 @@ const Row = lazy(() => import("Common/Row"));
 const Col = lazy(() => import("Common/Col"));
 const Container = lazy(() => import("Common/Container"));
 
-const Footer = ({ t }) => {
+const Footer = () => {
+  const { t, setLanguage, language } = useTranslate();
   const handleChange = (event) => {
-    i18n.changeLanguage(event.target.value);
+    setLanguage(event.target.value);
   };
 
   const SocialLink = ({ href, src }) => {
@@ -96,7 +96,7 @@ const Footer = ({ t }) => {
                   <S.Label htmlFor="select-lang">{t("Language")}</S.Label>
                   <S.LangSelect
                     onChange={handleChange}
-                    value={i18n.language}
+                    value={language}
                     id="select-lang"
                   >
                     <option value="en">English 🇬🇧</option>
@@ -114,4 +114,4 @@ const Footer = ({ t }) => {
   );
 };
 
-export default withTranslation()(Footer);
+export default Footer;
