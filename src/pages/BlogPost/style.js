@@ -20,6 +20,10 @@ const StyledContainer = styled(Container)`
       font-size: 1.5rem;
       margin: 0;
     }
+    h3 {
+      font-size: 1.25rem;
+      margin: 0;
+    }
   }
 `;
 
@@ -31,6 +35,10 @@ const Content = styled.div`
     }
     h2 {
       font-size: 1.5rem;
+      margin: 0;
+    }
+    h3 {
+      font-size: 1.25rem;
       margin: 0;
     }
     p {
@@ -58,6 +66,9 @@ const Content = styled.div`
     font-weight: 900;
     line-height: 125%;
     font-family: Raleway;
+  }
+  h3 {
+    font-size: 1.75rem;
   }
   code {
     background-color: ${({ theme }) => theme.secondaryBackground};

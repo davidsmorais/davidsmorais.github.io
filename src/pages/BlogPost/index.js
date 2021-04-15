@@ -23,9 +23,10 @@ const BlogPost = () => {
 
   const post = data?.post;
 
-  const postHasLoaded = loading || !post;
+  const postHasLoaded = !loading && post;
   useEffect(() => {
     if (postHasLoaded) {
+      window.document.title = `DS Morais > ${post.title}`;
       const element = document.getElementById("scroll-target");
       if (element) {
         element.scrollIntoView({
@@ -40,7 +41,7 @@ const BlogPost = () => {
   return (
     <S.StyledContainer>
       <div id="scroll-target" />
-      {postHasLoaded ? (
+      {!postHasLoaded ? (
         <Title>{t("Loading")}</Title>
       ) : (
         <Col>
