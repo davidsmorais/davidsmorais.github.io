@@ -1,4 +1,3 @@
-
 import { useState, useCallback } from 'react'
 
 import translationEn from "Content/locales/en/translation.json";
@@ -19,8 +18,6 @@ const DEFAULT_LANGUAGE =
 const useTranslate = (mainKey) => {
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE)
   const languages = Object.keys(content)
-
-  console.log(language, content[language])
 
   const updatePageLanguage = useCallback(
     (lang) => {
