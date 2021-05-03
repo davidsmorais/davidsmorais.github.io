@@ -133,8 +133,8 @@ export default [
         },
         {
           type: "label",
-          link: "https://mdyna.dev",
-          content: "mdyna.dev",
+          link: "https://mdyna.netlify.app",
+          content: "mdyna.netlify.app",
         },
         {
           type: "label",
@@ -184,64 +184,11 @@ export default [
             "React, Styled Components, Netlify, Ruby on Rails, Heroku, PostgreSQL",
         },
       ],
-      kininha: [
-        {
-          type: "title",
-          content: "Sabores da Kininha",
-        },
-        {
-          type: "label",
-          link: "https://saboresdakininha.netlify.com",
-          content: "saboresdakininha.netlify.com",
-        },
-        {
-          type: "label",
-          content: "A freelance website for a food delivery service.",
-        },
-        {
-          type: "image",
-          src: "kininha.png",
-        },
-        {
-          type: "emoji",
-          content: "🔨",
-        },
-        {
-          type: "label",
-          content: "React, Styled Components, Netlify,",
-        },
-      ],
-      staccioneri: [
-        {
-          type: "title",
-          content: "Staccioneri",
-        },
-        {
-          type: "label",
-          content: "Work In Progress",
-        },
-        {
-          type: "label",
-          content: "A website generator based on instagram feeds.",
-        },
-        {
-          type: "image",
-          src: "staccio.png",
-        },
-        {
-          type: "emoji",
-          content: "🔨",
-        },
-        {
-          type: "label",
-          content: "Work in Progress",
-        },
-      ],
     },
     mainSkills: [
       {
         title: "Projects",
-        stack: ["MDyna", "Le Farn L", "Staccioneri", "Sabores da Kininha"],
+        stack: ["MDyna", "Le Farn L"],
         clickableKeys: [
           {
             label: "MDyna",
@@ -250,14 +197,6 @@ export default [
           {
             label: "Le Farn L",
             key: "farn-l",
-          },
-          {
-            label: "Staccioneri",
-            key: "staccioneri",
-          },
-          {
-            label: "Sabores da Kininha",
-            key: "kininha",
           },
         ],
       },
