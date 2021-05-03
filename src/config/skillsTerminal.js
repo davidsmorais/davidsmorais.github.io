@@ -162,8 +162,8 @@ export default [
         },
         {
           type: "label",
-          link: "https://le-farn-l.netlify.com",
-          content: "le-farn-l.netlify.com",
+          link: "https://farn-l.netlify.com",
+          content: "farn-l.netlify.com",
         },
         {
           type: "label",
