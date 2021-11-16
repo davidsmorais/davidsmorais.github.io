@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "styled-components";
 import { GraphQLClient, ClientContext } from "graphql-hooks";
@@ -11,13 +11,13 @@ import theme, { ThemeContext } from "Theme";
 import config from "Config";
 
 const gqlClient = new GraphQLClient({
-  url: config.blog.hashnodeOrigin
+  url: config.blog.hashnodeOrigin,
 });
 
 const App = () => {
   const [currentTheme, setTheme] = useState("dark");
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <ThemeContext.Provider
         value={{
           currentTheme,
@@ -26,18 +26,19 @@ const App = () => {
           },
         }}
       >
-          <ClientContext.Provider value={gqlClient}>
-            <ThemeContext.Consumer>
-              {(ctx) => ctx && (
-                  <ThemeProvider theme={theme[ctx.currentTheme]}>
-                    <Router />
-                  </ThemeProvider>
-                )
-              }
-            </ThemeContext.Consumer>
-          </ClientContext.Provider>
+        <ClientContext.Provider value={gqlClient}>
+          <ThemeContext.Consumer>
+            {(ctx) =>
+              ctx && (
+                <ThemeProvider theme={theme[ctx.currentTheme]}>
+                  <Router />
+                </ThemeProvider>
+              )
+            }
+          </ThemeContext.Consumer>
+        </ClientContext.Provider>
       </ThemeContext.Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

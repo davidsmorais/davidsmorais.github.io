@@ -98,7 +98,7 @@ export default [
         },
         {
           type: "label",
-          content: "jan 2020 - current",
+          content: "jan 2020 - dec 2021",
         },
         {
           type: "title",
@@ -123,7 +123,7 @@ export default [
           type: "label",
           link: "https://www.linkedin.com/in/dmorais92/",
           content: "for more info =>",
-          icon: "linked-in.svg"
+          icon: "linked-in.svg",
         },
       ],
       mdyna: [
@@ -221,4 +221,3 @@ export default [
     ],
   },
 ];
-

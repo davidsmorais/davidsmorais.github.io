@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useQuery } from "graphql-hooks";
-import qs from "query-string";
 import useTranslate from "Hooks/useTranslate";
 
 import CONFIG from "Config";
@@ -18,7 +17,9 @@ const POST_QUERY = (slug) => `{
 
 const BlogPost = () => {
   const { t } = useTranslate();
-  const { slug } = qs.parse(location.search);
+  const slug = location.hash.split("slug=")?.[1];
+  console.log("🚀 ~ file: index.js ~ line 22 ~ BlogPost ~ slug", slug);
+
   const { loading, data } = useQuery(POST_QUERY(slug));
 
   const post = data?.post;
