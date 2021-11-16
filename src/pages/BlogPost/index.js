@@ -18,7 +18,6 @@ const POST_QUERY = (slug) => `{
 const BlogPost = () => {
   const { t } = useTranslate();
   const slug = location.hash.split("slug=")?.[1];
-  console.log("🚀 ~ file: index.js ~ line 22 ~ BlogPost ~ slug", slug);
 
   const { loading, data } = useQuery(POST_QUERY(slug));
 

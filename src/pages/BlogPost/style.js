@@ -91,6 +91,10 @@ const Content = styled.div`
       }
     }
   }
+  li {
+    font-size: 1rem;
+    color: ${({ theme }) => theme.accent.main};
+  }
   a {
     text-decoration: underline;
     font-weight: 900;
