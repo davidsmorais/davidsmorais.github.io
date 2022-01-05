@@ -17,4 +17,11 @@ export const BlogsRow = styled(Row)`
       margin: ${({ theme }) => theme.margin}px auto;
     }
   }
+  > button {
+    margin: auto;
+    min-width: 150px;
+  }
+  button:hover {
+    border: 1px solid ${({ theme }) => theme.accent.main};
+  }
 `;
