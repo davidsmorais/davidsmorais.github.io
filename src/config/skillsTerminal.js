@@ -19,6 +19,10 @@ export default [
         stack: ["Bootstrap", "LESS", "Sass", "Styled Components"],
       },
       {
+        title: "GameDev",
+        stack: ["PhaserJS", "Aseprite", "Typescript"],
+      },
+      {
         title: "Other",
         stack: [
           "Webpack",
@@ -92,6 +96,14 @@ export default [
     title: "Projects & Work",
     clickables: {
       work: [
+        {
+          type: "title",
+          content: "Pennylane",
+        },
+        {
+          type: "label",
+          content: "dec 2021 ~ present",
+        },
         {
           type: "title",
           content: "Gaspard+Bruno",
@@ -234,8 +246,12 @@ export default [
       },
       {
         title: "Work",
-        stack: ["Gaspard + Bruno", "Intrasurance", "Frames"],
+        stack: ["Pennylane", "Gaspard + Bruno", "Intrasurance", "Frames"],
         clickableKeys: [
+          {
+            label: "Pennylane",
+            key: "work",
+          },
           {
             label: "Gaspard + Bruno",
             key: "work",
