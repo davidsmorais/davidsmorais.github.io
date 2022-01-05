@@ -1,8 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
-
+import { createGlobalStyle } from "styled-components";
 
 const Styles = createGlobalStyle`
-${({theme}) => `
+${({ theme }) => `
     body,
     html,
     a {
@@ -18,6 +17,22 @@ ${({theme}) => `
         background: ${theme.background};
         overflow-x: hidden;
     }
+    ::-webkit-scrollbar {
+    width: 1em;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #88888833;
+        border-radius: 10px;
+    }
+
+
 
     a:hover {
         color: ${theme.accent.main};

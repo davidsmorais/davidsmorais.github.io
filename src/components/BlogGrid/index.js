@@ -5,7 +5,7 @@ import * as S from "./styles";
 const BlogGrid = ({ posts, loading }) => {
   const { t } = useTranslate();
   return (
-    <S.BlogsRow>
+    <S.BlogsRow noWrap>
       {loading ||
         (!posts && t("Loading")) ||
         posts.map((post) => <BlogPost key={post.slug} {...post} />)}
