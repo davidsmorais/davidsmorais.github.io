@@ -34,7 +34,6 @@ const BLOGPOSTS_QUERY = `{
 }`;
 
 const Home = () => {
-
   const { t } = useTranslate();
   const { loading, data } = useQuery(BLOGPOSTS_QUERY);
 

@@ -12,9 +12,9 @@ const Post = ({ title, brief, dateAdded, coverImage, slug }) => {
   return (
     <S.BlogPostContainer>
       <BlogPostTitle>{title}</BlogPostTitle>
+      <S.DateText>{new Date(dateAdded).toLocaleDateString()}</S.DateText>
       <img src={coverImage} alt={slug} />
       <Body>{brief}</Body>
-      <S.DateText>{new Date(dateAdded).toLocaleDateString()}</S.DateText>
       <Button
         type="secondary"
         onClick={() => history.push(`/post?slug=${slug}`)}

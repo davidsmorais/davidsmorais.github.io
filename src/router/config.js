@@ -4,6 +4,10 @@ const routes = [
     component: "BlogPost",
   },
   {
+    path: "/all-posts",
+    component: "AllPosts",
+  },
+  {
     path: ["/", "/home"],
     exact: true,
     component: "Home",

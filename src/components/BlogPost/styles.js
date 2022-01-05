@@ -4,6 +4,7 @@ import { Col, Body } from "Common";
 export const BlogPostContainer = styled(Col)`
   flex: 1;
   min-width: 300px;
+  max-width: 300px;
   background: ${({ theme }) => theme.background};
   padding: ${({ theme }) => theme.margin * 2}px;
   padding-bottom: ${({ theme }) => theme.margin * 4}px;
