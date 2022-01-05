@@ -184,12 +184,44 @@ export default [
             "React, Styled Components, Netlify, Ruby on Rails, Heroku, PostgreSQL",
         },
       ],
+      "epoch-rift": [
+        {
+          type: "title",
+          content: "Epoch Rift",
+        },
+        {
+          type: "label",
+          link: "https://epochrift.com",
+          content: "epochrift.com",
+        },
+        {
+          type: "label",
+          content:
+            "Pixel art roguelike game with a fantasy theme. Play as a wizard or a witch in this fun platformer game.",
+        },
+        {
+          type: "image",
+          src: "epochrift.png",
+        },
+        {
+          type: "emoji",
+          content: "🔨",
+        },
+        {
+          type: "label",
+          content: "Typescript, PhaserJS, Webpack, Electron, Pixel Art",
+        },
+      ],
     },
     mainSkills: [
       {
         title: "Projects",
-        stack: ["MDyna", "Le Farn L"],
+        stack: ["Epoch Rift", "MDyna", "Le Farn L"],
         clickableKeys: [
+          {
+            label: "Epoch Rift",
+            key: "epoch-rift",
+          },
           {
             label: "MDyna",
             key: "mdyna",
