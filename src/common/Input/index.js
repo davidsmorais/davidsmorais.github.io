@@ -2,7 +2,6 @@ import useTranslate from "Hooks/useTranslate";
 import * as S from "./styles";
 
 const Input = ({ id, name, placeholder, onChange }) => {
-
   const { t } = useTranslate();
   return (
     <S.Container>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { notification } from "antd";
 import axios from "axios";
-import CONFIG from 'Config'
+import CONFIG from "Config";
 
 const useForm = (validate) => {
   const [values, setValues] = useState({});

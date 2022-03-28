@@ -1,4 +1,4 @@
-import skillsTerminal from './skillsTerminal'
+import skillsTerminal from "./skillsTerminal";
 
 export default {
   title: "Hello\nI'm David",
@@ -28,6 +28,6 @@ export default {
   skillsTerminal,
   blog: {
     hashnodeOrigin: "https://api.hashnode.com/",
-    hashnodeUsername: 'davidmorais'
-  }
+    hashnodeUsername: "davidmorais",
+  },
 };

@@ -4,14 +4,13 @@ import { MenuOutlined } from "@ant-design/icons";
 import { Drawer } from "antd";
 import { Body } from "Common/Text";
 
-
 export const StyledSidebarMenu = styled(Drawer)`
-&&& {
-  .ant-drawer-wrapper-body {
-    background: ${({ theme }) => theme.background} !important;
-    color: ${({ theme }) => theme.text};
+  &&& {
+    .ant-drawer-wrapper-body {
+      background: ${({ theme }) => theme.background} !important;
+      color: ${({ theme }) => theme.text};
+    }
   }
-}
 `;
 export const Header = styled.header`
   z-index: 1;
@@ -48,7 +47,7 @@ export const BackBtn = styled.button`
 
   &:hover {
     h2 {
-    color: ${({ theme }) => theme.accent.main};
+      color: ${({ theme }) => theme.accent.main};
     }
   }
   > * {

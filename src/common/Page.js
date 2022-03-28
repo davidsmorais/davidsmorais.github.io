@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const Page = styled.div`
   display: flex;
   flex-flow: column;
@@ -9,4 +8,4 @@ const Page = styled.div`
   background-color: ${(props) => props.theme?.[props.color || "background"]};
 `;
 
-export default Page
+export default Page;

@@ -1,5 +1,5 @@
 import IcomoonReact from "icomoon-react";
-import get from 'lodash.get';
+import get from "lodash.get";
 import iconSet from "./selection.json";
 import styled from "styled-components";
 
@@ -18,7 +18,8 @@ const StyledSvg = styled.div`
     }
     &:hover {
       path {
-        fill:  ${({ theme, hoverColor }) => (hoverColor ? get(theme, hoverColor) : "")};
+        fill: ${({ theme, hoverColor }) =>
+          hoverColor ? get(theme, hoverColor) : ""};
         stroke: ${({ theme, hoverColor, stroke }) =>
           hoverColor && stroke ? get(theme, hoverColor) : ""};
       }

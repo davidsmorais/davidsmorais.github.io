@@ -1,5 +1,5 @@
-import Col from './Col'
-import Container from './Container'
+import Col from "./Col";
+import Container from "./Container";
 import Row from "./Row";
 import Page from "./Page";
 import {
@@ -12,7 +12,7 @@ import {
   MonoLink,
   Labels,
   FooterTitle,
-} from './Text';
+} from "./Text";
 
 export {
   Col,

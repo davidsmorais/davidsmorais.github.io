@@ -142,4 +142,4 @@ export const LangSelect = styled.select`
 
 export const MonoMini = styled(Mono)`
   font-size: 14px;
-`
+`;

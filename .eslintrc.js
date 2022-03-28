@@ -11,9 +11,7 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: "module",
   },
-  plugins: ["react", "react-hooks", "jsx-a11y",
-  "prettier",
-  "babel"],
+  plugins: ["react", "react-hooks", "jsx-a11y", "prettier", "babel"],
   rules: {
     "react/jsx-filename-extension": [
       1,

@@ -14,4 +14,4 @@ const Col = styled.div`
   transition: all 0.25s;
 `;
 
-export default Col
+export default Col;

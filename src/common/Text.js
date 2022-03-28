@@ -10,9 +10,9 @@ export const Title = styled.h1`
   color: ${(props) => props.theme[props.color]};
   text-align: ${(props) => props.align || ""};
   @media only screen and (max-width: 480px) {
-      font-size: 3rem;
-      width: 250px;
-      margin: auto;
+    font-size: 3rem;
+    width: 250px;
+    margin: auto;
   }
   @media only screen and (max-width: 350px) {
     width: 200px;
@@ -50,7 +50,6 @@ export const Body = styled.p`
   text-align: ${(props) => props.align || ""};
 `;
 
-
 export const Link = styled.a`
   font-family: Cabin;
   font-style: normal;
@@ -59,7 +58,6 @@ export const Link = styled.a`
   line-height: 120%;
   text-align: ${(props) => props.align || ""};
 `;
-
 
 export const MonoLink = styled.a`
   font-family: Fira Code, monospace;

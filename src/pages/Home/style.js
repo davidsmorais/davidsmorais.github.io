@@ -91,4 +91,9 @@ const StyledBlackAndWhiteContainer = styled(Container)`
   }
 `;
 
-export default { StyledBackgroundContainer , LoadingModal ,  StyledContainer, StyledBlackAndWhiteContainer };
+export default {
+  StyledBackgroundContainer,
+  LoadingModal,
+  StyledContainer,
+  StyledBlackAndWhiteContainer,
+};

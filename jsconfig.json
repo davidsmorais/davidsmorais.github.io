@@ -2,30 +2,14 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "Common": [
-        "./common/*"
-      ],
-      "Components": [
-        "./components/*"
-      ],
-      "Config": [
-        "./config/index.js"
-      ],
-      "Content": [
-        "./content/*"
-      ],
-      "Hooks": [
-        "./hooks/*"
-      ],
-      "Pages": [
-        "./pages/*"
-      ],
-      "Theme": [
-        "./theme.js"
-      ],
-      "Utils": [
-        "./utils"
-      ]
+      "Common": ["./common/*"],
+      "Components": ["./components/*"],
+      "Config": ["./config/index.js"],
+      "Content": ["./content/*"],
+      "Hooks": ["./hooks/*"],
+      "Pages": ["./pages/*"],
+      "Theme": ["./theme.js"],
+      "Utils": ["./utils"]
     }
   }
 }

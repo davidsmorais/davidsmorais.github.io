@@ -15,7 +15,6 @@ import {
 } from "./styles";
 
 const SkillsTerminal = ({ skills }) => {
-
   const { t } = useTranslate();
   const [activeSkill, changeActiveSkill] = useState(skills?.[0]);
   const [activeClickable, setClickable] = useState(null);

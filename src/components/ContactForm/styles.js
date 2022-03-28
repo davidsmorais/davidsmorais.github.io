@@ -7,7 +7,7 @@ export const TitleTop = styled(Title)`
   color: ${({ theme }) => theme.background};
   @media only screen and (max-width: 480px) {
     font-size: 2.5rem;
-    margin-left: ${({theme}) => theme.margin}px;
+    margin-left: ${({ theme }) => theme.margin}px;
   }
 `;
 

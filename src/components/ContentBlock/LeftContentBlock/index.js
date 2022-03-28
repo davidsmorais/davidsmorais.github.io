@@ -1,35 +1,28 @@
 import { Row, Col } from "antd";
 import useTranslate from "Hooks/useTranslate";
 import Slide from "react-reveal/Slide";
-import {Title, Subtitle} from 'Common';
+import { Title, Subtitle } from "Common";
 
 import SvgIcon from "Common/SvgIcon";
 
 import * as S from "./styles";
 
-const LeftContentBlock = ({
-  icon,
-  title,
-  content,
-  section,
-  id,
-  subtitle,
-}) => {
+const LeftContentBlock = ({ icon, title, content, section, id, subtitle }) => {
   const { t } = useTranslate();
   return (
     <S.LeftContentBlock>
       <Row type="flex" justify="space-between" align="middle" id={id}>
         {icon && (
-        <Col lg={11} md={11} sm={12} xs={24}>
-          <Slide left>
-            <SvgIcon
-              src={icon}
-              className="about-block-image"
-              width="100%"
-              height="100%"
-            />
-          </Slide>
-        </Col>
+          <Col lg={11} md={11} sm={12} xs={24}>
+            <Slide left>
+              <SvgIcon
+                src={icon}
+                className="about-block-image"
+                width="100%"
+                height="100%"
+              />
+            </Slide>
+          </Col>
         )}
         <Col lg={11} md={11} sm={11} xs={24}>
           <Slide right>

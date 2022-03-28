@@ -9,7 +9,7 @@ import ContactContent from "Content/ContactContent.json";
 import CONFIG from "Config";
 import { Row, Title } from "Common";
 
-const Banner= lazy(() => import("Components/Banner"));
+const Banner = lazy(() => import("Components/Banner"));
 const SkillsTerminal = lazy(() => import("Components/SkillsTerminal"));
 const ContactFrom = lazy(() => import("Components/ContactForm"));
 const ContentBlock = lazy(() => import("Components/ContentBlock"));
@@ -50,7 +50,7 @@ const Home = () => {
 
   return (
     <S.StyledContainer>
-      <Banner/>
+      <Banner />
       {loading && (
         <S.LoadingModal>
           <Title>{t("loading")}</Title>
