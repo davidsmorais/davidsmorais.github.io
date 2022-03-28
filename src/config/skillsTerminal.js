@@ -224,11 +224,39 @@ export default [
           content: "Typescript, PhaserJS, Webpack, Electron, Pixel Art",
         },
       ],
+      kuro: [
+        {
+          type: "title",
+          content: "Kuro",
+        },
+        {
+          type: "label",
+          link: "https://github.com/davidsmorais/kuro/",
+          content: "Github",
+        },
+        {
+          type: "label",
+          content:
+            "Elegant Microsoft To-Do desktop client for Linux with dark themes and other features.",
+        },
+        {
+          type: "image",
+          src: "kuro.png",
+        },
+        {
+          type: "emoji",
+          content: "🔨",
+        },
+        {
+          type: "label",
+          content: "Electron, Javascript, CSS, Node",
+        },
+      ],
     },
     mainSkills: [
       {
         title: "Projects",
-        stack: ["Epoch Rift", "MDyna", "Le Farn L"],
+        stack: ["Epoch Rift", "MDyna", "Le Farn L", "Kuro"],
         clickableKeys: [
           {
             label: "Epoch Rift",
@@ -241,6 +269,10 @@ export default [
           {
             label: "Le Farn L",
             key: "farn-l",
+          },
+          {
+            label: "Kuro",
+            key: "kuro",
           },
         ],
       },
