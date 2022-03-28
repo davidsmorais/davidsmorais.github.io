@@ -16,12 +16,11 @@ const Row = styled.div`
 
   @media only screen and (max-width: 480px) {
     &&&&& {
-    margin: 0;
-    padding: 0;
-    padding-top: 0;
+      margin: 0;
+      padding: 0;
+      padding-top: 0;
     }
   }
 `;
 
-
-export default Row
+export default Row;

@@ -232,7 +232,7 @@ export default [
         {
           type: "label",
           link: "https://github.com/davidsmorais/kuro/",
-          content: "Github",
+          content: "🌳 GitHub",
         },
         {
           type: "label",

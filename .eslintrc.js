@@ -12,7 +12,7 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "react-hooks", "jsx-a11y",
-  // "prettier",
+  "prettier",
   "babel"],
   rules: {
     "react/jsx-filename-extension": [
@@ -33,7 +33,7 @@ module.exports = {
     "react/prop-types": 1,
     "react-hooks/exhaustive-deps": "warn",
     "no-console": "off",
-    // "prettier/prettier": ["warn"],
+    "prettier/prettier": ["warn"],
   },
   globals: {
     window: true,

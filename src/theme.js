@@ -1,18 +1,19 @@
-import React from 'react';
+import React from "react";
 const common = {
   margin: 8,
   mainFont: "'Cabin', sans-serif",
-  secondaryFont: "'Raleway', sans-serif"
-}
+  secondaryFont: "'Raleway', sans-serif",
+};
 
 const colors = {
-  black: '#111111',
-  darkGrey: '#212121',
-  grey: '#535353',
-  white: '#FFFFFF',
-  teal: '#66EFAD',
-  lightGrey: '#EAEAEA',
-}
+  black: "#111111",
+  darkGrey: "#212121",
+  grey: "#535353",
+  white: "#FFFFFF",
+  teal: "#66EEAA",
+  lightGrey: "#EAEAEA",
+  red: "#FF4477",
+};
 
 const gradients = {
   whiteGradient: (text, accent) =>
@@ -23,21 +24,23 @@ const gradients = {
 
 const dark = {
   ...common,
+  ...colors,
   background: colors.black,
   secondaryBackground: colors.darkGrey,
   neutral: colors.grey,
   text: colors.white,
   accent: {
     main: colors.teal,
-    secondary: colors.lightGrey
+    secondary: colors.lightGrey,
   },
   gradients: {
-    main: gradients.darkGradient(colors.teal, colors.black)
-  }
-}
+    main: gradients.darkGradient(colors.teal, colors.black),
+  },
+};
 
 const white = {
   ...common,
+  ...colors,
   background: colors.lightGrey,
   secondaryBackground: colors.white,
   neutral: colors.grey,
@@ -47,10 +50,10 @@ const white = {
     secondary: colors.darkGrey,
   },
   gradients: {
-    main: gradients.whiteGradient(colors.white, colors.teal)
-  }
+    main: gradients.whiteGradient(colors.white, colors.teal),
+  },
 };
 
 export const ThemeContext = React.createContext("dark");
 
-export default {dark, white}
+export default { dark, white };
