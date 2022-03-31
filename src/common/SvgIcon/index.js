@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 const StyledIcon = styled.img`
   width: ${({ size }) => size}px;
-  height: ${({ size }) => size}px;
 `;
 const StyledSvg = styled.div`
   svg {

@@ -46,7 +46,7 @@ const Footer = () => {
                         <SvgIcon
                           src={`logo-${ctx.currentTheme}.png`}
                           aria-label="homepage"
-                          size="120"
+                          size="240"
                         />
                       )}
                     </ThemeContext.Consumer>
