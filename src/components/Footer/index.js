@@ -1,6 +1,5 @@
 import { lazy, Fragment } from "react";
 import Fade from "react-reveal/Fade";
-import { ThemeContext } from "Theme";
 import CONFIG from "Config";
 import useTranslate from "Hooks/useTranslate";
 
@@ -41,15 +40,11 @@ const Footer = () => {
               <Col size={1}>
                 <S.NavLink to="/">
                   <S.LogoContainer>
-                    <ThemeContext.Consumer>
-                      {(ctx) => (
-                        <SvgIcon
-                          src={`logo-${ctx.currentTheme}.png`}
-                          aria-label="homepage"
-                          size="240"
-                        />
-                      )}
-                    </ThemeContext.Consumer>
+                    <SvgIcon
+                      src={`logo-letters.png`}
+                      aria-label="homepage"
+                      size="240"
+                    />
                   </S.LogoContainer>
                 </S.NavLink>
               </Col>
