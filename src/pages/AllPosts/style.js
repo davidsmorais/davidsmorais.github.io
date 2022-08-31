@@ -25,6 +25,18 @@ const StyledContainer = styled(Container)`
       margin: 0;
     }
   }
+  .pagination-controls {
+    button {
+      background: transparent;
+      font-size: 32px;
+      &:disabled {
+        filter: grayscale(1);
+      }
+    }
+    p {
+      margin: 0 !important;
+    }
+  }
 `;
 
 const Content = styled.div`
