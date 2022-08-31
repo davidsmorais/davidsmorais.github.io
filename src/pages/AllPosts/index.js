@@ -1,4 +1,4 @@
-import { lazy, useState } from "react";
+import { lazy, useState, useEffect } from "react";
 import { useQuery } from "graphql-hooks";
 import useTranslate from "Hooks/useTranslate";
 
@@ -15,6 +15,12 @@ const AllPosts = () => {
   const { t } = useTranslate();
   const [page, setPage] = useState(0);
   const [maxPage, setMaxPage] = useState(null);
+  const scrollTo = (id) => {
+    const element = document.getElementById(id);
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   const BLOGPOSTS_QUERY = `{
     user(username: "${CONFIG.blog.hashnodeUsername}") {
       publication {
@@ -31,7 +37,17 @@ const AllPosts = () => {
   }`;
 
   const { loading, data } = useQuery(BLOGPOSTS_QUERY);
-
+  const posts = data?.user?.publication?.posts;
+  const handleSetPage = (page) => {
+    scrollTo("all-posts-title");
+    setPage(page);
+  };
+  useEffect(() => {
+    if (posts && !posts.length && page && !maxPage) {
+      setMaxPage(page - 1);
+      handleSetPage(page - 1);
+    }
+  }, [data, page]);
   return (
     <S.StyledContainer>
       <div id="scroll-target" />
@@ -39,20 +55,22 @@ const AllPosts = () => {
         <Title>{t("Loading")}</Title>
       ) : (
         <Container>
-          <Title>{t("allPosts")}</Title>
+          <Title id="all-posts-title">{t("allPosts")}</Title>
           <Link href="/">🏠 {t("Home")}</Link>
-          <AllPostsGrid
-            loading={loading}
-            posts={data?.user?.publication?.posts}
-          />
+          <AllPostsGrid loading={loading} posts={posts} />
           <Row justify="center" align="center" className="pagination-controls">
-            <Button onClick={() => setPage(page - 1)} disabled={page === 0}>
+            <Button
+              onClick={() => handleSetPage(page - 1)}
+              disabled={page === 0}
+            >
               ⬅️
             </Button>
-            <Body>Page: {page + 1}</Body>
+            <Body>
+              Page: {page + 1} {maxPage && `of ${maxPage + 1}`}
+            </Body>
             <Button
-              onClick={() => setPage(page + 1)}
-              disabled={page === maxPage}
+              onClick={() => handleSetPage(page + 1)}
+              disabled={page === maxPage || posts.length !== 6}
             >
               ➡️
             </Button>
