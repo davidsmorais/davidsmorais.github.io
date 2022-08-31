@@ -12,7 +12,7 @@ export const ProjectsContainer = styled(Col)`
 export const ProjectsCard = styled(Col)`
   border: 1px solid ${({ theme }) => theme.grey};
   border-radius: 16px;
-  margin-top: 16px;
+  margin-top: 32px;
   flex: 1;
   max-width: 320px;
   background: ${({ theme }) => `${theme.darkGrey}`};
@@ -25,9 +25,13 @@ export const ProjectsCard = styled(Col)`
     font-size: 20px;
     margin: 0 8px;
   }
+  img {
+    width: 64px;
+    margin: 0 auto;
+  }
   transition: scale 0.5 ease-in;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     > * {
       color: ${({ theme }) => theme.accent.main} !important;
     }

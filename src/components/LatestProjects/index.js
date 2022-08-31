@@ -1,5 +1,5 @@
 import REPOS from "Config/repos";
-import { Title, BlogPostTitle, Link } from "Common/Text";
+import { Title, BlogPostTitle, Link, Mono } from "Common/Text";
 import SvgIcon from "Common/SvgIcon";
 import Row from "Common/Row";
 import * as S from "./styles";
@@ -8,7 +8,7 @@ const LatestProjects = () => {
   return (
     <S.ProjectsContainer>
       <Title>Latest Projects</Title>
-      <Row justify="center">
+      <Row justify="flex-start" noWrap scroll>
         {REPOS.map((repo) => (
           <a
             key={repo.label}
@@ -26,6 +26,8 @@ const LatestProjects = () => {
                   <span>{"🔗"}</span>
                 )}
               </Row>
+              <Mono>{repo.description}</Mono>
+              {repo.logoUrl && <img src={repo.logoUrl} />}
             </S.ProjectsCard>
           </a>
         ))}

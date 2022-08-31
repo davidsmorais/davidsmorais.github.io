@@ -10,6 +10,7 @@ const Row = styled.div`
   align-items: ${(props) => props.align};
   max-width: 100vw;
   overflow: hidden;
+  overflow-x: ${({ scroll }) => (scroll ? "scroll" : "initial")};
   margin: ${(props) => (props.margin ?? 1) * props.theme.margin}px
     ${(props) =>
       props.center ? "auto" : (props.margin ?? 1) * props.theme.margin + "px"};
