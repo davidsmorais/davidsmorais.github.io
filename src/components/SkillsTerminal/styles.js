@@ -36,7 +36,13 @@ export const ClickablesContainer = styled(Col)`
 
 export const StyledMonoLink = styled(MonoLink)`
   font-size: 14px;
+  display: flex;
+  flex-flow: row nowrap;
   margin-bottom: ${({ theme }) => theme.margin}px;
+  align-items: flex-end;
+  svg {
+    margin-left: 16px;
+  }
   && {
     :hover {
       div svg path {

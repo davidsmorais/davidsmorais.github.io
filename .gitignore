@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+.dccache
 
 # testing
 /coverage
@@ -11,7 +12,6 @@
 # production
 /build
 build.zip
-.dccache
 
 # misc
 .DS_Store
