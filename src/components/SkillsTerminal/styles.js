@@ -58,7 +58,7 @@ export const MonoLabel = styled(Mono)`
 export const TerminalBtn = styled.span`
   width: 16px;
   height: 16px;
-  background: ${({ theme }) => theme.accent.main};
+  background: ${({ theme, color }) => theme[color] || theme.teal};
   border-radius: 50px;
   margin: ${({ theme }) => theme.margin}px ${({ theme }) => theme.margin}px
     ${({ theme }) => theme.margin}px 0;

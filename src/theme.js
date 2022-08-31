@@ -13,6 +13,7 @@ const colors = {
   teal: "#66EEAA",
   lightGrey: "#EAEAEA",
   red: "#FF4477",
+  yellow: "#ffc56f",
 };
 
 const gradients = {

@@ -118,8 +118,8 @@ const SkillsTerminal = ({ skills }) => {
         <MonoTitle>~david 🌍</MonoTitle>
         <Row>
           <TerminalBtn />
-          <TerminalBtn />
-          <TerminalBtn />
+          <TerminalBtn color="yellow" />
+          <TerminalBtn color="red" />
         </Row>
       </Titlebar>
       <SectionBtns />
