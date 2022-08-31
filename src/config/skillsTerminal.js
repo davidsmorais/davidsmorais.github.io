@@ -141,7 +141,7 @@ export default [
       mdyna: [
         {
           type: "title",
-          content: "MDyna",
+          content: "MDyna (Legacy)",
         },
         {
           type: "label",
@@ -256,23 +256,23 @@ export default [
     mainSkills: [
       {
         title: "Projects",
-        stack: ["Epoch Rift", "MDyna", "Le Farn L", "Kuro"],
+        stack: ["Epoch Rift", "MDyna 💀", "Le Farn L 💀", "Kuro"],
         clickableKeys: [
           {
             label: "Epoch Rift",
             key: "epoch-rift",
           },
           {
-            label: "MDyna",
+            label: "Kuro",
+            key: "kuro",
+          },
+          {
+            label: "MDyna 💀",
             key: "mdyna",
           },
           {
-            label: "Le Farn L",
+            label: "Le Farn L 💀",
             key: "farn-l",
-          },
-          {
-            label: "Kuro",
-            key: "kuro",
           },
         ],
       },

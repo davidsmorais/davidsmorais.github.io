@@ -57,13 +57,15 @@ export const Link = styled.a`
   font-size: 1.05rem;
   line-height: 120%;
   text-align: ${(props) => props.align || ""};
+  text-decoration: underline;
 `;
 
 export const MonoLink = styled.a`
   font-family: Fira Code, monospace;
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 18px;
+  text-decoration: underline;
   line-height: 125%;
   text-align: ${(props) => props.align || ""};
 `;
