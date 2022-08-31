@@ -42,6 +42,7 @@ export const BackBtn = styled.button`
   color: ${({ theme }) => theme.text};
   transition: all 0.5s;
   display: flex;
+  max-height: 32px;
   flex-flow: row nowrap;
   align-items: center;
 
