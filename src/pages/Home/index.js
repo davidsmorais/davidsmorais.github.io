@@ -14,6 +14,7 @@ const SkillsTerminal = lazy(() => import("Components/SkillsTerminal"));
 const ContactFrom = lazy(() => import("Components/ContactForm"));
 const ContentBlock = lazy(() => import("Components/ContentBlock"));
 const BlogGrid = lazy(() => import("Components/BlogGrid"));
+const LatestProjects = lazy(() => import("Components/LatestProjects"));
 const ScrollToTop = lazy(() => import("Common/ScrollToTop"));
 const Container = lazy(() => import("Common/Container"));
 
@@ -71,7 +72,9 @@ const Home = () => {
           />
         </Row>
       </S.StyledBackgroundContainer>
-      <Row size={4}></Row>
+      <Row>
+        <LatestProjects />
+      </Row>
       <S.StyledBackgroundContainer bg={2}>
         <Container transparent>
           <ContentBlock

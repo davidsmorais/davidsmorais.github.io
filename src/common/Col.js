@@ -7,8 +7,8 @@ const Col = styled.div`
   margin: 0;
   justify-content: ${(props) => props.justify};
   align-items: ${(props) => props.align};
-  margin-right: ${(props) => props.theme.margin}px;
-  margin-bottom: ${(props) => props.theme.margin}px;
+  margin-right: ${(props) => props.margin || props.theme.margin}px;
+  margin-bottom: ${(props) => props.margin || props.theme.margin}px;
   width: ${(props) => props.hidden && "0"};
   height: ${(props) => props.hidden && "0"};
   transition: all 0.25s;
