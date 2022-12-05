@@ -15,6 +15,14 @@ export default [
     link: "https://epochrift.com",
   },
   {
+    label: "Dark Magic Themes 🎨",
+    description:
+      "A set of original dark themes for VSCode including custom versions of popular themes like Tokyo Night and Dracula",
+    logoUrl:
+      "https://davidmorais.gallerycdn.vsassets.io/extensions/davidmorais/dark-magic-themes/0.1.2/1670264988633/Microsoft.VisualStudio.Services.Icons.Default",
+    link: "https://marketplace.visualstudio.com/items?itemName=DavidMorais.dark-magic-themes",
+  },
+  {
     label: "React Bifrost ❄️",
     repo: "Dark-Magic-Studios/react-bifrost",
     description:

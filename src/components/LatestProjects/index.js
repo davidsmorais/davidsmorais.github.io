@@ -19,7 +19,7 @@ const LatestProjects = () => {
             <S.ProjectsCard margin={32}>
               <BlogPostTitle>{repo.label}</BlogPostTitle>
               <Row justify="flex-start" align="center" paddingInner={0} noWrap>
-                <Link>{repo.repo || repo.link}</Link>
+                <Link>{repo.repo || "Link"}</Link>
                 {repo.repo ? (
                   <SvgIcon src="github.svg" color={"white"} />
                 ) : (
