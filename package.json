@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^12.6.2",
     "antd": "^4.10.3",
     "axios": "^0.21.1",
-    "graphql-hooks": "^5.1.1",
+    "graphql-hooks": "^5.11.4",
     "icomoon-react": "^2.0.19",
     "lodash.get": "^4.4.2",
     "lodash.snakecase": "^4.1.1",
