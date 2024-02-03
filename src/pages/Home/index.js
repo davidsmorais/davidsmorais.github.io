@@ -26,6 +26,7 @@ const BLOGPOSTS_QUERY = `{
       totalDocuments
       edges {
         node {
+          id
           title
           brief
           slug

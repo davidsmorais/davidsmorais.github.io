@@ -1,25 +1,25 @@
 import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { useQuery } from "graphql-hooks";
 import useTranslate from "Hooks/useTranslate";
-
-import CONFIG from "Config";
-import { Title, Subtitle, Col } from "Common";
+import { Title, Subtitle, Col, Button } from "Common";
 
 import S from "./style";
 const POST_QUERY = (slug) => `{
-  post(slug:"${slug}", hostname: "${CONFIG.blog.hashnodeUsername}")  {
+  post(id:"${slug}")  {
     title
-    dateAdded
-    coverImage
-    content
+    publishedAt
+    coverImage {url}
+    content {html}
   }
 }`;
 
 const BlogPost = () => {
   const { t } = useTranslate();
-  const slug = location.hash.split("slug=")?.[1];
+  const id = location.hash.split("=")[1];
+  let history = useHistory();
 
-  const { loading, data } = useQuery(POST_QUERY(slug));
+  const { loading, data } = useQuery(POST_QUERY(id));
 
   const post = data?.post;
 
@@ -38,6 +38,18 @@ const BlogPost = () => {
     }
   }, [postHasLoaded]);
 
+  if (!loading && data.post === null) {
+    return (
+      <S.StyledContainer>
+        <Title color="red">{t("error")}</Title>
+        <Subtitle>{t("postNotFound")}</Subtitle>
+        <Button onClick={() => history.push("/all-posts")}>
+          {t("gotoAllPosts")}
+        </Button>
+      </S.StyledContainer>
+    );
+  }
+  console.log(data);
   return (
     <S.StyledContainer>
       <div id="scroll-target" />
@@ -45,10 +57,10 @@ const BlogPost = () => {
         <Title>{t("Loading")}</Title>
       ) : (
         <Col>
-          <img src={post.coverImage} />
+          <img src={post.coverImage.url} />
           <Title>{post.title}</Title>
-          <Subtitle>{new Date(post.dateAdded).toLocaleDateString()}</Subtitle>
-          <S.Content dangerouslySetInnerHTML={{ __html: post.content }} />
+          <Subtitle>{new Date(post.publishedAt).toLocaleDateString()}</Subtitle>
+          <S.Content dangerouslySetInnerHTML={{ __html: post.content.html }} />
         </Col>
       )}
     </S.StyledContainer>
