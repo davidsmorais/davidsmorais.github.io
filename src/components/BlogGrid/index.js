@@ -4,7 +4,7 @@ import BlogPost from "Components/BlogPost";
 import Button from "Common/Button";
 import * as S from "./styles";
 
-const BlogGrid = ({ posts, loading }) => {
+const BlogGrid = ({ posts = [], loading }) => {
   const { t } = useTranslate();
   const trimmedPosts = posts?.slice(0, 4) ?? [];
   let history = useHistory();
