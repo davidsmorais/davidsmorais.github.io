@@ -13,6 +13,7 @@ const AllPostsGrid = lazy(() => import("Components/AllPostsGrid"));
 
 const AllPosts = () => {
   const { t } = useTranslate();
+  const [cursor] = useState(null);
   const [page, setPage] = useState(0);
   const [maxPage, setMaxPage] = useState(null);
   const scrollTo = (id) => {
@@ -21,27 +22,42 @@ const AllPosts = () => {
       behavior: "smooth",
     });
   };
-  const BLOGPOSTS_QUERY = `{
-    user(username: "${CONFIG.blog.hashnodeUsername}") {
-      publication {
-        posts(page: ${page}) {
-          title
-          brief
-          slug
-          coverImage
-          dateAdded
-          cuid
+  const BLOGPOSTS_QUERY = `
+  {
+    publication(host: "${CONFIG.blog.hashNodeHost}") {
+      posts(first: 5, after: ${cursor ? `"${cursor}"` : null}) {
+        totalDocuments
+        edges {
+          cursor
+          node {
+            title
+            brief
+            slug
+            coverImage {
+              url
+            }
+            publishedAt
+            cuid
+          }
         }
       }
     }
   }`;
 
   const { loading, data } = useQuery(BLOGPOSTS_QUERY);
-  const posts = data?.user?.publication?.posts;
+  const edges = data?.publication?.posts?.edges ?? [];
+  const posts = edges.map((edge) => edge.node);
+  console.log("🚀 ~ AllPosts ~ posts:", posts);
+  const lastCursor = edges[edges.length - 1]?.cursor;
   const handleSetPage = (page) => {
     scrollTo("all-posts-title");
     setPage(page);
   };
+  // useEffect(() => {
+  //   if (edges && edges.length && lastCursor) {
+  //     setCursor(lastCursor);
+  //   }
+  // }, [edges, lastCursor]);
   useEffect(() => {
     if (posts && !posts.length && page && !maxPage) {
       setMaxPage(page - 1);
