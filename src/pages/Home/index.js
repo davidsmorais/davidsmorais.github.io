@@ -21,15 +21,20 @@ const Container = lazy(() => import("Common/Container"));
 import S from "./style";
 
 const BLOGPOSTS_QUERY = `{
-  user(username: "${CONFIG.blog.hashnodeUsername}") {
-    publication {
-      posts(page: 0) {
-        title
-        brief
-        slug
-        coverImage
-        dateAdded
-        cuid
+  publication(host: "${CONFIG.blog.hashNodeHost}") {
+    posts(first: 5) {
+      totalDocuments
+      edges {
+        node {
+          title
+          brief
+          slug
+          coverImage {
+            url
+          }
+          publishedAt
+          cuid
+        }
       }
     }
   }
@@ -89,7 +94,7 @@ const Home = () => {
       </S.StyledBackgroundContainer>
       <Container>
         <ContentBlock type="left" title={BlogContent.title} id="blog" />
-        <BlogGrid loading={loading} posts={data?.user?.publication?.posts} />
+        <BlogGrid loading={loading} posts={data?.publication?.posts?.edges} />
       </Container>
       <S.StyledBlackAndWhiteContainer>
         <Row justify="center">

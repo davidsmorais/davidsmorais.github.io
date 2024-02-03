@@ -27,7 +27,7 @@ const RightBlock = ({
   };
   return (
     <S.RightBlockContainer>
-      <Row type="flex" justify="space-between" MinParaalign="middle" id={id}>
+      <Row type="flex" justify="space-between" align="middle" id={id}>
         <Col lg={11} md={24} sm={24} xs={24}>
           <Slide top cascade when={!loading}>
             <S.ContentWrapper hasSection={Boolean(section?.length)}>
