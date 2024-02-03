@@ -48,6 +48,10 @@ export const Body = styled.p`
   font-size: 1rem;
   line-height: 150%;
   text-align: ${(props) => props.align || ""};
+  color: ${(props) =>
+    props.error
+      ? props.theme.red
+      : props.theme[props.color] || props.theme.white};
 `;
 
 export const Link = styled.a`
