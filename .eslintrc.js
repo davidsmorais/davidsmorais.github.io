@@ -31,6 +31,7 @@ module.exports = {
     "react/prop-types": 1,
     "react-hooks/exhaustive-deps": "warn",
     "no-console": "off",
+    "no-debugger": "off",
     "prettier/prettier": ["warn"],
   },
   globals: {

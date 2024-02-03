@@ -3,29 +3,23 @@ import { useQuery } from "graphql-hooks";
 import useTranslate from "Hooks/useTranslate";
 
 import CONFIG from "Config";
-import { Title, Link, Body, Row } from "Common";
+import { Title, Link } from "Common";
 import Button from "Common/Button";
 
 import S from "./style";
 
 const Container = lazy(() => import("Common/Container"));
 const AllPostsGrid = lazy(() => import("Components/AllPostsGrid"));
+const PAGE_SIZE = 6;
 
 const AllPosts = () => {
   const { t } = useTranslate();
-  const [cursor] = useState(null);
-  const [page, setPage] = useState(0);
-  const [maxPage, setMaxPage] = useState(null);
-  const scrollTo = (id) => {
-    const element = document.getElementById(id);
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+  const [cursor, setCursor] = useState(null);
+  const pageCursor = cursor ? `"${cursor}"` : null;
   const BLOGPOSTS_QUERY = `
   {
     publication(host: "${CONFIG.blog.hashNodeHost}") {
-      posts(first: 5, after: ${cursor ? `"${cursor}"` : null}) {
+      posts(first: ${PAGE_SIZE}, after: ${pageCursor}) {
         totalDocuments
         edges {
           cursor
@@ -46,51 +40,35 @@ const AllPosts = () => {
 
   const { loading, data } = useQuery(BLOGPOSTS_QUERY);
   const edges = data?.publication?.posts?.edges ?? [];
-  const posts = edges.map((edge) => edge.node);
-  console.log("🚀 ~ AllPosts ~ posts:", posts);
-  const lastCursor = edges[edges.length - 1]?.cursor;
-  const handleSetPage = (page) => {
-    scrollTo("all-posts-title");
-    setPage(page);
+  const totalDocuments = data?.publication?.posts?.totalDocuments ?? 0;
+  const [posts, setPosts] = useState([]);
+  const nodes = edges.map((edge) => edge.node);
+  const handleLoadMore = () => {
+    setCursor(edges[edges.length - 1].cursor);
   };
-  // useEffect(() => {
-  //   if (edges && edges.length && lastCursor) {
-  //     setCursor(lastCursor);
-  //   }
-  // }, [edges, lastCursor]);
   useEffect(() => {
-    if (posts && !posts.length && page && !maxPage) {
-      setMaxPage(page - 1);
-      handleSetPage(page - 1);
+    if (nodes && nodes[0]) {
+      const postsIds = posts.map((post) => post.cuid);
+      if (!postsIds.find((id) => id === nodes[0]?.cuid)) {
+        console.log("Setting posts", posts[0]?.cuid, nodes[0]?.cuid);
+        debugger;
+        setPosts([...posts, ...nodes]);
+      }
     }
-  }, [data, page]);
+  }, [nodes, posts]);
   return (
     <S.StyledContainer>
       <div id="scroll-target" />
-      {loading ? (
+      {loading && !posts.length ? (
         <Title>{t("Loading")}</Title>
       ) : (
         <Container>
           <Title id="all-posts-title">{t("allPosts")}</Title>
           <Link href="/">🏠 {t("Home")}</Link>
           <AllPostsGrid loading={loading} posts={posts} />
-          <Row justify="center" align="center" className="pagination-controls">
-            <Button
-              onClick={() => handleSetPage(page - 1)}
-              disabled={page === 0}
-            >
-              ⬅️
-            </Button>
-            <Body>
-              Page: {page + 1} {maxPage && `of ${maxPage + 1}`}
-            </Body>
-            <Button
-              onClick={() => handleSetPage(page + 1)}
-              disabled={page === maxPage || posts.length !== 6}
-            >
-              ➡️
-            </Button>
-          </Row>
+          {totalDocuments > posts.length && (
+            <Button onClick={handleLoadMore}>{t("Load More")}</Button>
+          )}
         </Container>
       )}
     </S.StyledContainer>
