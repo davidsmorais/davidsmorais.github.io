@@ -10,16 +10,18 @@ const BlogGrid = ({ posts = [], loading }) => {
   const postNodes = posts?.map((post) => post.node);
   let history = useHistory();
   return (
-    <S.BlogsRow noWrap>
-      {!posts.length && <Body error>{t("noPostsFound")}</Body>}
-      {((loading || !posts) && t("Loading")) ||
-        postNodes.map((post) => <BlogPost key={post.slug} {...post} />)}
-      {!loading && postNodes.length < posts.length && (
+    <>
+      <S.BlogsRow noWrap>
+        {!posts.length && <Body error>{t("noPostsFound")}</Body>}
+        {((loading || !posts) && t("Loading")) ||
+          postNodes.map((post) => <BlogPost key={post.slug} {...post} />)}
+      </S.BlogsRow>
+      {!loading && postNodes.length && (
         <Button type="secondary" onClick={() => history.push(`/all-posts`)}>
           {t("Load More")}
         </Button>
       )}
-    </S.BlogsRow>
+    </>
   );
 };
 
