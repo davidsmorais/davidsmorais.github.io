@@ -13,6 +13,9 @@
   "Loading": "Caricamento in corso",
   "allPosts": "Tutti i posti",
   "noPostsFound": "Nessun post trovato 💀",
+  "error": "Errore 🦜",
+  "postNotFound": "Non ho trovato questo post. Se sei stato reindirizzato da un altro sito web, potresti voler controllare la pagina 'Tutti i posti'",
+  "gotoAllPosts": "Vai a 'Tutti i posti'",
 
   "contactTitle": "costruiamo cose\nINSIEME",
   "contactCta": "PARLA CON ME",

@@ -13,6 +13,9 @@
   "allPosts": "Todos os Posts",
   "Loading": "A carregar",
   "noPostsFound": "Nenhum post encontrado 💀",
+  "error": "Erro 🦜",
+  "postNotFound": "Não consegui encontrar este post. Se foste redirecionado, experimenta procurar na página 'Todos os Posts'",
+  "gotoAllPosts": "Para 'Todos os Posts'",
 
   "contactTitle": "vamos construir coisas\nJUNTOS",
   "contactCta": "FALA COMIGO",

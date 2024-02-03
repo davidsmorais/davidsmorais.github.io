@@ -3,8 +3,6 @@
   "meText": "Y soy un web developer",
   "My blog": "Mi blog",
   "Get in touch": "Habla Conmigo",
-
-  "noPostsFound": "No hay posts aquí 💀",
   "aboutMe": "> sobre mí",
 
   "blogTitle": "> blog",
@@ -12,6 +10,10 @@
   "Load More": "Cargar más",
   "Loading": "Cargando",
   "allPosts": "Todos los posts",
+  "noPostsFound": "No hay posts aquí 💀",
+  "error": "Error 🦜",
+  "postNotFound": "No pude encontrar este post. Si fuiste redirigido de otro sitio web, es posible que desees consultar la página 'Todos los posts'",
+  "gotoAllPosts": "Ir a 'Todos los posts'",
 
   "contactTitle": "construyamos cosas\nJUNTOS",
   "contactCta": "HABLA CONMIGO",

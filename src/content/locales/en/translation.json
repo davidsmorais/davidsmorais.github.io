@@ -3,7 +3,6 @@
   "meText": "And I'm a web developer",
   "My blog": "My blog",
   "Get in touch": "Get in touch",
-  "noPostsFound": "Unable to find posts 💀",
   "aboutMe": "> about me",
 
   "blogTitle": "> blog",
@@ -11,6 +10,10 @@
   "Load More": "Load More",
   "allPosts": "All Posts",
   "Loading": "Loading",
+  "noPostsFound": "Unable to find posts 💀",
+  "error": "Error 🦜",
+  "postNotFound": "I couldn't find this post. If you were redirected from another website you may want to check the 'All Posts' page",
+  "gotoAllPosts": "To 'All Posts'",
 
   "contactTitle": "let's build something\nTOGETHER",
   "contactCta": "GET IN TOUCH",
