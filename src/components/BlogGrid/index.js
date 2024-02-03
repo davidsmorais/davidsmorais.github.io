@@ -7,14 +7,14 @@ import { Body } from "Common";
 
 const BlogGrid = ({ posts = [], loading }) => {
   const { t } = useTranslate();
-  const trimmedPosts = posts?.slice(0, 4) ?? [];
+  const postNodes = posts?.map((post) => post.node);
   let history = useHistory();
   return (
     <S.BlogsRow noWrap>
       {!posts.length && <Body error>{t("noPostsFound")}</Body>}
       {((loading || !posts) && t("Loading")) ||
-        trimmedPosts.map((post) => <BlogPost key={post.slug} {...post} />)}
-      {!loading && trimmedPosts.length < posts.length && (
+        postNodes.map((post) => <BlogPost key={post.slug} {...post} />)}
+      {!loading && postNodes.length < posts.length && (
         <Button type="secondary" onClick={() => history.push(`/all-posts`)}>
           {t("Load More")}
         </Button>

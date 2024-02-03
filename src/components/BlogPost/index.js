@@ -6,14 +6,14 @@ import { BlogPostTitle, Body } from "Common";
 import * as S from "./styles";
 const Button = lazy(() => import("Common/Button"));
 
-const Post = ({ title, brief, dateAdded, coverImage, slug }) => {
+const Post = ({ title, brief, publishedAt, coverImage, slug }) => {
   const { t } = useTranslate();
   let history = useHistory();
   return (
     <S.BlogPostContainer>
       <BlogPostTitle>{title}</BlogPostTitle>
-      <S.DateText>{new Date(dateAdded).toLocaleDateString()}</S.DateText>
-      <img src={coverImage} alt={slug} />
+      <S.DateText>{new Date(publishedAt).toLocaleDateString()}</S.DateText>
+      <img src={coverImage.url} alt={slug} />
       <Body>{brief}</Body>
       <Button
         type="secondary"
