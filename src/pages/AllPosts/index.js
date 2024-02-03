@@ -24,6 +24,7 @@ const AllPosts = () => {
         edges {
           cursor
           node {
+            id
             title
             brief
             slug
@@ -51,7 +52,6 @@ const AllPosts = () => {
       const postsIds = posts.map((post) => post.cuid);
       if (!postsIds.find((id) => id === nodes[0]?.cuid)) {
         console.log("Setting posts", posts[0]?.cuid, nodes[0]?.cuid);
-        debugger;
         setPosts([...posts, ...nodes]);
       }
     }
