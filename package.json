@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "cross-env PORT=3001 ENV=development react-app-rewired start",
-    "build": "cross-env NODE_ENV=production react-app-rewired build && cp _config.yml build",
+    "build": "cross-env NODE_ENV=production react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
