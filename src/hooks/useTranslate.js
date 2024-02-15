@@ -43,7 +43,7 @@ const useTranslate = (mainKey) => {
         return content?.[language]?.[key] ?? key;
       }
     },
-    [language, setLanguage]
+    [language, setLanguage, mainKey]
   );
   return {
     t: translate,

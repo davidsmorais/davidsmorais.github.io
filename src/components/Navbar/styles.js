@@ -114,7 +114,7 @@ export const Menu = styled.h5`
   margin-top: -0.45rem;
   padding: 0 1.56rem 0 0;
   font-weight: 600;
-  border-bottom: 5px solid ${({ theme }) => theme?.accent?.main}; ;
+  border-bottom: 5px solid ${({ theme }) => theme?.accent?.main};
 `;
 
 export const CustomNavLinkSmall = styled(NavLink)`

@@ -53,7 +53,7 @@ const Home = () => {
           behavior: "smooth",
         });
     }
-  }, [loading]);
+  }, [loading, data]);
 
   return (
     <S.StyledContainer>

@@ -25,7 +25,7 @@ const BlogPost = () => {
 
   const postHasLoaded = !loading && post;
   useEffect(() => {
-    if (postHasLoaded) {
+    if (postHasLoaded && post.title) {
       window.document.title = `DS Morais > ${post.title}`;
       const element = document.getElementById("scroll-target");
       if (element) {
@@ -36,7 +36,7 @@ const BlogPost = () => {
         });
       }
     }
-  }, [postHasLoaded]);
+  }, [postHasLoaded, post.title]);
 
   if (!loading && data.post === null) {
     return (
