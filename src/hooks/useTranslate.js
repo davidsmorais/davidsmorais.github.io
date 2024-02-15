@@ -19,16 +19,13 @@ const useTranslate = (mainKey) => {
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
   const languages = Object.keys(content);
 
-  const updatePageLanguage = useCallback(
-    (lang) => {
-      if (typeof window !== "undefined") {
-        localStorage.setItem("lang", lang);
-      }
-      setLanguage(lang);
-      window.location.reload();
-    },
-    [setLanguage]
-  );
+  const updatePageLanguage = useCallback((lang) => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("lang", lang);
+    }
+    setLanguage(lang);
+    window.location.reload();
+  }, []);
   const translate = useCallback(
     (key) => {
       if (!key) {
@@ -39,11 +36,10 @@ const useTranslate = (mainKey) => {
       }`;
       if (mainKey) {
         return content?.[language]?.[mainKey]?.[key] ?? notFoundString;
-      } else {
-        return content?.[language]?.[key] ?? key;
       }
+      return content?.[language]?.[key] ?? key;
     },
-    [language, setLanguage, mainKey]
+    [language, mainKey]
   );
   return {
     t: translate,
